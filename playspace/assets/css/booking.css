@@ -1,0 +1,234 @@
+/* ==========================================================================
+   PlaySpace - Booking Wizard Styles
+   Strict 3-Color Palette: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+.ps-booking-flow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--ps-space-2xl);
+  align-items: start;
+}
+
+/* Step Bar */
+.ps-wizard-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: var(--ps-space-2xl);
+}
+
+.ps-wizard-steps::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: var(--ps-border-color);
+  z-index: 1;
+}
+
+.ps-wizard-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--ps-bg-main);
+  padding: 0 0.5rem;
+}
+
+.ps-step-num {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--ps-radius-full);
+  background-color: var(--ps-white);
+  border: 2px solid var(--ps-border-color);
+  color: var(--ps-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  transition: all var(--ps-transition-fast);
+}
+
+.ps-wizard-step.active .ps-step-num {
+  background-color: var(--ps-yellow);
+  border-color: var(--ps-yellow);
+  color: var(--ps-black);
+  box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.25);
+}
+
+.ps-wizard-step.completed .ps-step-num {
+  background-color: var(--ps-black);
+  border-color: var(--ps-black);
+  color: var(--ps-yellow);
+}
+
+.ps-step-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ps-text-muted);
+}
+
+.ps-wizard-step.active .ps-step-label {
+  color: var(--ps-black);
+}
+
+/* Time Slots Grid */
+.ps-timeslot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ps-timeslot-btn {
+  padding: 0.75rem 0.5rem;
+  border-radius: var(--ps-radius-md);
+  border: 1.5px solid var(--ps-border-color);
+  background-color: var(--ps-bg-card);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--ps-transition-fast);
+}
+
+.ps-timeslot-btn:hover {
+  border-color: var(--ps-yellow);
+}
+
+.ps-timeslot-btn.active {
+  background-color: var(--ps-yellow);
+  border-color: var(--ps-yellow);
+  color: var(--ps-black);
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+}
+
+.ps-timeslot-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Quantity Counter */
+.ps-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ps-counter-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ps-radius-full);
+  border: 1.5px solid var(--ps-border-color);
+  background-color: var(--ps-bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--ps-transition-fast);
+}
+
+.ps-counter-btn:hover {
+  background-color: var(--ps-yellow);
+  border-color: var(--ps-yellow);
+  color: var(--ps-black);
+}
+
+.ps-counter-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* Order Summary Box */
+.ps-order-summary {
+  position: sticky;
+  top: 100px;
+  background-color: var(--ps-black);
+  color: var(--ps-white);
+  border-radius: var(--ps-radius-xl);
+  padding: 2rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.ps-summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ps-summary-total {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--ps-white);
+}
+
+.ps-summary-total span.price {
+  color: var(--ps-yellow);
+}
+
+/* Digital Signature Box */
+.ps-signature-pad {
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  border-radius: var(--ps-radius-md);
+  height: 140px;
+  background-color: var(--ps-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: crosshair;
+}
+
+.ps-signature-pad canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+  .ps-booking-flow {
+    grid-template-columns: 1fr;
+  }
+  .ps-order-summary {
+    position: static;
+    margin-top: 1.5rem;
+  }
+  .ps-timeslot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .ps-timeslot-grid {
+    grid-template-columns: 1fr;
+  }
+  .ps-wizard-step {
+    padding: 0 0.25rem;
+  }
+  .ps-step-num {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  .ps-step-label {
+    font-size: 0.72rem;
+  }
+}

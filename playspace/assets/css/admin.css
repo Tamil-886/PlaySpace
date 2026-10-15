@@ -1,0 +1,168 @@
+/* ==========================================================================
+   PlaySpace - Admin Dashboard Styling
+   Strict 3-Color Palette: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+.ps-admin-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  background-color: var(--ps-bg-main);
+}
+
+/* Admin Sidebar */
+.ps-admin-sidebar {
+  background-color: var(--ps-black);
+  color: var(--ps-white);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.ps-admin-brand {
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ps-admin-nav {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex-grow: 1;
+}
+
+.ps-admin-nav-category {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 0.75rem 0.5rem 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.ps-admin-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--ps-radius-md);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  transition: all var(--ps-transition-fast);
+}
+
+.ps-admin-link:hover,
+.ps-admin-link.active {
+  background-color: var(--ps-yellow);
+  color: var(--ps-black);
+}
+
+/* Occupancy Gauge Widget */
+.ps-occupancy-widget {
+  background-color: var(--ps-black);
+  color: var(--ps-white);
+  border-radius: var(--ps-radius-xl);
+  padding: 1.75rem;
+  border: 1.5px solid var(--ps-yellow);
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-occupancy-meter {
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: var(--ps-radius-full);
+  overflow: hidden;
+  margin: 1.25rem 0 0.75rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ps-occupancy-fill {
+  height: 100%;
+  background-color: var(--ps-yellow);
+  border-radius: var(--ps-radius-full);
+  transition: width 0.8s ease;
+}
+
+/* Live Status Indicators */
+.ps-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--ps-radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ps-status-pill.active {
+  background-color: var(--ps-yellow);
+  color: var(--ps-black);
+}
+
+.ps-status-pill.inactive {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--ps-text-main);
+  border: 1px solid var(--ps-border-color);
+}
+
+.ps-status-pill.danger {
+  background-color: var(--ps-black);
+  color: var(--ps-yellow);
+  border: 1px solid var(--ps-yellow);
+}
+
+/* Calendar Schedule Grid */
+.ps-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: var(--ps-border-color);
+  border: 1px solid var(--ps-border-color);
+  border-radius: var(--ps-radius-lg);
+  overflow: hidden;
+}
+
+.ps-schedule-col {
+  background-color: var(--ps-bg-card);
+  min-height: 480px;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ps-schedule-header {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ps-border-color);
+}
+
+.ps-schedule-event {
+  padding: 0.6rem;
+  border-radius: var(--ps-radius-sm);
+  background-color: rgba(255, 204, 0, 0.18);
+  border-left: 3px solid var(--ps-yellow);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--ps-transition-fast);
+}
+
+.ps-schedule-event:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}

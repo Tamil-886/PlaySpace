@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Reservation — Parent Portal | PlaySpace</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Top Navigation Bar for Parent Portal (No top bar, toggles inside navbar) -->
+  <header class="ps-header">
+    <div class="ps-container-fluid ps-navbar">
+      <div class="ps-flex ps-items-center ps-gap-md">
+        <a href="../index.html" class="ps-navbar-brand">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+        </a>
+        <span class="ps-badge ps-badge-yellow-outline" style="font-size: 0.75rem;">PARENT PORTAL</span>
+      </div>
+
+      <div class="ps-nav-actions">
+        <!-- LTR / RTL toggle right in nav bar -->
+        <button class="ps-lang-toggle" aria-label="Toggle Layout Direction">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span>RTL</span>
+        </button>
+
+        <!-- Dark Mode toggle right in nav bar -->
+        <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <a href="book-session.html" class="ps-btn ps-btn-primary ps-btn-sm">+ New Jump Booking</a>
+        <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm" data-action-logout>Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ps-dashboard-layout">
+    
+  <aside class="ps-dash-sidebar">
+    <nav class="ps-sidebar-nav">
+      
+    <a href="dashboard.html" class="ps-sidebar-link ">
+      <span>📊</span>
+      <span>Overview</span>
+    </a>
+  
+    <a href="children.html" class="ps-sidebar-link ">
+      <span>👶</span>
+      <span>Child Profiles & Waivers</span>
+    </a>
+  
+    <a href="book-session.html" class="ps-sidebar-link ">
+      <span>🎟️</span>
+      <span>Book Jump Session</span>
+    </a>
+  
+    <a href="my-bookings.html" class="ps-sidebar-link ">
+      <span>📅</span>
+      <span>My Bookings</span>
+    </a>
+  
+    <a href="birthday-booking.html" class="ps-sidebar-link active">
+      <span>🎂</span>
+      <span>Birthday Reservation</span>
+    </a>
+  
+    <a href="my-passes.html" class="ps-sidebar-link ">
+      <span>💳</span>
+      <span>Punch Pass Wallet</span>
+    </a>
+  
+    <a href="purchase-pass.html" class="ps-sidebar-link ">
+      <span>🛍️</span>
+      <span>Buy Passes & Packs</span>
+    </a>
+  
+    <a href="order-history.html" class="ps-sidebar-link ">
+      <span>🧾</span>
+      <span>Order History</span>
+    </a>
+  
+    <a href="payment-history.html" class="ps-sidebar-link ">
+      <span>💲</span>
+      <span>Payment Receipts</span>
+    </a>
+  
+    <a href="notifications.html" class="ps-sidebar-link ">
+      <span>🔔</span>
+      <span>Notifications</span>
+    </a>
+  
+    <a href="profile.html" class="ps-sidebar-link ">
+      <span>👤</span>
+      <span>Parent Profile</span>
+    </a>
+  
+    <a href="settings.html" class="ps-sidebar-link ">
+      <span>⚙️</span>
+      <span>Account Settings</span>
+    </a>
+  
+    </nav>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+      <a href="../index.html" class="ps-sidebar-link">
+        <span>🏠</span> <span>Return to Main Website</span>
+      </a>
+      <a href="../pages/login.html" class="ps-sidebar-link" data-action-logout>
+        <span>🚪</span> <span>Sign Out</span>
+      </a>
+    </div>
+  </aside>
+  
+    <main class="ps-dash-content">
+      
+  <div class="ps-dash-header">
+    <div>
+      <h2 style="margin: 0;">Customize Birthday Party</h2>
+      <p class="text-muted" style="margin: 0;">Choose party package, private suite, guest counts, and catering.</p>
+    </div>
+  </div>
+
+  <div class="ps-booking-flow">
+    <div>
+      <div class="ps-card" style="margin-bottom: 2rem;">
+        <h4>1. Choose Party Package</h4>
+        <div class="ps-grid ps-grid-3" style="margin-top: 1.25rem;">
+          <div class="ps-pricing-card" data-party-package="Classic Bounce" data-package-price="299" data-included-kids="10" style="cursor: pointer;">
+            <h5>Classic Bounce</h5>
+            <div style="font-size: 1.8rem; font-weight: 900;">$299</div>
+            <p style="font-size: 0.8rem;">10 Jumpers Included</p>
+          </div>
+          <div class="ps-pricing-card featured" data-party-package="VIP Glow Party" data-package-price="449" data-included-kids="12" style="cursor: pointer;">
+            <h5 style="color: #FFFFFF;">VIP Glow Celebration</h5>
+            <div style="font-size: 1.8rem; font-weight: 900; color: #FFCC00;">$449</div>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.8);">12 Jumpers Included</p>
+          </div>
+          <div class="ps-pricing-card" data-party-package="Ultimate Takeover" data-package-price="699" data-included-kids="20" style="cursor: pointer;">
+            <h5>Ultimate Takeover</h5>
+            <div style="font-size: 1.8rem; font-weight: 900;">$699</div>
+            <p style="font-size: 0.8rem;">20 Jumpers Included</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ps-card" style="margin-bottom: 2rem;">
+        <h4>2. Party Room &amp; Date</h4>
+        <div class="ps-grid ps-grid-2" style="margin-top: 1rem;">
+          <div class="ps-form-group">
+            <label class="ps-form-label">Party Date</label>
+            <input type="date" class="ps-form-control" value="2026-11-07">
+          </div>
+          <div class="ps-form-group">
+            <label class="ps-form-label">Private Celebration Suite</label>
+            <select id="ps-party-room-select" class="ps-form-control">
+              <option>Galaxy Neon Suite (Recommended for Glow)</option>
+              <option>Jungle Safari Lounge</option>
+              <option>Adventure Superhero Suite</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="ps-order-summary">
+      <h3 style="color: #FFFFFF; margin-bottom: 1.5rem;">Party Estimate</h3>
+      <div id="ps-party-breakdown">
+        <!-- populated by birthday-booking.js -->
+      </div>
+      <div class="ps-summary-total">
+        <span>Total Estimate:</span>
+        <span class="price" id="ps-party-total">$449.00</span>
+      </div>
+      <a href="my-bookings.html" class="ps-btn ps-btn-primary ps-btn-block" style="margin-top: 1.5rem;">
+        Reserve Party Suite ($100 Deposit)
+      </a>
+    </aside>
+  </div>
+  
+    </main>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/birthday-booking.js"></script>
+</body>
+</html>

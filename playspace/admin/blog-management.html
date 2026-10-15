@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog CMS Manager — Admin Console | PlaySpace</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Top Navigation Bar for Admin Dashboard (No top bar, toggles inside navbar) -->
+  <header class="ps-header">
+    <div class="ps-container-fluid ps-navbar">
+      <div class="ps-flex ps-items-center ps-gap-md">
+        <a href="../index.html" class="ps-navbar-brand">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+        </a>
+        <span class="ps-badge" style="font-size: 0.75rem;">ADMIN CONSOLE</span>
+      </div>
+
+      <div class="ps-nav-actions">
+        <!-- Live quick occupancy badge in navbar -->
+        <span class="ps-badge ps-badge-dark" style="font-size: 0.8rem; display: flex; align-items: center; gap: 6px;">
+          <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#FFCC00;"></span>
+          LIVE OCCUPANCY: <span id="nav-occupancy-count" style="color: #FFCC00; font-weight: 800;">184 / 250</span>
+        </span>
+
+        <!-- LTR / RTL toggle right in nav bar -->
+        <button class="ps-lang-toggle" aria-label="Toggle Layout Direction">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span>RTL</span>
+        </button>
+
+        <!-- Dark Mode toggle right in nav bar -->
+        <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm" data-action-logout>Sign Out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ps-admin-layout">
+    
+  <aside class="ps-admin-sidebar">
+    <div class="ps-admin-brand">
+      <a href="../index.html">
+        <img src="../assets/images/brand/logo.svg" alt="PlaySpace Brand" style="height: 38px;">
+      </a>
+    </div>
+
+    <nav class="ps-admin-nav">
+      <div class="ps-admin-nav-category">Operations</div>
+        <a href="dashboard.html" class="ps-admin-link ">
+          <span>📊</span>
+          <span>Dashboard & Gauge</span>
+        </a>
+      
+        <a href="bookings.html" class="ps-admin-link ">
+          <span>🎟️</span>
+          <span>Live Check-In Desk</span>
+        </a>
+      
+        <a href="schedule.html" class="ps-admin-link ">
+          <span>🗓️</span>
+          <span>Court Schedule</span>
+        </a>
+      
+        <a href="birthday-events.html" class="ps-admin-link ">
+          <span>🎂</span>
+          <span>Birthday Parties</span>
+        </a>
+      
+        <a href="attractions.html" class="ps-admin-link ">
+          <span>🛡️</span>
+          <span>Attraction Safety Status</span>
+        </a>
+      <div class="ps-admin-nav-category">CRM & Sales</div>
+        <a href="customers.html" class="ps-admin-link ">
+          <span>👥</span>
+          <span>Customer Directory</span>
+        </a>
+      
+        <a href="passes.html" class="ps-admin-link ">
+          <span>💳</span>
+          <span>Passes & Members</span>
+        </a>
+      
+        <a href="orders.html" class="ps-admin-link ">
+          <span>🛍️</span>
+          <span>Orders & Cafe</span>
+        </a>
+      
+        <a href="reports.html" class="ps-admin-link ">
+          <span>📈</span>
+          <span>Revenue Reports</span>
+        </a>
+      <div class="ps-admin-nav-category">Park Control</div>
+        <a href="pricing.html" class="ps-admin-link ">
+          <span>💲</span>
+          <span>Pricing & Packages</span>
+        </a>
+      
+        <a href="messages.html" class="ps-admin-link ">
+          <span>✉️</span>
+          <span>Inquiries & Feedback</span>
+        </a>
+      
+        <a href="blog-management.html" class="ps-admin-link active">
+          <span>📝</span>
+          <span>Blog CMS</span>
+        </a>
+      
+        <a href="settings.html" class="ps-admin-link ">
+          <span>⚙️</span>
+          <span>Park Settings</span>
+        </a>
+      
+    </nav>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.12); padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+      <a href="../index.html" class="ps-admin-link">
+        <span>🏠</span> <span>Public Website</span>
+      </a>
+      <a href="../pages/login.html" class="ps-admin-link" data-action-logout>
+        <span>🚪</span> <span>Sign Out</span>
+      </a>
+    </div>
+  </aside>
+  
+    <main class="ps-dash-content">
+      
+  <div class="ps-dash-header">
+    <div>
+      <h2 style="margin: 0;">Blog CMS &amp; Article Manager</h2>
+      <p class="text-muted" style="margin: 0;">Publish and update parenting guides and news updates.</p>
+    </div>
+    <button class="ps-btn ps-btn-primary">+ Add New Post</button>
+  </div>
+
+  <div class="ps-table-wrap">
+    <table class="ps-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Author</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Top Benefits of Trampoline Play for Kids</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Play &amp; Activities</span></td>
+          <td>Coach Alex Reynolds</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=top-benefits-trampoline-play-kids" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td><strong>Why Indoor Play Is Great for Growing Kids</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Parenting Tips</span></td>
+          <td>Dr. Elena Vance</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=why-indoor-play-is-great-for-growing-kids" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td><strong>How to Plan the Perfect Kids' Birthday Party</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Birthday Party Ideas</span></td>
+          <td>Samantha Clarke</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=how-to-plan-perfect-kids-birthday-party" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td><strong>Essential Indoor Playground Safety Tips</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Safety &amp; Wellness</span></td>
+          <td>Marcus Miller</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=essential-indoor-playground-safety-tips" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td><strong>Fun Indoor Activities for Toddlers</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Play &amp; Activities</span></td>
+          <td>Chloe Bennett</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=fun-indoor-activities-for-toddlers" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td><strong>Planning an Exciting School Field Trip</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Events &amp; Updates</span></td>
+          <td>David Martinez</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=planning-exciting-school-field-trip" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td><strong>Meet the Most Exciting Adventure Zones at PLAYSPACE</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Indoor Adventures</span></td>
+          <td>Coach Tyler Brooks</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=meet-most-exciting-adventure-zones-at-playspace" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td><strong>Five Ways to Make Family Playtime More Memorable</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Parenting Tips</span></td>
+          <td>Jessica Taylor</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=five-ways-to-make-family-playtime-more-memorable" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td><strong>The Magic of Neon Glow Nights: What Parents &amp; Kids Can Expect</strong></td>
+          <td><span class="ps-badge" style="background:#FFCC00;color:#000;">Events &amp; Updates</span></td>
+          <td>Coach Maya Lin</td>
+          <td><span class="ps-badge" style="background:#28a745;color:#fff;">PUBLISHED</span></td>
+          <td><a href="../pages/blog-details.html?id=the-magic-of-neon-glow-nights" class="ps-btn ps-btn-outline-dark ps-btn-sm" target="_blank">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+    </main>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+  <script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

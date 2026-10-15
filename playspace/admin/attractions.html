@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attraction Safety Status — Admin Console | PlaySpace</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Top Navigation Bar for Admin Dashboard (No top bar, toggles inside navbar) -->
+  <header class="ps-header">
+    <div class="ps-container-fluid ps-navbar">
+      <div class="ps-flex ps-items-center ps-gap-md">
+        <a href="../index.html" class="ps-navbar-brand">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+        </a>
+        <span class="ps-badge" style="font-size: 0.75rem;">ADMIN CONSOLE</span>
+      </div>
+
+      <div class="ps-nav-actions">
+        <!-- Live quick occupancy badge in navbar -->
+        <span class="ps-badge ps-badge-dark" style="font-size: 0.8rem; display: flex; align-items: center; gap: 6px;">
+          <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#FFCC00;"></span>
+          LIVE OCCUPANCY: <span id="nav-occupancy-count" style="color: #FFCC00; font-weight: 800;">184 / 250</span>
+        </span>
+
+        <!-- LTR / RTL toggle right in nav bar -->
+        <button class="ps-lang-toggle" aria-label="Toggle Layout Direction">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span>RTL</span>
+        </button>
+
+        <!-- Dark Mode toggle right in nav bar -->
+        <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm" data-action-logout>Sign Out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ps-admin-layout">
+    
+  <aside class="ps-admin-sidebar">
+    <div class="ps-admin-brand">
+      <a href="../index.html">
+        <img src="../assets/images/brand/logo.svg" alt="PlaySpace Brand" style="height: 38px;">
+      </a>
+    </div>
+
+    <nav class="ps-admin-nav">
+      <div class="ps-admin-nav-category">Operations</div>
+        <a href="dashboard.html" class="ps-admin-link ">
+          <span>📊</span>
+          <span>Dashboard & Gauge</span>
+        </a>
+      
+        <a href="bookings.html" class="ps-admin-link ">
+          <span>🎟️</span>
+          <span>Live Check-In Desk</span>
+        </a>
+      
+        <a href="schedule.html" class="ps-admin-link ">
+          <span>🗓️</span>
+          <span>Court Schedule</span>
+        </a>
+      
+        <a href="birthday-events.html" class="ps-admin-link ">
+          <span>🎂</span>
+          <span>Birthday Parties</span>
+        </a>
+      
+        <a href="attractions.html" class="ps-admin-link active">
+          <span>🛡️</span>
+          <span>Attraction Safety Status</span>
+        </a>
+      <div class="ps-admin-nav-category">CRM & Sales</div>
+        <a href="customers.html" class="ps-admin-link ">
+          <span>👥</span>
+          <span>Customer Directory</span>
+        </a>
+      
+        <a href="passes.html" class="ps-admin-link ">
+          <span>💳</span>
+          <span>Passes & Members</span>
+        </a>
+      
+        <a href="orders.html" class="ps-admin-link ">
+          <span>🛍️</span>
+          <span>Orders & Cafe</span>
+        </a>
+      
+        <a href="reports.html" class="ps-admin-link ">
+          <span>📈</span>
+          <span>Revenue Reports</span>
+        </a>
+      <div class="ps-admin-nav-category">Park Control</div>
+        <a href="pricing.html" class="ps-admin-link ">
+          <span>💲</span>
+          <span>Pricing & Packages</span>
+        </a>
+      
+        <a href="messages.html" class="ps-admin-link ">
+          <span>✉️</span>
+          <span>Inquiries & Feedback</span>
+        </a>
+      
+        <a href="blog-management.html" class="ps-admin-link ">
+          <span>📝</span>
+          <span>Blog CMS</span>
+        </a>
+      
+        <a href="settings.html" class="ps-admin-link ">
+          <span>⚙️</span>
+          <span>Park Settings</span>
+        </a>
+      
+    </nav>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.12); padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+      <a href="../index.html" class="ps-admin-link">
+        <span>🏠</span> <span>Public Website</span>
+      </a>
+      <a href="../pages/login.html" class="ps-admin-link" data-action-logout>
+        <span>🚪</span> <span>Sign Out</span>
+      </a>
+    </div>
+  </aside>
+  
+    <main class="ps-dash-content">
+      
+  <div class="ps-dash-header">
+    <div>
+      <h2 style="margin: 0;">Attraction Status &amp; Daily Inspections</h2>
+      <p class="text-muted" style="margin: 0;">Verify daily ASTM spring audits, airbag PSI checks, and monitor court status.</p>
+    </div>
+  </div>
+
+  <div class="ps-table-wrap">
+    <table class="ps-table">
+      <thead>
+        <tr>
+          <th>Attraction Zone</th>
+          <th>Max Capacity</th>
+          <th>Daily Inspection</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>Mega Trampoline Arena</strong></td>
+          <td>14,000 Sq Ft</td>
+          <td>Passed (8:00 AM by Marshal #1)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Ninja Warrior Course</strong></td>
+          <td>10ft Warped Wall</td>
+          <td>Passed (8:03 AM by Marshal #2)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Adventure Climbing Zone</strong></td>
+          <td>Auto-Belay Spires</td>
+          <td>Passed (8:06 AM by Marshal #3)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Super Slide Mountain</strong></td>
+          <td>4-Lane Racing Slides</td>
+          <td>Passed (8:09 AM by Marshal #4)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Rainbow Ball Pit</strong></td>
+          <td>60,000+ Clean Balls</td>
+          <td>Passed (8:12 AM by Marshal #1)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Sky-High Rope Adventure</strong></td>
+          <td>Suspension Bridges</td>
+          <td>Passed (8:15 AM by Marshal #2)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Foam Pit Challenge</strong></td>
+          <td>5-Foot Foam Depth</td>
+          <td>Passed (8:18 AM by Marshal #3)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Laser Maze Mission</strong></td>
+          <td>Dynamic Laser Grid</td>
+          <td>Passed (8:21 AM by Marshal #4)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Interactive Play Arena</strong></td>
+          <td>Augmented Projection</td>
+          <td>Passed (8:24 AM by Marshal #1)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Little Explorers Zone</strong></td>
+          <td>Gated Safe Haven</td>
+          <td>Passed (8:27 AM by Marshal #2)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Cargo Net Climber</strong></td>
+          <td>Braided Marine Rope</td>
+          <td>Passed (8:30 AM by Marshal #3)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Balance & Bounce Trail</strong></td>
+          <td>Foam Stepping Stones</td>
+          <td>Passed (8:33 AM by Marshal #4)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Neon Glow Adventure</strong></td>
+          <td>Blacklight Illumination</td>
+          <td>Passed (8:36 AM by Marshal #1)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Mini Sports Arena</strong></td>
+          <td>Slam Dunk Hoops</td>
+          <td>Passed (8:39 AM by Marshal #2)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Mystery Tunnel Quest</strong></td>
+          <td>Winding Labyrinth</td>
+          <td>Passed (8:42 AM by Marshal #3)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Spider Wall Climb</strong></td>
+          <td>Padded Velcro Wall</td>
+          <td>Passed (8:45 AM by Marshal #4)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Parkour Jump Zone</strong></td>
+          <td>Soft Vault Blocks</td>
+          <td>Passed (8:48 AM by Marshal #1)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Adventure Tower</strong></td>
+          <td>3-Tier Tower</td>
+          <td>Passed (8:51 AM by Marshal #2)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Volcano Climb</strong></td>
+          <td>Padded Volcano Cone</td>
+          <td>Passed (8:54 AM by Marshal #3)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Wipeout Challenge</strong></td>
+          <td>Rotating Foam Arm</td>
+          <td>Passed (8:57 AM by Marshal #4)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+        <tr>
+          <td><strong>Airbag Jump Zone</strong></td>
+          <td>Stunt Airbag</td>
+          <td>Passed (8:00 AM by Marshal #1)</td>
+          <td><span class="ps-badge">OPERATIONAL</span></td>
+          <td><button class="ps-btn ps-btn-outline-dark ps-btn-sm">Log Check</button></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+    </main>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+  <script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

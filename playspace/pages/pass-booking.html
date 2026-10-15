@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Pricing &amp; Passes — PlaySpace</title>
+  <meta name="description" content="Book your PlaySpace Jump Passes, Hourly Sessions, and Multi-Visit Punch Cards. Select your pass, start date, number of children, and reserve instantly.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .ps-pass-plan-card {
+      border: 2px solid var(--ps-border-color);
+      border-radius: var(--ps-radius-lg);
+      padding: 1.15rem;
+      background: var(--ps-bg-card);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .ps-pass-plan-card:hover {
+      border-color: #FFCC00;
+      transform: translateY(-2px);
+    }
+    .ps-pass-plan-card.selected {
+      border-color: #FFCC00;
+      background: rgba(255, 204, 0, 0.08);
+      box-shadow: 0 0 0 2px #FFCC00;
+    }
+    .ps-counter-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid var(--ps-border-color);
+      background: var(--ps-bg-card);
+      color: var(--ps-text-main);
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .ps-counter-btn:hover {
+      background: #FFCC00;
+      color: #000000;
+      border-color: #FFCC00;
+    }
+
+    /* Booking details and purchaser information */
+    .pass-form-section {
+      padding: clamp(1.25rem, 3vw, 2rem) !important;
+      margin-bottom: 1.25rem !important;
+      border-radius: 18px;
+      background: var(--ps-bg-surface-alt);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    }
+    .pass-form-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 0 1.4rem !important;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--ps-border-color);
+      line-height: 1.35;
+    }
+    .pass-step-number {
+      display: inline-flex;
+      flex: 0 0 36px;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #FFCC00;
+      color: #000000;
+      font-size: 1rem !important;
+      font-weight: 800;
+    }
+    .pass-date-jumper-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.4rem;
+    }
+    .pass-form-section .ps-form-group { min-width: 0; }
+    .pass-form-section .ps-label {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ps-text-main);
+    }
+    .pass-form-section input.ps-input {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid var(--ps-border-color);
+      border-radius: 10px;
+      background: var(--ps-bg-card);
+      color: var(--ps-text-main);
+      font: inherit;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+    .pass-form-section input.ps-input::placeholder { color: var(--ps-text-muted); opacity: 0.72; }
+    .pass-form-section input.ps-input:focus-visible {
+      outline: 0;
+      border-color: #FFCC00;
+      box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+    }
+    .pass-jumper-controls { display: flex; align-items: center; gap: 0.65rem; }
+    .pass-jumper-controls .ps-counter-btn { width: 42px; height: 42px; border-radius: 12px; flex: 0 0 42px; }
+    .pass-jumper-controls input.ps-input { width: 82px !important; min-width: 64px; min-height: 42px; }
+    .pass-jump-age-note { color: var(--ps-text-muted); font-size: 0.85rem; }
+    .pass-socks-option {
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--ps-border-color);
+      border-left: 3px solid #FFCC00;
+      border-radius: 12px;
+      background: var(--ps-bg-card);
+    }
+    .pass-socks-option label { align-items: center !important; }
+    .pass-socks-option input[type="checkbox"] { width: 18px; height: 18px; flex: 0 0 18px; accent-color: #FFCC00; }
+    .pass-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .pass-emergency-group { margin-bottom: 0 !important; }
+    @media (max-width: 800px) {
+      .pass-contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .pass-date-jumper-grid,
+      .pass-contact-grid { grid-template-columns: minmax(0, 1fr); gap: 0.85rem; }
+      .pass-form-heading { align-items: flex-start; font-size: 1.08rem !important; }
+      .pass-socks-option { padding: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  
+<header class="ps-header">
+  <div class="ps-container ps-navbar">
+    <a href="../index.html" class="ps-navbar-brand">
+      <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+    </a>
+
+    <nav class="ps-nav-menu">
+      <!-- 1. Home -->
+      <div class="ps-nav-item">
+        <a href="../index.html" class="ps-nav-link ">Home <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../index.html" class="ps-dropdown-item">Homepage 1 (Main)</a>
+          <a href="../home-2.html" class="ps-dropdown-item">Homepage 2 (Adventure)</a>
+        </div>
+      </div>
+
+      <!-- 2. About -->
+      <div class="ps-nav-item">
+        <a href="../pages/about.html" class="ps-nav-link ">About</a>
+      </div>
+
+      <!-- 3. Attractions -->
+      <div class="ps-nav-item">
+        <a href="../pages/attractions.html" class="ps-nav-link ">Attractions</a>
+      </div>
+
+      <!-- 4. Pricing & Passes -->
+      <div class="ps-nav-item">
+        <a href="../pages/pricing-passes.html" class="ps-nav-link active">Pricing &amp; Passes</a>
+      </div>
+
+      <!-- 5. Birthday Parties -->
+      <div class="ps-nav-item">
+        <a href="../pages/birthday-parties.html" class="ps-nav-link ">Birthday Parties <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../pages/birthday-parties.html" class="ps-dropdown-item">Birthday Packages</a>
+          <a href="../pages/birthday-details.html" class="ps-dropdown-item">VIP Glow Party</a>
+          <a href="../pages/group-events.html" class="ps-dropdown-item">Group Events &amp; Field Trips</a>
+        </div>
+      </div>
+
+      <!-- 6. Gallery -->
+      <div class="ps-nav-item">
+        <a href="../pages/gallery.html" class="ps-nav-link ">Gallery</a>
+      </div>
+
+      <!-- 7. Dashboard -->
+      <div class="ps-nav-item">
+        <a href="../parent/dashboard.html" class="ps-nav-link ">Dashboard</a>
+      </div>
+
+      <!-- 8. Blog -->
+      <div class="ps-nav-item">
+        <a href="../pages/blog.html" class="ps-nav-link ">Blog</a>
+      </div>
+
+      <!-- 9. Contact -->
+      <div class="ps-nav-item">
+        <a href="../pages/contact.html" class="ps-nav-link ">Contact</a>
+      </div>
+
+      <!-- 10. Sign In / Account -->
+      <div class="ps-nav-item ps-nav-item-mobile-only">
+        <a href="../pages/login.html" class="ps-nav-link ps-nav-auth-btn ">Sign In</a>
+      </div>
+    </nav>
+
+    <div class="ps-nav-actions">
+      <!-- LTR / RTL Switcher -->
+      <button class="ps-lang-toggle" aria-label="Toggle Layout Direction" title="Switch between LTR and RTL">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span>RTL</span>
+      </button>
+
+      <!-- Dark Mode Switcher -->
+      <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <!-- Cart Button directly in Nav Bar -->
+      <button class="ps-cart-toggle ps-btn-icon position-relative" aria-label="Shopping Cart" title="View Cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="ps-cart-badge">0</span>
+      </button>
+
+      <!-- Sign In Option -->
+      <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm ps-nav-auth-btn">Sign In</a>
+
+      <!-- Primary Booking CTA -->
+      <a href="booking.html" class="ps-btn ps-btn-primary ps-btn-sm">Book Jump</a>
+
+      <button class="ps-mobile-toggle" aria-label="Open Mobile Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Banner / Breadcrumbs -->
+  <section class="ps-page-banner">
+    <div class="ps-container">
+      <div class="ps-breadcrumb">
+        <a href="../index.html">Home</a> <span class="sep">/</span> <a href="pricing-passes.html">Pricing &amp; Passes</a> <span class="sep">/</span> <span>Pass Booking</span>
+      </div>
+      <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+        <span class="badge-tag">OFFICIAL PASS RESERVATION</span>
+        <span class="ps-badge" style="background-color: #FFCC00; color: #000000; font-weight: 800;">ALL-INCLUSIVE ADMISSION</span>
+      </div>
+      <h1 style="color: #FFFFFF; margin: 0; font-size: 2.2rem;">Book Pricing &amp; Passes</h1>
+      <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 740px; margin: 0.75rem 0 0 0; line-height: 1.6;">
+        Choose your session pass or multi-visit punch card, select your start date and jumpers, and reserve your PlaySpace access instantly.
+      </p>
+    </div>
+  </section>
+
+  <!-- Standalone Pass Booking Section -->
+  <section class="ps-section ps-booking-section">
+    <div class="ps-container">
+
+      <!-- Form Validation Error Alert -->
+      <div id="psPassValidationAlert" class="ps-alert ps-alert-danger" style="display: none; background: #fff3f3; border: 2px solid #e74c3c; border-radius: var(--ps-radius-md); padding: 1rem 1.25rem; margin-bottom: 2rem; color: #c0392b; font-weight: 700; font-size: 0.95rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.4rem;">⚠️</span>
+          <div id="psPassAlertMessage">Please complete all required fields before confirming your pass booking.</div>
+        </div>
+      </div>
+
+      <!-- Successful Booking Confirmation View -->
+      <div id="psPassSuccessView" style="display: none; max-width: 820px; margin: 0 auto; text-align: center;">
+        <div class="ps-card" style="padding: 3rem 2rem; border: 2px solid var(--ps-yellow); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 50%; background: var(--ps-yellow); color: #000; font-size: 2.5rem; margin-bottom: 1.25rem; font-weight: 900; box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);">
+            🎟️
+          </div>
+          <h2 style="font-size: 2.2rem; margin: 0 0 0.75rem 0; color: var(--ps-text-main);">Pass Booking Completed Successfully!</h2>
+          <p style="font-size: 1.15rem; color: var(--ps-text-muted); max-width: 620px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+            Your pass reservation has been completed successfully! Digital passes and barcodes have been prepared for check-in at our front welcome desk. Thank you for choosing PLAYSPACE!
+          </p>
+
+          <div style="display: inline-block; background: rgba(255, 204, 0, 0.15); border: 1.5px solid var(--ps-yellow); padding: 0.5rem 1.25rem; border-radius: 20px; margin-bottom: 2rem;">
+            <span style="font-size: 0.85rem; font-weight: 800; color: var(--ps-text-muted);">BOOKING REFERENCE: </span>
+            <strong id="passSuccessRef" style="font-size: 1.1rem; color: var(--ps-text-main); margin-left: 0.25rem;">#PS-PASS-4912</strong>
+          </div>
+
+          <!-- Booking Summary Table -->
+          <div style="border: 1px solid var(--ps-border-color); border-radius: var(--ps-radius-lg); overflow: hidden; margin-bottom: 2rem; text-align: left;">
+            <table class="ps-table" style="margin: 0; width: 100%;">
+              <tbody>
+                <tr>
+                  <th style="width: 35%; background: var(--ps-bg-card);">Selected Pass Plan</th>
+                  <td id="passSuccessPlanName"><strong>90-Minute Jump Pass</strong></td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Number of Visits</th>
+                  <td id="passSuccessVisits">1 Visit (Single Session)</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Validity Period</th>
+                  <td id="passSuccessValidity">Valid on Selected Date</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Start / Visit Date</th>
+                  <td id="passSuccessStartDate">Saturday, Oct 17, 2026</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Number of Jumpers / Children</th>
+                  <td id="passSuccessJumpers">2 Children</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Parent Details</th>
+                  <td id="passSuccessParent">Sarah Jenkins &bull; sarah@example.com &bull; (555) 234-5678</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Grip Socks Included</th>
+                  <td id="passSuccessSocks">Yes (2 Pairs &bull; $7.00)</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card); font-size: 1.1rem;">Total Price</th>
+                  <td><strong id="passSuccessTotal" style="font-size: 1.3rem; color: var(--ps-yellow);">$55.00</strong> <span style="font-size: 0.85rem; color: var(--ps-text-muted);">(Demo Checkout)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="../index.html" class="ps-btn ps-btn-primary ps-btn-lg" style="font-weight: 800;">
+              🏠 Back to Home
+            </a>
+            <a href="pricing-passes.html" class="ps-btn ps-btn-outline-dark ps-btn-lg" style="border-color: var(--ps-border-color); color: #000000; font-weight: 700;">
+              🎟️ View All Passes &amp; Plans
+            </a>
+            <button type="button" class="ps-btn ps-btn-dark ps-btn-lg" onclick="window.print()">
+              🖨️ Print Confirmation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Booking Form & Summary Container -->
+      <div id="psPassFormView" class="ps-grid ps-grid-3" style="gap: 2.5rem; align-items: start;">
+        
+        <!-- Left 2 Cols: Form -->
+        <div style="grid-column: span 2;">
+          <form id="psPassBookingForm" novalidate>
+
+            <!-- 1. Select Pass or Plan -->
+            <div class="ps-card" style="padding: 1.75rem; margin-bottom: 2rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h3 style="margin: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #FFCC00; font-size: 1.4rem;">1.</span> Select Pass or Pricing Plan <span style="color: #e74c3c;">*</span>
+                </h3>
+                <span class="text-muted" style="font-size: 0.82rem;">Hourly sessions &amp; multi-visit cards</span>
+              </div>
+
+              <!-- Hourly Passes Group -->
+              <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: var(--ps-text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                ⏱️ Hourly &amp; Single-Day Passes
+              </div>
+              <div class="ps-grid ps-grid-3" style="gap: 0.85rem; margin-bottom: 1.5rem;" id="hourlyPassGrid">
+                
+                <!-- 60 min -->
+                <div class="ps-pass-plan-card" data-pass-id="pass-60" data-price="18" data-visits="1 Visit" data-validity="Selected Date" onclick="selectPassPlan('pass-60')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">60-Min Pass</strong>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.7rem;">1 HR</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$18.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">1 Visit &bull; Single Session</div>
+                </div>
+
+                <!-- 90 min (Default) -->
+                <div class="ps-pass-plan-card selected" data-pass-id="pass-90" data-price="24" data-visits="1 Visit" data-validity="Selected Date" onclick="selectPassPlan('pass-90')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">90-Min Pass</strong>
+                    <span class="ps-badge" style="background: #FFCC00; color: #000; font-size: 0.7rem; font-weight: 800;">POPULAR</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$24.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">1 Visit &bull; 1.5 Hours Jump</div>
+                </div>
+
+                <!-- 120 min -->
+                <div class="ps-pass-plan-card" data-pass-id="pass-120" data-price="28" data-visits="1 Visit" data-validity="Selected Date" onclick="selectPassPlan('pass-120')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">120-Min Pass</strong>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.7rem;">2 HR</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$28.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">1 Visit &bull; 2 Full Hours</div>
+                </div>
+
+                <!-- All-Day Pass -->
+                <div class="ps-pass-plan-card" data-pass-id="pass-allday" data-price="36" data-visits="Unlimited All-Day" data-validity="Selected Date" onclick="selectPassPlan('pass-allday')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">All-Day Pass</strong>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.7rem;">ALL-DAY</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$36.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">Unlimited Access + Re-entry</div>
+                </div>
+
+                <!-- Toddler Special -->
+                <div class="ps-pass-plan-card" data-pass-id="pass-toddler-single" data-price="12" data-visits="1 Visit" data-validity="Selected Date" onclick="selectPassPlan('pass-toddler-single')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">Toddler Pass</strong>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.7rem;">AGES 0-3</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$12.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">Includes 1 Free Parent</div>
+                </div>
+
+                <!-- Family 4-Pack -->
+                <div class="ps-pass-plan-card" data-pass-id="family-4" data-price="79" data-visits="1 Visit (4 Jumpers)" data-validity="Selected Date" onclick="selectPassPlan('family-4')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">Family 4-Pack</strong>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.7rem;">BUNDLE</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$79.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">4 Passes + Pizza &amp; Drinks</div>
+                </div>
+
+              </div>
+
+              <!-- Multi-Visit Passes Group -->
+              <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: var(--ps-text-muted); letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                💳 Multi-Visit Punch Cards &amp; Season Passes
+              </div>
+              <div class="ps-grid ps-grid-3" style="gap: 0.85rem;" id="multiPassGrid">
+                
+                <!-- 5 Visits -->
+                <div class="ps-pass-plan-card" data-pass-id="pass-5" data-price="75" data-visits="5 Visits" data-validity="Valid 6 Months" onclick="selectPassPlan('pass-5')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">5-Session Pass</strong>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.7rem;">SAVE $15</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$75.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">5 Visits &bull; Valid 6 Months</div>
+                </div>
+
+                <!-- 10 Visits -->
+                <div class="ps-pass-plan-card" data-pass-id="punch-10" data-price="140" data-visits="10 Visits" data-validity="Valid 12 Months" onclick="selectPassPlan('punch-10')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">10-Session Pass</strong>
+                    <span class="ps-badge" style="background: #FFCC00; color: #000; font-size: 0.7rem; font-weight: 800;">BEST VALUE</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$140.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">10 Visits &bull; Valid 12 Months</div>
+                </div>
+
+                <!-- 20 Visits -->
+                <div class="ps-pass-plan-card" data-pass-id="pass-20" data-price="250" data-visits="20 Visits" data-validity="Valid 12 Months" onclick="selectPassPlan('pass-20')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 1rem; color: var(--ps-text-main);">20-Session Pack</strong>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.7rem;">SAVE $110</span>
+                  </div>
+                  <div style="font-size: 1.2rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.35rem;">$250.00</div>
+                  <div style="font-size: 0.8rem; color: var(--ps-text-muted);">20 Visits &bull; Family Sharing</div>
+                </div>
+
+              </div>
+              <input type="hidden" id="selectedPassId" value="pass-90">
+            </div>
+
+            <!-- 2. Pass Details: Start Date, Jumpers, Gear -->
+            <div class="ps-card pass-form-section">
+              <h3 class="pass-form-heading">
+                <span class="pass-step-number">2</span> Pass Dates &amp; Number of Jumpers
+              </h3>
+
+              <div class="pass-date-jumper-grid">
+                <div class="ps-form-group">
+                  <label class="ps-label" for="passStartDate">Start / First Visit Date <span style="color: #e74c3c;">*</span></label>
+                  <input type="date" id="passStartDate" class="ps-input" required>
+                  <div class="ps-form-hint" style="color: #e74c3c; display: none;" id="passStartDateError">Please select a valid start date.</div>
+                </div>
+
+                <div class="ps-form-group">
+                  <label class="ps-label" for="passJumpersCount">Number of Children / Jumpers <span style="color: #e74c3c;">*</span></label>
+                  <div class="pass-jumper-controls">
+                    <button type="button" class="ps-counter-btn" onclick="stepPassJumpers(-1)">−</button>
+                    <input type="number" id="passJumpersCount" class="ps-input text-center" style="width: 80px; font-weight: 800; font-size: 1.1rem;" value="1" min="1" max="15" onchange="updatePassPrice()">
+                    <button type="button" class="ps-counter-btn" onclick="stepPassJumpers(1)">+</button>
+                    <span class="pass-jump-age-note" id="passJumpersNote">Ages 1 - 14</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grip Socks Add-on -->
+              <div class="pass-socks-option">
+                <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
+                  <input type="checkbox" id="passAddonSocks" value="3.50" checked onchange="updatePassPrice()" style="margin-top: 3px;">
+                  <div>
+                    <span style="font-size: 0.92rem; font-weight: 700; color: var(--ps-text-main); display: block;">Include Official PLAYSPACE Grip Socks (+$3.50 / jumper)</span>
+                    <span class="text-muted" style="font-size: 0.82rem; line-height: 1.4; display: block; margin-top: 2px;">
+                      Mandatory safety footwear for court entry. Reusable for all future visits. Uncheck if you already own PlaySpace socks.
+                    </span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- 3. Parent / Contact Information -->
+            <div class="ps-card pass-form-section">
+              <h3 class="pass-form-heading">
+                <span class="pass-step-number">3</span> Parent / Purchaser Contact Information <span style="color: #e74c3c;">*</span>
+              </h3>
+
+              <div class="pass-contact-grid">
+                <div class="ps-form-group">
+                  <label class="ps-label" for="passParentName">Parent / Guardian Name <span style="color: #e74c3c;">*</span></label>
+                  <input type="text" id="passParentName" class="ps-input" data-type="name" placeholder="e.g. Ranjith Kumar" required>
+                  <div class="ps-form-error" id="passParentNameError">Name must contain letters and spaces only.</div>
+                </div>
+
+                <div class="ps-form-group">
+                  <label class="ps-label" for="passParentEmail">Email Address <span style="color: #e74c3c;">*</span></label>
+                  <input type="email" id="passParentEmail" class="ps-input" data-type="email" placeholder="e.g. ranjith@gmail.com" required>
+                  <div class="ps-form-error" id="passParentEmailError">Valid email with @ and domain required.</div>
+                </div>
+
+                <div class="ps-form-group">
+                  <label class="ps-label" for="passParentPhone">Phone Number <span style="color: #e74c3c;">*</span></label>
+                  <input type="tel" id="passParentPhone" class="ps-input" data-type="mobile" placeholder="e.g. 9876543210" maxlength="10" required>
+                  <div class="ps-form-error" id="passParentPhoneError">Mobile number must contain exactly 10 digits.</div>
+                </div>
+              </div>
+
+              <div class="ps-form-group pass-emergency-group">
+                <label class="ps-label" for="passEmergencyContact">Emergency Contact (Optional)</label>
+                <input type="text" id="passEmergencyContact" class="ps-input" placeholder="Name and relation (e.g. Michael Jenkins - Father / 555-987-6543)">
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Right 1 Col: Live Price Summary & Submit -->
+        <div>
+          <div class="ps-card" style="position: sticky; top: 100px; padding: 1.75rem; border: 2px solid var(--ps-border-color); box-shadow: var(--ps-shadow-md);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--ps-border-color);">
+              <h3 style="margin: 0; font-size: 1.2rem; color: var(--ps-text-main);">Pass Summary</h3>
+              <span class="ps-badge" style="background: #FFCC00; color: #000; font-weight: 800;">LIVE SUMMARY</span>
+            </div>
+
+            <!-- Pass Specifications Display -->
+            <div style="margin-bottom: 1.25rem; background: var(--ps-bg-surface-alt, rgba(0,0,0,0.02)); border: 1px solid var(--ps-border-color); border-radius: 8px; padding: 0.85rem;">
+              <div style="font-size: 0.82rem; color: var(--ps-text-muted);">Selected Pass:</div>
+              <div style="font-weight: 800; font-size: 1.15rem; color: var(--ps-text-main); margin-bottom: 0.4rem;" id="summaryPassTitle">90-Minute Jump Pass</div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem;">
+                <span class="text-muted">Visits Included:</span>
+                <strong id="summaryPassVisits">1 Visit (1.5 Hours)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                <span class="text-muted">Validity Period:</span>
+                <strong id="summaryPassValidity">Valid on Selected Date</strong>
+              </div>
+            </div>
+
+            <div style="border-top: 1px dashed var(--ps-border-color); padding-top: 0.85rem; margin-bottom: 0.85rem; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span class="text-muted" id="summaryPassRateLabel">Pass Price (1 Jumper):</span>
+                <span style="font-weight: 700;" id="summaryPassSubtotal">$24.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;" id="summarySocksRow">
+                <span class="text-muted" id="summarySocksLabel">Grip Socks (1 Pair):</span>
+                <span style="font-weight: 700;" id="summarySocksPrice">$3.50</span>
+              </div>
+            </div>
+
+            <div style="border-top: 2px solid var(--ps-border-color); padding-top: 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--ps-text-muted); display: block;">Total Due</span>
+                <span style="font-size: 0.75rem; color: var(--ps-text-muted);">All taxes included</span>
+              </div>
+              <div style="font-size: 2rem; font-weight: 900; color: var(--ps-text-main);" id="summaryPassTotal">$27.50</div>
+            </div>
+
+            <button type="button" class="ps-btn ps-btn-primary ps-btn-block ps-btn-lg" id="btnConfirmPassBooking" onclick="submitPassBooking()" style="font-size: 1.1rem; font-weight: 900; box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);">
+              Confirm Pass Booking &rarr;
+            </button>
+
+            <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--ps-text-muted); display: flex; flex-direction: column; gap: 0.25rem;">
+              <span>🎟️ Instant Digital Pass Generation</span>
+              <span>🔄 Multi-pass visits never expire during validity</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+ 
+<footer class="ps-footer">
+  <div class="ps-container">
+
+    <!-- ASTM & Safety Standards Assurance Ribbon -->
+    <div class="ps-footer-cert-ribbon">
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">ASTM F2970-20 Certified</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Daily engineered court &amp; airbag audits</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Hospital-Grade Sanitation</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Fogged &amp; disinfected every 120 minutes</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Red Cross CPR Marshals</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Dedicated safety team on active courts</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Anti-Slip Grip Safe</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Mandatory certified traction play socks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main 5-Column Grid -->
+    <div class="ps-footer-grid">
+      <!-- Col 1: Brand & Status & Socials -->
+      <div class="ps-footer-brand">
+        <a href="../index.html">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Brand Logo" style="height: 44px; margin-bottom: 0.75rem;">
+        </a>
+        <p>
+          PlaySpace is Adventure City's premier high-energy indoor trampoline arena, toddler soft play wonderland, and award-winning birthday celebration park for ages 1–14.
+        </p>
+
+        <div class="ps-footer-live-badge">
+          <span class="ps-pulse-dot"></span>
+          <span><strong>PARK STATUS:</strong> OPEN TODAY UNTIL 10 PM</span>
+        </div>
+
+        <div class="ps-footer-socials">
+          <a href="https://facebook.com" class="ps-social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com" class="ps-social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://youtube.com" class="ps-social-btn" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#000000"/></svg>
+          </a>
+          <a href="https://tiktok.com" class="ps-social-btn" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.4a6.33 6.33 0 0 0-.86-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 10.79 4.49 6.27 6.27 0 0 0 1.89-4.49V8.71a8.21 8.21 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.14z"/></svg>
+          </a>
+          <a href="https://x.com" class="ps-social-btn" aria-label="X Twitter" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Jump Arenas -->
+      <div class="ps-footer-col">
+        <h5>Jump Arenas</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/attractions.html">Trampoline Main Court</a></li>
+          <li><a href="../pages/attraction-details.html">Toddler Soft Play Haven</a></li>
+          <li><a href="../pages/attractions.html#ninja">Ninja Warrior Course</a></li>
+          <li><a href="../pages/attractions.html#airbag">Giant Stunt Airbag</a></li>
+          <li><a href="../pages/attractions.html#slamdunk">Slam Dunk Basketball</a></li>
+          <li><a href="../home-2.html#glow">Friday Neon Glow Arena</a></li>
+          <li><a href="../pages/attractions.html">Interactive Arcade Lounge</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Passes & Parties -->
+      <div class="ps-footer-col">
+        <h5>Passes &amp; Parties</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/pricing-passes.html">General Jump Admission</a></li>
+          <li><a href="../parent/purchase-pass.html">VIP 10-Session Punch Pass</a></li>
+          <li><a href="../pages/pricing-passes.html#toddler">Toddler Unlimited Pass</a></li>
+          <li><a href="../pages/birthday-parties.html">All-Inclusive Birthday Bash</a></li>
+          <li><a href="../pages/birthday-details.html">VIP Glow Birthday Package</a></li>
+          <li><a href="../pages/group-events.html">School Trips &amp; Field Camps</a></li>
+          <li><a href="../pages/group-events.html#buyout">Private Facility Rental</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Guest Services & Safety -->
+      <div class="ps-footer-col">
+        <h5>Guest Services</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/safety-guidelines.html" style="color: var(--ps-yellow); font-weight: 700;">★ Sign Safety Waiver</a></li>
+          <li><a href="../pages/booking.html">Book Jump Sessions</a></li>
+          <li><a href="../parent/dashboard.html">Parent Account Portal</a></li>
+          <li><a href="../parent/my-passes.html">Punch Pass Wallet</a></li>
+          <li><a href="../pages/safety-guidelines.html">Court Safety &amp; Grip Socks</a></li>
+          <li><a href="../pages/faq.html">Frequently Asked Questions</a></li>
+          <li><a href="../admin/dashboard.html">Admin Command Console</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Park Location & Hours -->
+      <div class="ps-footer-col ps-footer-col-contact">
+        <h5>Park &amp; Contact</h5>
+        <ul class="ps-footer-contact">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>4500 Bounce Boulevard, Adventure City, AC 90210</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span><a href="tel:5558397529" style="color: inherit;">(555) 839-PLAY</a> / <a href="tel:5558397529" style="color: inherit;">(555) 839-7529</a></span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span><a href="mailto:jump@playspacepark.com" style="color: inherit;">jump@playspacepark.com</a></span>
+          </li>
+          <li class="ps-hours-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div>
+              <strong style="color: var(--ps-white); display: block; margin-bottom: 2px;">Standard Operating Hours:</strong>
+              <div>Mon–Thu: 10:00 AM – 8:00 PM</div>
+              <div>Fri–Sat: 9:00 AM – 10:00 PM <span style="color: var(--ps-yellow); font-size: 0.78rem;">(Glow 7–10)</span></div>
+              <div>Sun: 10:00 AM – 7:00 PM</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="ps-back-to-top" id="psBackToTop" aria-label="Back to Top" title="Back to Top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- Docked Sticky Action Bar -->
+<aside class="ps-sticky-bar" id="psStickyBar" aria-label="Quick Action Bar">
+  <div class="ps-container ps-sticky-bar-inner">
+    <div class="ps-sticky-bar-info">
+      <span class="ps-pulse-dot"></span>
+      <span class="ps-sticky-bar-text">
+        <strong>Open Today:</strong> 9:00 AM – 10:00 PM <span class="ps-hide-sm">• Jump Patrol on Duty • ASTM F2970 Safety Certified</span>
+      </span>
+    </div>
+    <div class="ps-sticky-bar-actions">
+      <!-- Cart Button in Sticky Bar -->
+      <button type="button" class="ps-cart-toggle ps-btn ps-btn-sm ps-btn-outline" aria-label="Shopping Cart" title="View Cart" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF; position: relative;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        Cart (<span class="ps-cart-badge-text">0</span>)
+      </button>
+      <a href="../pages/safety-guidelines.html" class="ps-btn ps-btn-sm ps-btn-outline" style="border-color: var(--ps-yellow); color: var(--ps-yellow);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        Sign Waiver
+      </a>
+      <a href="../pages/booking.html" class="ps-btn ps-btn-sm ps-btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        Book Jump Session
+      </a>
+      <button class="ps-sticky-bar-close" id="psStickyBarClose" aria-label="Dismiss bottom bar" title="Dismiss">✕</button>
+    </div>
+  </div>
+</aside>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/authentication.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/validation.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    // Pricing & Passes Booking Engine
+    const PASS_PLANS = {
+      'pass-60': {
+        id: 'pass-60',
+        name: '60-Minute Jump Pass',
+        price: 18.00,
+        visits: '1 Visit (1 Hour)',
+        validity: 'Valid on Selected Date'
+      },
+      'pass-90': {
+        id: 'pass-90',
+        name: '90-Minute Jump Pass',
+        price: 24.00,
+        visits: '1 Visit (1.5 Hours)',
+        validity: 'Valid on Selected Date'
+      },
+      'pass-120': {
+        id: 'pass-120',
+        name: '120-Minute Jump Pass',
+        price: 28.00,
+        visits: '1 Visit (2 Full Hours)',
+        validity: 'Valid on Selected Date'
+      },
+      'pass-allday': {
+        id: 'pass-allday',
+        name: 'All-Day Unlimited Pass',
+        price: 36.00,
+        visits: 'Unlimited All-Day Access',
+        validity: 'Valid on Selected Date (Free Re-entry)'
+      },
+      'pass-toddler-single': {
+        id: 'pass-toddler-single',
+        name: 'Toddler Morning Session Pass',
+        price: 12.00,
+        visits: '1 Toddler Session (Includes 1 Free Adult)',
+        validity: 'Valid on Selected Date'
+      },
+      'family-4': {
+        id: 'family-4',
+        name: 'Family 4-Pack Bundle',
+        price: 79.00,
+        visits: '1 Visit (4 Jumpers + Pizza & Drinks)',
+        validity: 'Valid on Selected Date'
+      },
+      'pass-5': {
+        id: 'pass-5',
+        name: '5-Session Punch Pass',
+        price: 75.00,
+        visits: '5 Full Jump Sessions',
+        validity: 'Valid for 6 Months (Transferable)'
+      },
+      'punch-10': {
+        id: 'punch-10',
+        name: '10-Session Punch Pass',
+        price: 140.00,
+        visits: '10 Full Jump Sessions',
+        validity: 'Valid for 12 Months (Transferable)'
+      },
+      'pass-20': {
+        id: 'pass-20',
+        name: '20-Session Season Pack',
+        price: 250.00,
+        visits: '20 Full Jump Sessions',
+        validity: 'Valid for 12 Months (Family Sharing)'
+      }
+    };
+
+    let currentPassId = 'pass-90';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set default start date to today
+      const dateInput = document.getElementById('passStartDate');
+      if (dateInput) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+        dateInput.value = `${yyyy}-${mm}-${dd}`;
+      }
+
+      // Check URL parameters for pass preselection
+      const urlParams = new URLSearchParams(window.location.search);
+      const passParam = urlParams.get('pass');
+      if (passParam && PASS_PLANS[passParam]) {
+        selectPassPlan(passParam);
+      } else {
+        updatePassPrice();
+      }
+    });
+
+    function selectPassPlan(passId) {
+      if (!PASS_PLANS[passId]) return;
+      currentPassId = passId;
+      document.getElementById('selectedPassId').value = passId;
+
+      // Update card active styles
+      document.querySelectorAll('.ps-pass-plan-card').forEach(card => {
+        if (card.getAttribute('data-pass-id') === passId) {
+          card.classList.add('selected');
+        } else {
+          card.classList.remove('selected');
+        }
+      });
+
+      const plan = PASS_PLANS[passId];
+      document.getElementById('summaryPassTitle').textContent = plan.name;
+      document.getElementById('summaryPassVisits').textContent = plan.visits;
+      document.getElementById('summaryPassValidity').textContent = plan.validity;
+
+      updatePassPrice();
+    }
+
+    function stepPassJumpers(delta) {
+      const input = document.getElementById('passJumpersCount');
+      let val = parseInt(input.value, 10) || 1;
+      val = Math.max(1, Math.min(15, val + delta));
+      input.value = val;
+      updatePassPrice();
+    }
+
+    function updatePassPrice() {
+      const plan = PASS_PLANS[currentPassId] || PASS_PLANS['pass-90'];
+      const numJumpers = parseInt(document.getElementById('passJumpersCount').value, 10) || 1;
+      
+      const subtotal = plan.price * numJumpers;
+      
+      let socksTotal = 0;
+      const socksCheckbox = document.getElementById('passAddonSocks');
+      if (socksCheckbox && socksCheckbox.checked) {
+        socksTotal = 3.50 * numJumpers;
+      }
+
+      const total = subtotal + socksTotal;
+
+      document.getElementById('summaryPassRateLabel').textContent = `Pass Subtotal (${numJumpers} × $${plan.price.toFixed(2)}):`;
+      document.getElementById('summaryPassSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+
+      const socksRow = document.getElementById('summarySocksRow');
+      if (socksTotal > 0) {
+        socksRow.style.display = 'flex';
+        document.getElementById('summarySocksLabel').textContent = `Grip Socks (${numJumpers} × $3.50):`;
+        document.getElementById('summarySocksPrice').textContent = `$${socksTotal.toFixed(2)}`;
+      } else {
+        socksRow.style.display = 'none';
+      }
+
+      document.getElementById('summaryPassTotal').textContent = `$${total.toFixed(2)}`;
+      return total;
+    }
+
+    function submitPassBooking() {
+      const alertBox = document.getElementById('psPassValidationAlert');
+      const alertMsg = document.getElementById('psPassAlertMessage');
+      alertBox.style.display = 'none';
+
+      const passForm = document.getElementById('psPassBookingForm');
+      if (window.PlaySpaceValidation && passForm) {
+        const isFormValid = window.PlaySpaceValidation.validateForm(passForm);
+        if (!isFormValid) {
+          alertMsg.textContent = 'Please correct the highlighted errors in the form before submitting.';
+          alertBox.style.display = 'block';
+          window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+          return;
+        }
+      }
+
+      // Explicit field validations
+      const startDate = document.getElementById('passStartDate').value;
+      const numJumpers = parseInt(document.getElementById('passJumpersCount').value, 10) || 1;
+      const parentName = document.getElementById('passParentName').value.trim();
+      const parentEmail = document.getElementById('passParentEmail').value.trim();
+      const parentPhone = document.getElementById('passParentPhone').value.trim();
+      const emergencyContact = document.getElementById('passEmergencyContact').value.trim();
+      const socksIncluded = document.getElementById('passAddonSocks').checked;
+
+      const v = window.PlaySpaceValidation;
+      let errors = [];
+
+      if (!startDate) errors.push("Start / visit date is required.");
+      if (v) {
+        const nameRes = v.validateName(parentName, 'Parent / purchaser name');
+        if (!nameRes.valid) errors.push(nameRes.message);
+
+        const emailRes = v.validateEmail(parentEmail, 'Email address');
+        if (!emailRes.valid) errors.push(emailRes.message);
+
+        const phoneRes = v.validateMobile(parentPhone, 'Phone number');
+        if (!phoneRes.valid) errors.push(phoneRes.message);
+      } else {
+        if (!parentName || !/^[A-Za-z\s]+$/.test(parentName)) errors.push("Name must contain letters only.");
+        if (!parentEmail || !parentEmail.includes('@')) errors.push("Valid email address is required.");
+        if (!parentPhone || parentPhone.replace(/\D/g, '').length !== 10) errors.push("Phone number must contain exactly 10 digits.");
+      }
+
+      if (errors.length > 0) {
+        alertMsg.innerHTML = errors.join('<br>');
+        alertBox.style.display = 'block';
+        window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+        return;
+      }
+
+      const plan = PASS_PLANS[currentPassId] || PASS_PLANS['pass-90'];
+      const totalPrice = updatePassPrice();
+      const bookingRef = '#PS-PASS-' + Math.floor(1000 + Math.random() * 9000);
+
+      // Backend Schema Validation before saving
+      const bookingRecord = {
+        bookingRef,
+        category: 'pass',
+        passId: currentPassId,
+        passName: plan.name,
+        visits: plan.visits,
+        validity: plan.validity,
+        startDate,
+        numJumpers,
+        parentName,
+        parentEmail,
+        parentPhone,
+        emergencyContact,
+        socksIncluded,
+        totalPrice: `$${totalPrice.toFixed(2)}`,
+        bookedAt: new Date().toISOString()
+      };
+
+      const passSchema = {
+        parentName: { type: 'name', required: true, label: 'Parent Name' },
+        parentEmail: { type: 'email', required: true, label: 'Email Address' },
+        parentPhone: { type: 'mobile', required: true, label: 'Mobile Number' },
+        startDate: { type: 'text', required: true, label: 'Start Date' },
+        numJumpers: { type: 'number', required: true, min: 1, max: 15, label: 'Number of Jumpers' }
+      };
+
+      try {
+        if (v && v.saveToStorage) {
+          v.saveToStorage('playspace_pass_bookings', bookingRecord, passSchema);
+        } else {
+          const storedBookings = JSON.parse(localStorage.getItem('playspace_pass_bookings') || '[]');
+          storedBookings.push(bookingRecord);
+          localStorage.setItem('playspace_pass_bookings', JSON.stringify(storedBookings));
+          localStorage.setItem('playspace_last_booking', JSON.stringify(bookingRecord));
+        }
+      } catch (err) {
+        console.error('Security / Validation Error while saving booking:', err);
+        alertMsg.textContent = err.message || 'Validation error while saving booking.';
+        alertBox.style.display = 'block';
+        return;
+      }
+
+      // Populate confirmation view
+      document.getElementById('passSuccessRef').textContent = bookingRef;
+      document.getElementById('passSuccessPlanName').innerHTML = `<strong>${plan.name}</strong>`;
+      document.getElementById('passSuccessVisits').textContent = plan.visits;
+      document.getElementById('passSuccessValidity').textContent = plan.validity;
+      document.getElementById('passSuccessStartDate').textContent = startDate;
+      document.getElementById('passSuccessJumpers').textContent = `${numJumpers} Jumper${numJumpers > 1 ? 's' : ''}`;
+      document.getElementById('passSuccessParent').textContent = `${parentName} • ${parentEmail} • ${parentPhone}`;
+      document.getElementById('passSuccessSocks').textContent = socksIncluded ? `Yes (${numJumpers} pair${numJumpers > 1 ? 's' : ''} • $${(numJumpers * 3.50).toFixed(2)})` : 'No (Using own PlaySpace socks)';
+      document.getElementById('passSuccessTotal').textContent = `$${totalPrice.toFixed(2)}`;
+
+      // Switch view: Hide form, Show success confirmation
+      document.getElementById('psPassFormView').style.display = 'none';
+      document.getElementById('psPassSuccessView').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,613 @@
+/* ==========================================================================
+   PlaySpace - Components
+   Strict 3-Color Palette: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.ps-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.65rem;
+  font-family: var(--ps-font-sans);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1;
+  border-radius: var(--ps-radius-full);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--ps-transition-fast);
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.ps-btn-primary {
+  background-color: var(--ps-yellow);
+  color: var(--ps-black);
+  border-color: var(--ps-yellow);
+}
+
+.ps-btn-primary:hover {
+  background-color: var(--ps-yellow-hover);
+  border-color: var(--ps-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.35);
+}
+
+.ps-btn-dark {
+  background-color: var(--ps-black);
+  color: #FFFFFF !important;
+  border-color: var(--ps-black);
+}
+
+.ps-btn-dark:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-color: var(--ps-black);
+  color: var(--ps-yellow) !important;
+  transform: translateY(-2px);
+}
+
+.ps-btn-outline {
+  background-color: transparent;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.ps-btn-outline:hover {
+  border-color: var(--ps-yellow) !important;
+  color: var(--ps-yellow) !important;
+  transform: translateY(-2px);
+}
+
+.ps-btn-outline-dark {
+  background-color: transparent;
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.ps-btn-outline-dark:hover {
+  border-color: var(--ps-black) !important;
+  background-color: var(--ps-black) !important;
+  color: var(--ps-yellow) !important;
+  transform: translateY(-2px);
+}
+
+/* Light mode / light background overrides for outline buttons */
+.ps-btn-outline.ps-btn-outline-dark,
+.ps-btn-outline[style*="var(--ps-text-main)"],
+.ps-btn-outline[style*="var(--ps-border-color)"],
+.ps-btn-outline[style*="#000"],
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline,
+.ps-pricing-card:not(.featured) .ps-btn-outline,
+.ps-section:not(.ps-section-dark):not([style*="#000"]):not([style*="black"]) .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-hero *):not(.ps-header *):not(.ps-hero-dark *):not(.ps-occupancy-banner-grid *),
+.ps-section-white .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not([style*="#000"] *):not([style*="black"] *),
+.ps-section-alt .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
+#toddler .ps-btn-outline {
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.ps-btn-outline.ps-btn-outline-dark:hover,
+.ps-btn-outline[style*="var(--ps-text-main)"]:hover,
+.ps-btn-outline[style*="var(--ps-border-color)"]:hover,
+.ps-btn-outline[style*="#000"]:hover,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline:hover,
+.ps-pricing-card:not(.featured) .ps-btn-outline:hover,
+.ps-section:not(.ps-section-dark):not([style*="#000"]):not([style*="black"]) .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-hero *):not(.ps-header *):not(.ps-hero-dark *):not(.ps-occupancy-banner-grid *):hover,
+.ps-section-white .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not([style*="#000"] *):not([style*="black"] *):hover,
+.ps-section-alt .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):hover,
+#toddler .ps-btn-outline:hover {
+  background-color: #000000 !important;
+  color: #FFCC00 !important;
+  border-color: #000000 !important;
+}
+
+/* Explicit high-contrast outline button inside black Occupancy & Schedule banner */
+.ps-occupancy-banner-grid .ps-btn-outline,
+.ps-occupancy-banner-grid a.ps-btn-outline,
+.ps-section-white [style*="#000"] .ps-btn-outline,
+.ps-section-white [style*="black"] .ps-btn-outline {
+  color: #FFCC00 !important;
+  border: 1.5px solid #FFCC00 !important;
+  background-color: transparent !important;
+  font-weight: 700 !important;
+}
+
+.ps-occupancy-banner-grid .ps-btn-outline:hover,
+.ps-occupancy-banner-grid a.ps-btn-outline:hover,
+.ps-section-white [style*="#000"] .ps-btn-outline:hover,
+.ps-section-white [style*="black"] .ps-btn-outline:hover {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(255, 204, 0, 0.35);
+}
+
+/* Yellow-bordered outline buttons in light containers */
+.ps-section-white .ps-btn-outline[style*="#FFCC00"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
+.ps-section-white .ps-btn-outline[style*="yellow"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
+.ps-section-alt .ps-btn-outline[style*="#FFCC00"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
+.ps-section-alt .ps-btn-outline[style*="yellow"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="#FFCC00"],
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="yellow"] {
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+  font-weight: 800;
+}
+
+.ps-section-white .ps-btn-outline[style*="#FFCC00"]:hover,
+.ps-section-white .ps-btn-outline[style*="yellow"]:hover,
+.ps-section-alt .ps-btn-outline[style*="#FFCC00"]:hover,
+.ps-section-alt .ps-btn-outline[style*="yellow"]:hover,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="#FFCC00"]:hover,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="yellow"]:hover {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+}
+
+/* Ensure buttons in dark cards or dark sections always have high contrast */
+.ps-card-dark .ps-btn-outline,
+.ps-section-dark .ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="#000"] .ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="black"] .ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-card-dark .ps-btn-outline-dark,
+.ps-section-dark .ps-btn-outline-dark:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="#000"] .ps-btn-outline-dark:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="black"] .ps-btn-outline-dark:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-card.featured .ps-btn-outline,
+.ps-pricing-card.featured .ps-btn-outline,
+.ps-card-dark .ps-btn-add-cart.ps-btn-outline,
+.ps-section-dark .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="#000"] .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="black"] .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-card.featured .ps-btn-add-cart.ps-btn-outline,
+.ps-pricing-card.featured .ps-btn-add-cart.ps-btn-outline {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  background-color: transparent !important;
+}
+
+.ps-card-dark .ps-btn-outline:hover,
+.ps-section-dark .ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="#000"] .ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="black"] .ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-card-dark .ps-btn-outline-dark:hover,
+.ps-section-dark .ps-btn-outline-dark:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="#000"] .ps-btn-outline-dark:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="black"] .ps-btn-outline-dark:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-card.featured .ps-btn-outline:hover,
+.ps-pricing-card.featured .ps-btn-outline:hover,
+.ps-card-dark .ps-btn-add-cart.ps-btn-outline:hover,
+.ps-section-dark .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="#000"] .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="black"] .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-card.featured .ps-btn-add-cart.ps-btn-outline:hover,
+.ps-pricing-card.featured .ps-btn-add-cart.ps-btn-outline:hover {
+  color: var(--ps-yellow) !important;
+  border-color: var(--ps-yellow) !important;
+  background-color: transparent !important;
+}
+
+/* Yellow-bordered outline buttons in dark containers maintain yellow styling */
+.ps-card-dark .ps-btn-outline[style*="#FFCC00"],
+.ps-card-dark .ps-btn-outline[style*="yellow"],
+.ps-section-dark .ps-btn-outline[style*="#FFCC00"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section-dark .ps-btn-outline[style*="yellow"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="#000"] .ps-btn-outline[style*="#FFCC00"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="#000"] .ps-btn-outline[style*="yellow"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="black"] .ps-btn-outline[style*="#FFCC00"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+.ps-section[style*="black"] .ps-btn-outline[style*="yellow"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *) {
+  color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+}
+
+.ps-card-dark .ps-btn-outline[style*="#FFCC00"]:hover,
+.ps-card-dark .ps-btn-outline[style*="yellow"]:hover,
+.ps-section-dark .ps-btn-outline[style*="#FFCC00"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section-dark .ps-btn-outline[style*="yellow"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="#000"] .ps-btn-outline[style*="#FFCC00"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="#000"] .ps-btn-outline[style*="yellow"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="black"] .ps-btn-outline[style*="#FFCC00"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+.ps-section[style*="black"] .ps-btn-outline[style*="yellow"]:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+}
+
+/* Guaranteed Light Mode & White Card Button Visibility (Even inside dark sections) */
+.ps-pricing-card:not(.featured) .ps-btn-outline,
+.ps-pricing-card:not(.featured) .ps-btn-outline-dark,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline-dark,
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline,
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline-dark,
+.ps-section-dark .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline,
+.ps-section-dark .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline-dark,
+.ps-section[style*="#000"] .ps-pricing-card:not(.featured) .ps-btn-outline,
+.ps-section[style*="#000"] .ps-pricing-card:not(.featured) .ps-btn-outline-dark,
+.ps-section[style*="#000"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline,
+.ps-section[style*="#000"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline-dark,
+.ps-section[style*="black"] .ps-pricing-card:not(.featured) .ps-btn-outline,
+.ps-section[style*="black"] .ps-pricing-card:not(.featured) .ps-btn-outline-dark,
+.ps-section[style*="black"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline,
+.ps-section[style*="black"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline-dark {
+  color: #000000 !important;
+  border: 2px solid rgba(0, 0, 0, 0.4) !important;
+  background-color: transparent !important;
+  font-weight: 800;
+}
+
+.ps-pricing-card:not(.featured) .ps-btn-outline:hover,
+.ps-pricing-card:not(.featured) .ps-btn-outline-dark:hover,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline:hover,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline-dark:hover,
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline:hover,
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline-dark:hover,
+.ps-section-dark .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline:hover,
+.ps-section-dark .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline-dark:hover,
+.ps-section[style*="#000"] .ps-pricing-card:not(.featured) .ps-btn-outline:hover,
+.ps-section[style*="#000"] .ps-pricing-card:not(.featured) .ps-btn-outline-dark:hover,
+.ps-section[style*="#000"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline:hover,
+.ps-section[style*="#000"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline-dark:hover,
+.ps-section[style*="black"] .ps-pricing-card:not(.featured) .ps-btn-outline:hover,
+.ps-section[style*="black"] .ps-pricing-card:not(.featured) .ps-btn-outline-dark:hover,
+.ps-section[style*="black"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline:hover,
+.ps-section[style*="black"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline-dark:hover {
+  background-color: #000000 !important;
+  color: #FFCC00 !important;
+  border-color: #000000 !important;
+  transform: translateY(-2px);
+}
+
+/* Yellow-bordered outline buttons in light containers or light cards */
+.ps-pricing-card:not(.featured) .ps-btn-outline[style*="#FFCC00"],
+.ps-pricing-card:not(.featured) .ps-btn-outline[style*="yellow"],
+.ps-pricing-card:not(.featured) .ps-btn-outline-dark[style*="#FFCC00"],
+.ps-pricing-card:not(.featured) .ps-btn-outline-dark[style*="yellow"],
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="#FFCC00"],
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="yellow"],
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline[style*="#FFCC00"],
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline[style*="yellow"],
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline-dark[style*="#FFCC00"],
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline-dark[style*="yellow"],
+.ps-section-dark .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="#FFCC00"],
+.ps-section-dark .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="yellow"] {
+  color: #000000 !important;
+  border: 2px solid #FFCC00 !important;
+  font-weight: 800 !important;
+  background-color: transparent !important;
+}
+
+.ps-pricing-card:not(.featured) .ps-btn-outline[style*="#FFCC00"]:hover,
+.ps-pricing-card:not(.featured) .ps-btn-outline[style*="yellow"]:hover,
+.ps-pricing-card:not(.featured) .ps-btn-outline-dark[style*="#FFCC00"]:hover,
+.ps-pricing-card:not(.featured) .ps-btn-outline-dark[style*="yellow"]:hover,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="#FFCC00"]:hover,
+.ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="yellow"]:hover,
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline[style*="#FFCC00"]:hover,
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline[style*="yellow"]:hover,
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline-dark[style*="#FFCC00"]:hover,
+.ps-section-dark .ps-pricing-card:not(.featured) .ps-btn-outline-dark[style*="yellow"]:hover,
+.ps-section-dark .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="#FFCC00"]:hover,
+.ps-section-dark .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="yellow"]:hover {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+  transform: translateY(-2px);
+}
+
+.ps-btn-sm {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+}
+
+.ps-btn-lg {
+  padding: 1.1rem 2.25rem;
+  font-size: 1.1rem;
+}
+
+.ps-btn-block {
+  width: 100%;
+}
+
+.ps-icon-square {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ps-radius-md);
+  background-color: var(--ps-yellow);
+  color: var(--ps-black);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  transition: transform var(--ps-transition-fast);
+}
+
+.ps-icon-square:hover {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+.ps-card {
+  background-color: var(--ps-bg-card);
+  color: var(--ps-text-main);
+  border: 1px solid var(--ps-border-color);
+  border-radius: var(--ps-radius-lg);
+  padding: var(--ps-space-xl);
+  transition: transform var(--ps-transition-base), box-shadow var(--ps-transition-base), border-color var(--ps-transition-base);
+  position: relative;
+  overflow: visible;
+}
+
+.ps-card.overflow-hidden,
+.ps-card:has(.ps-card-media) {
+  overflow: hidden;
+}
+
+/* Equal height and vertical alignment for cards in grids */
+.ps-grid > .ps-card,
+.ps-grid-2 > .ps-card,
+.ps-grid-3 > .ps-card,
+.ps-grid-4 > .ps-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ps-grid > .ps-card > .ps-card-body,
+.ps-grid-2 > .ps-card > .ps-card-body,
+.ps-grid-3 > .ps-card > .ps-card-body,
+.ps-grid-4 > .ps-card > .ps-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ps-card .ps-attraction-actions {
+  margin-top: auto;
+}
+
+.ps-card.featured {
+  overflow: visible !important;
+}
+
+.ps-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ps-shadow-md);
+  border-color: var(--ps-yellow);
+}
+
+.ps-card-dark {
+  background-color: var(--ps-black);
+  color: var(--ps-white);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.ps-card-dark:hover {
+  border-color: var(--ps-yellow);
+}
+
+.ps-card-media {
+  margin: calc(var(--ps-space-xl) * -1);
+  margin-bottom: var(--ps-space-lg);
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.ps-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ps-transition-slow);
+}
+
+.ps-card:hover .ps-card-media img {
+  transform: scale(1.06);
+}
+
+/* Badges */
+.ps-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--ps-radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--ps-yellow);
+  color: var(--ps-black);
+  max-width: max-content;
+  white-space: nowrap !important;
+}
+
+/* Ensure badges inside centered cards/containers stay centered and don't stretch */
+.ps-card[style*="text-align: center"] .ps-badge,
+.ps-card[style*="text-align:center"] .ps-badge,
+.ps-card.text-center .ps-badge,
+.text-center .ps-badge,
+.ps-card-center .ps-badge {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ps-badge-dark {
+  background-color: var(--ps-black);
+  color: var(--ps-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ps-badge-yellow-outline {
+  background-color: transparent;
+  color: var(--ps-yellow);
+  border: 1px solid var(--ps-yellow);
+}
+
+/* ==========================================================================
+   Accordion (FAQ)
+   ========================================================================== */
+.ps-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ps-space-md);
+}
+
+.ps-accordion-item {
+  border: 1px solid var(--ps-border-color);
+  border-radius: var(--ps-radius-md);
+  background-color: var(--ps-bg-card);
+  overflow: hidden;
+  transition: border-color var(--ps-transition-fast);
+}
+
+.ps-accordion-item.active {
+  border-color: var(--ps-yellow);
+}
+
+.ps-accordion-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  user-select: none;
+}
+
+.ps-accordion-header .icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--ps-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: transform var(--ps-transition-fast), background-color var(--ps-transition-fast);
+}
+
+.ps-accordion-item.active .ps-accordion-header .icon {
+  transform: rotate(45deg);
+  background-color: var(--ps-yellow);
+  color: var(--ps-black);
+}
+
+.ps-accordion-body {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  display: none;
+  color: var(--ps-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ps-accordion-item.active .ps-accordion-body {
+  display: block;
+}
+
+/* ==========================================================================
+   Tabs
+   ========================================================================== */
+.ps-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--ps-border-color);
+  margin-bottom: var(--ps-space-2xl);
+  overflow-x: auto;
+}
+
+.ps-tab-btn {
+  padding: 0.85rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ps-text-muted);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--ps-transition-fast);
+}
+
+.ps-tab-btn:hover {
+  color: var(--ps-black);
+}
+
+.ps-tab-btn.active {
+  color: var(--ps-black);
+  border-bottom-color: var(--ps-yellow);
+}
+
+.ps-tab-content {
+  display: none;
+}
+
+.ps-tab-content.active {
+  display: block;
+}
+
+/* Modal Popup */
+.ps-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--ps-transition-base);
+  padding: 1rem;
+}
+
+.ps-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ps-modal-box {
+  background-color: var(--ps-white);
+  color: var(--ps-black);
+  border-radius: var(--ps-radius-xl);
+  max-width: 580px;
+  width: 100%;
+  padding: var(--ps-space-2xl);
+  position: relative;
+  border: 2px solid var(--ps-yellow);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: scale(0.95);
+  transition: transform var(--ps-transition-base);
+}
+
+.ps-modal-overlay.active .ps-modal-box {
+  transform: scale(1);
+}
+
+.ps-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ps-radius-full);
+  background-color: rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+}

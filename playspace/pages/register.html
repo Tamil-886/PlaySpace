@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Parent Account — PlaySpace</title>
+  <meta name="description" content="Sign up for an online PlaySpace parent account to link child profiles and sign digital safety waivers.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  
+<header class="ps-header">
+  <div class="ps-container ps-navbar">
+    <a href="../index.html" class="ps-navbar-brand">
+      <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+    </a>
+
+    <nav class="ps-nav-menu">
+      <!-- 1. Home -->
+      <div class="ps-nav-item">
+        <a href="../index.html" class="ps-nav-link ">Home <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../index.html" class="ps-dropdown-item">Homepage 1 (Main)</a>
+          <a href="../home-2.html" class="ps-dropdown-item">Homepage 2 (Adventure)</a>
+        </div>
+      </div>
+
+      <!-- 2. About (Immediately after Home) -->
+      <div class="ps-nav-item">
+        <a href="../pages/about.html" class="ps-nav-link ">About</a>
+      </div>
+
+      <!-- 3. Attractions -->
+      <div class="ps-nav-item">
+        <a href="../pages/attractions.html" class="ps-nav-link ">Attractions</a>
+      </div>
+
+      <!-- 4. Pricing & Passes -->
+      <div class="ps-nav-item">
+        <a href="../pages/pricing-passes.html" class="ps-nav-link ">Pricing &amp; Passes</a>
+      </div>
+
+      <!-- 5. Birthday Parties -->
+      <div class="ps-nav-item">
+        <a href="../pages/birthday-parties.html" class="ps-nav-link ">Birthday Parties <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../pages/birthday-parties.html" class="ps-dropdown-item">Birthday Packages</a>
+          <a href="../pages/birthday-details.html" class="ps-dropdown-item">VIP Glow Party</a>
+          <a href="../pages/group-events.html" class="ps-dropdown-item">Group Events &amp; Field Trips</a>
+        </div>
+      </div>
+
+      <!-- 6. Gallery -->
+      <div class="ps-nav-item">
+        <a href="../pages/gallery.html" class="ps-nav-link ">Gallery</a>
+      </div>
+
+      <!-- 7. Dashboard (Immediately after Gallery, styled like Gallery) -->
+      <div class="ps-nav-item">
+        <a href="../parent/dashboard.html" class="ps-nav-link ">Dashboard</a>
+      </div>
+
+      <!-- 8. Blog -->
+      <div class="ps-nav-item">
+        <a href="../pages/blog.html" class="ps-nav-link ">Blog</a>
+      </div>
+
+      <!-- 9. Contact -->
+      <div class="ps-nav-item">
+        <a href="../pages/contact.html" class="ps-nav-link ">Contact</a>
+      </div>
+
+      <!-- 10. Sign In / Account (Mobile Drawer) -->
+      <div class="ps-nav-item ps-nav-item-mobile-only">
+        <a href="../pages/login.html" class="ps-nav-link ps-nav-auth-btn ">Sign In</a>
+      </div>
+    </nav>
+
+    <div class="ps-nav-actions">
+      <!-- LTR / RTL Switcher directly in Nav Bar -->
+      <button class="ps-lang-toggle" aria-label="Toggle Layout Direction" title="Switch between LTR and RTL">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span>RTL</span>
+      </button>
+
+      <!-- Dark Mode Switcher directly in Nav Bar -->
+      <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <!-- Cart Button directly in Nav Bar -->
+      <button class="ps-cart-toggle ps-btn-icon position-relative" aria-label="Shopping Cart" title="View Cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="ps-cart-badge">0</span>
+      </button>
+
+      <!-- Sign In Option -->
+      <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm ps-nav-auth-btn">Sign In</a>
+
+      <!-- Primary Booking CTA -->
+      <a href="../pages/booking.html" class="ps-btn ps-btn-primary ps-btn-sm">Book Jump</a>
+
+      <button class="ps-mobile-toggle" aria-label="Open Mobile Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+  
+  <section class="ps-section ps-section-white" style="min-height: 80vh; display: flex; align-items: center;">
+    <div class="ps-container" style="max-width: 520px;">
+      <div class="ps-card" style="padding: 2.5rem; border: 2px solid var(--ps-border-color);">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <img src="../assets/images/brand/logo-dark.svg" alt="PlaySpace" class="ps-brand-logo-light ps-brand-logo-card" style="height: 48px; margin: 0 auto 1rem auto;">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace" class="ps-brand-logo-dark ps-brand-logo-card" style="height: 48px; margin: 0 auto 1rem auto; display: none;">
+          <h2>Create Account</h2>
+          <p class="text-muted">Register to book and track passes</p>
+        </div>
+
+        <form data-validate>
+          <div class="ps-form-group">
+            <label class="ps-form-label">Full Name</label>
+            <input type="text" class="ps-form-control" data-type="name" required placeholder="e.g. Ranjith Kumar">
+            <div class="ps-form-error">Name must contain letters and spaces only.</div>
+          </div>
+          <div class="ps-form-group">
+            <label class="ps-form-label">Email Address</label>
+            <input type="email" class="ps-form-control" data-type="email" required placeholder="e.g. ranjith@gmail.com">
+            <div class="ps-form-error">Valid email with @ and domain required.</div>
+          </div>
+          <div class="ps-form-group">
+            <label class="ps-form-label">Phone Number</label>
+            <input type="tel" class="ps-form-control" data-type="mobile" placeholder="9876543210" maxlength="10" required>
+            <div class="ps-form-error">Mobile number must contain exactly 10 digits.</div>
+          </div>
+          <div class="ps-form-group">
+            <label class="ps-form-label">Password</label>
+            <input type="password" class="ps-form-control" required placeholder="Create strong password">
+            <div class="ps-form-error">Password is required.</div>
+          </div>
+          <div class="ps-form-group">
+            <label class="ps-checkbox-label">
+              <input type="checkbox" class="ps-checkbox" required>
+              <span>I agree to PlaySpace Safety Rules &amp; Terms</span>
+            </label>
+            <div class="ps-form-error">You must agree to the safety rules.</div>
+          </div>
+          <button type="submit" class="ps-btn ps-btn-primary ps-btn-block">Create Account</button>
+        </form>
+
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--ps-border-color); text-align: center;">
+          <span class="text-muted">Already have an account?</span>
+          <a href="login.html" class="ps-auth-link" style="font-weight: 800; margin-left: 6px;">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+<footer class="ps-footer">
+  <div class="ps-container">
+
+    <!-- ASTM & Safety Standards Assurance Ribbon -->
+    <div class="ps-footer-cert-ribbon">
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">ASTM F2970-20 Certified</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Daily engineered court &amp; airbag audits</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Hospital-Grade Sanitation</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Fogged &amp; disinfected every 120 minutes</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Red Cross CPR Marshals</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Dedicated safety team on active courts</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Anti-Slip Grip Safe</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Mandatory certified traction play socks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main 5-Column Grid -->
+    <div class="ps-footer-grid">
+      <!-- Col 1: Brand & Status & Socials -->
+      <div class="ps-footer-brand">
+        <a href="../index.html">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Brand Logo" style="height: 44px; margin-bottom: 0.75rem;">
+        </a>
+        <p>
+          PlaySpace is Adventure City's premier high-energy indoor trampoline arena, toddler soft play wonderland, and award-winning birthday celebration park for ages 1–14.
+        </p>
+
+        <div class="ps-footer-live-badge">
+          <span class="ps-pulse-dot"></span>
+          <span><strong>PARK STATUS:</strong> OPEN TODAY UNTIL 10 PM</span>
+        </div>
+
+        <div class="ps-footer-socials">
+          <a href="https://facebook.com" class="ps-social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com" class="ps-social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://youtube.com" class="ps-social-btn" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#000000"/></svg>
+          </a>
+          <a href="https://tiktok.com" class="ps-social-btn" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.4a6.33 6.33 0 0 0-.86-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 10.79 4.49 6.27 6.27 0 0 0 1.89-4.49V8.71a8.21 8.21 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.14z"/></svg>
+          </a>
+          <a href="https://x.com" class="ps-social-btn" aria-label="X Twitter" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Jump Arenas -->
+      <div class="ps-footer-col">
+        <h5>Jump Arenas</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/attractions.html">Trampoline Main Court</a></li>
+          <li><a href="../pages/attraction-details.html">Toddler Soft Play Haven</a></li>
+          <li><a href="../pages/attractions.html#ninja">Ninja Warrior Course</a></li>
+          <li><a href="../pages/attractions.html#airbag">Giant Stunt Airbag</a></li>
+          <li><a href="../pages/attractions.html#slamdunk">Slam Dunk Basketball</a></li>
+          <li><a href="../home-2.html#glow">Friday Neon Glow Arena</a></li>
+          <li><a href="../pages/attractions.html">Interactive Arcade Lounge</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Passes & Parties -->
+      <div class="ps-footer-col">
+        <h5>Passes &amp; Parties</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/pricing-passes.html">General Jump Admission</a></li>
+          <li><a href="../parent/purchase-pass.html">VIP 10-Session Punch Pass</a></li>
+          <li><a href="../pages/pricing-passes.html#toddler">Toddler Unlimited Pass</a></li>
+          <li><a href="../pages/birthday-parties.html">All-Inclusive Birthday Bash</a></li>
+          <li><a href="../pages/birthday-details.html">VIP Glow Birthday Package</a></li>
+          <li><a href="../pages/group-events.html">School Trips &amp; Field Camps</a></li>
+          <li><a href="../pages/group-events.html#buyout">Private Facility Rental</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Guest Services & Safety -->
+      <div class="ps-footer-col">
+        <h5>Guest Services</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/safety-guidelines.html" style="color: var(--ps-yellow); font-weight: 700;">★ Sign Safety Waiver</a></li>
+          <li><a href="../pages/booking.html">Book Jump Sessions</a></li>
+          <li><a href="../parent/dashboard.html">Parent Account Portal</a></li>
+          <li><a href="../parent/my-passes.html">Punch Pass Wallet</a></li>
+          <li><a href="../pages/safety-guidelines.html">Court Safety &amp; Grip Socks</a></li>
+          <li><a href="../pages/faq.html">Frequently Asked Questions</a></li>
+          <li><a href="../admin/dashboard.html">Admin Command Console</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Park Location & Hours -->
+      <div class="ps-footer-col ps-footer-col-contact">
+        <h5>Park &amp; Contact</h5>
+        <ul class="ps-footer-contact">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>4500 Bounce Boulevard, Adventure City, AC 90210</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span><a href="tel:5558397529" style="color: inherit;">(555) 839-PLAY</a> / <a href="tel:5558397529" style="color: inherit;">(555) 839-7529</a></span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span><a href="mailto:jump@playspacepark.com" style="color: inherit;">jump@playspacepark.com</a></span>
+          </li>
+          <li class="ps-hours-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div>
+              <strong style="color: var(--ps-white); display: block; margin-bottom: 2px;">Standard Operating Hours:</strong>
+              <div>Mon–Thu: 10:00 AM – 8:00 PM</div>
+              <div>Fri–Sat: 9:00 AM – 10:00 PM <span style="color: var(--ps-yellow); font-size: 0.78rem;">(Glow 7–10)</span></div>
+              <div>Sun: 10:00 AM – 7:00 PM</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="ps-back-to-top" id="psBackToTop" aria-label="Back to Top" title="Back to Top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- Docked Sticky Action Bar -->
+<aside class="ps-sticky-bar" id="psStickyBar" aria-label="Quick Action Bar">
+  <div class="ps-container ps-sticky-bar-inner">
+    <div class="ps-sticky-bar-info">
+      <span class="ps-pulse-dot"></span>
+      <span class="ps-sticky-bar-text">
+        <strong>Open Today:</strong> 9:00 AM – 10:00 PM <span class="ps-hide-sm">• Jump Patrol on Duty • ASTM F2970 Safety Certified</span>
+      </span>
+    </div>
+    <div class="ps-sticky-bar-actions">
+      <!-- Cart Button in Sticky Bar -->
+      <button type="button" class="ps-cart-toggle ps-btn ps-btn-sm ps-btn-outline" aria-label="Shopping Cart" title="View Cart" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF; position: relative;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        Cart (<span class="ps-cart-badge-text">0</span>)
+      </button>
+      <a href="../pages/safety-guidelines.html" class="ps-btn ps-btn-sm ps-btn-outline" style="border-color: var(--ps-yellow); color: var(--ps-yellow);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        Sign Waiver
+      </a>
+      <a href="../pages/booking.html" class="ps-btn ps-btn-sm ps-btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        Book Jump Session
+      </a>
+      <button class="ps-sticky-bar-close" id="psStickyBarClose" aria-label="Dismiss bottom bar" title="Dismiss">✕</button>
+    </div>
+  </div>
+</aside>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

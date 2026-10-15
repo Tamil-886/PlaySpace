@@ -1,0 +1,815 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo & Facility Gallery — PlaySpace</title>
+  <meta name="description" content="Explore high-energy photos of our 35,000 sq ft indoor adventure park. Wall-to-wall trampoline arenas, toddler soft play, ninja warrior courses, neon glow suites, and parent lounges.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  
+<header class="ps-header">
+  <div class="ps-container ps-navbar">
+    <a href="../index.html" class="ps-navbar-brand">
+      <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+    </a>
+
+    <nav class="ps-nav-menu">
+      <!-- 1. Home -->
+      <div class="ps-nav-item">
+        <a href="../index.html" class="ps-nav-link ">Home <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../index.html" class="ps-dropdown-item">Homepage 1 (Main)</a>
+          <a href="../home-2.html" class="ps-dropdown-item">Homepage 2 (Adventure)</a>
+        </div>
+      </div>
+
+      <!-- 2. About (Immediately after Home) -->
+      <div class="ps-nav-item">
+        <a href="../pages/about.html" class="ps-nav-link ">About</a>
+      </div>
+
+      <!-- 3. Attractions -->
+      <div class="ps-nav-item">
+        <a href="../pages/attractions.html" class="ps-nav-link ">Attractions</a>
+      </div>
+
+      <!-- 4. Pricing & Passes -->
+      <div class="ps-nav-item">
+        <a href="../pages/pricing-passes.html" class="ps-nav-link ">Pricing &amp; Passes</a>
+      </div>
+
+      <!-- 5. Birthday Parties -->
+      <div class="ps-nav-item">
+        <a href="../pages/birthday-parties.html" class="ps-nav-link ">Birthday Parties <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../pages/birthday-parties.html" class="ps-dropdown-item">Birthday Packages</a>
+          <a href="../pages/birthday-details.html" class="ps-dropdown-item">VIP Glow Party</a>
+          <a href="../pages/group-events.html" class="ps-dropdown-item">Group Events &amp; Field Trips</a>
+        </div>
+      </div>
+
+      <!-- 6. Gallery -->
+      <div class="ps-nav-item">
+        <a href="../pages/gallery.html" class="ps-nav-link active">Gallery</a>
+      </div>
+
+      <!-- 7. Dashboard (Immediately after Gallery, styled like Gallery) -->
+      <div class="ps-nav-item">
+        <a href="../parent/dashboard.html" class="ps-nav-link ">Dashboard</a>
+      </div>
+
+      <!-- 8. Blog -->
+      <div class="ps-nav-item">
+        <a href="../pages/blog.html" class="ps-nav-link ">Blog</a>
+      </div>
+
+      <!-- 9. Contact -->
+      <div class="ps-nav-item">
+        <a href="../pages/contact.html" class="ps-nav-link ">Contact</a>
+      </div>
+
+      <!-- 10. Sign In / Account (Mobile Drawer) -->
+      <div class="ps-nav-item ps-nav-item-mobile-only">
+        <a href="../pages/login.html" class="ps-nav-link ps-nav-auth-btn ">Sign In</a>
+      </div>
+    </nav>
+
+    <div class="ps-nav-actions">
+      <!-- LTR / RTL Switcher directly in Nav Bar -->
+      <button class="ps-lang-toggle" aria-label="Toggle Layout Direction" title="Switch between LTR and RTL">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span>RTL</span>
+      </button>
+
+      <!-- Dark Mode Switcher directly in Nav Bar -->
+      <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <!-- Cart Button directly in Nav Bar -->
+      <button class="ps-cart-toggle ps-btn-icon position-relative" aria-label="Shopping Cart" title="View Cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="ps-cart-badge">0</span>
+      </button>
+
+      <!-- Sign In Option -->
+      <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm ps-nav-auth-btn">Sign In</a>
+
+      <!-- Primary Booking CTA -->
+      <a href="../pages/booking.html" class="ps-btn ps-btn-primary ps-btn-sm">Book Jump</a>
+
+      <button class="ps-mobile-toggle" aria-label="Open Mobile Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+  
+  <!-- 1. Hero Page Banner -->
+  <section class="ps-page-banner">
+    <div class="ps-container">
+      <div class="ps-breadcrumb">
+        <a href="../index.html">Home</a> <span class="sep">/</span> <span>Photo Gallery</span>
+      </div>
+      <h1 style="color: #FFFFFF; margin: 0 0 0.5rem 0;">Explore PlaySpace in Action</h1>
+      <p style="color: rgba(255,255,255,0.85); margin: 0 0 1.5rem 0; font-size: 1.1rem; max-width: 720px;">
+        Step inside our premier 35,000 sq ft indoor trampoline and soft play adventure park. Discover our multi-court trampoline arena, dedicated toddler village, ninja obstacles, and VIP neon glow party suites!
+      </p>
+
+      <!-- Facility Quick Stats -->
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
+        <div style="border-left: 3px solid #FFCC00; padding-left: 0.75rem;">
+          <div style="font-size: 1.35rem; font-weight: 900; color: #FFCC00;">35,000 Sq Ft</div>
+          <div style="font-size: 0.82rem; color: rgba(255,255,255,0.8);">Total Arena Footprint</div>
+        </div>
+        <div style="border-left: 3px solid #FFFFFF; padding-left: 0.75rem;">
+          <div style="font-size: 1.35rem; font-weight: 900; color: #FFFFFF;">21 Action Zones</div>
+          <div style="font-size: 0.82rem; color: rgba(255,255,255,0.8);">For All Age Groups</div>
+        </div>
+        <div style="border-left: 3px solid #FFCC00; padding-left: 0.75rem;">
+          <div style="font-size: 1.35rem; font-weight: 900; color: #FFCC00;">100+ Trampolines</div>
+          <div style="font-size: 0.82rem; color: rgba(255,255,255,0.8);">Interconnected Bounce Beds</div>
+        </div>
+        <div style="border-left: 3px solid #FFFFFF; padding-left: 0.75rem;">
+          <div style="font-size: 1.35rem; font-weight: 900; color: #FFFFFF;">6 Party Suites</div>
+          <div style="font-size: 0.82rem; color: rgba(255,255,255,0.8);">Private VIP Celebration Rooms</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="booking.html" class="ps-btn ps-btn-primary">Book Jump Session</a>
+        <a href="#photoGalleryGrid" class="ps-btn ps-btn-outline" style="border-color: #FFCC00; color: #FFCC00;">Filter Photos Below ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Categorized Photo Gallery Section with Interactive Filtering -->
+  <section class="ps-section ps-section-white" id="photoGalleryGrid">
+    <div class="ps-container">
+      <div class="ps-section-header text-center">
+        <span class="badge-tag">ACTION SHOTS</span>
+        <h2 style="margin-top: 0.75rem;">Photo &amp; Attraction Gallery</h2>
+        <p class="text-muted">
+          Click any category below to filter our high-flying park attractions, toddler areas, party rooms, and café lounges.
+        </p>
+      </div>
+
+                  <!-- Filter Tabs -->
+      <div class="ps-gallery-filters">
+        <button type="button" class="ps-filter-btn active" data-filter="all">All Zones (21)</button>
+        <button type="button" class="ps-filter-btn" data-filter="trampolines">Trampolines &amp; Sports (5)</button>
+        <button type="button" class="ps-filter-btn" data-filter="climbing">Climbing &amp; Ninja (6)</button>
+        <button type="button" class="ps-filter-btn" data-filter="softplay">Soft Play &amp; Mazes (2)</button>
+        <button type="button" class="ps-filter-btn" data-filter="toddlers">Toddler Sanctuary (4)</button>
+        <button type="button" class="ps-filter-btn" data-filter="interactive">Interactive &amp; Glow (4)</button>
+      </div>
+
+      <!-- 21 High-Res Categorized Gallery Grid -->
+      <div class="ps-gallery-grid">
+        <!-- 1. Mega Trampoline Arena -->
+        <div class="ps-gallery-item" data-category="trampolines" data-gallery-id="mega-trampoline-arena">
+          <img src="../assets/images/attractions/mega-trampoline-arena.jpg" alt="Mega Trampoline Arena" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 4+</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Mega Trampoline Arena</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Jump high, bounce freely, and enjoy energetic jumping challenges across our flagship court designed for jumpers of all ages.</p>
+          </div>
+        </div>
+
+        <!-- 2. Ninja Warrior Course -->
+        <div class="ps-gallery-item" data-category="climbing" data-gallery-id="ninja-warrior-course">
+          <img src="../assets/images/attractions/ninja-warrior-course.jpg" alt="Ninja Warrior Course" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 6 - 15 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Ninja Warrior Course</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Climb, crawl, balance, and conquer exciting obstacle challenges that test your grip, speed, and agility.</p>
+          </div>
+        </div>
+
+        <!-- 3. Adventure Climbing Zone -->
+        <div class="ps-gallery-item" data-category="climbing" data-gallery-id="adventure-climbing-zone">
+          <img src="../assets/images/attractions/adventure-climbing-zone.jpg" alt="Adventure Climbing Zone" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 5 - 14 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Adventure Climbing Zone</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Explore climbing frames, fun pathways, and exciting elevated play structures with 100% fail-safe auto-belay descenders.</p>
+          </div>
+        </div>
+
+        <!-- 4. Super Slide Mountain -->
+        <div class="ps-gallery-item" data-category="softplay" data-gallery-id="super-slide-mountain">
+          <img src="../assets/images/attractions/super-slide-mountain.jpg" alt="Super Slide Mountain" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 3 - 12 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Super Slide Mountain</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Race down colorful slides and enjoy thrilling rides into the soft-play area with safe, padded deceleration lanes.</p>
+          </div>
+        </div>
+
+        <!-- 5. Rainbow Ball Pit -->
+        <div class="ps-gallery-item" data-category="softplay" data-gallery-id="rainbow-ball-pit">
+          <img src="../assets/images/attractions/rainbow-ball-pit.jpg" alt="Rainbow Ball Pit" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 1 - 6 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Rainbow Ball Pit</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Dive into a colorful ball pool filled with playful activities, sensory chutes, and sparkling clean surprises.</p>
+          </div>
+        </div>
+
+        <!-- 6. Sky-High Rope Adventure -->
+        <div class="ps-gallery-item" data-category="climbing" data-gallery-id="sky-high-rope-adventure">
+          <img src="../assets/images/attractions/sky-high-rope-adventure.jpg" alt="Sky-High Rope Adventure" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 6 - 14 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Sky-High Rope Adventure</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Test balance and coordination on exciting rope bridges and net obstacles with continuous overhead lifeline protection.</p>
+          </div>
+        </div>
+
+        <!-- 7. Foam Pit Challenge -->
+        <div class="ps-gallery-item" data-category="trampolines" data-gallery-id="foam-pit-challenge">
+          <img src="../assets/images/attractions/foam-pit-challenge.jpg" alt="Foam Pit Challenge" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 5+</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Foam Pit Challenge</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Jump into a soft foam landing zone and enjoy playful jumping challenges with zero-shock impact absorption.</p>
+          </div>
+        </div>
+
+        <!-- 8. Laser Maze Mission -->
+        <div class="ps-gallery-item" data-category="interactive" data-gallery-id="laser-maze-mission">
+          <img src="../assets/images/attractions/laser-maze-mission.jpg" alt="Laser Maze Mission" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 5+</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Laser Maze Mission</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Navigate through a light-based maze and complete exciting secret agent missions with live countdown timers.</p>
+          </div>
+        </div>
+
+        <!-- 9. Interactive Play Arena -->
+        <div class="ps-gallery-item" data-category="interactive" data-gallery-id="interactive-play-arena">
+          <img src="../assets/images/attractions/interactive-play-arena.jpg" alt="Interactive Play Arena" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 3+</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Interactive Play Arena</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Play movement-based games with interactive lights, projections, and real-time motion-tracking video challenges.</p>
+          </div>
+        </div>
+
+        <!-- 10. Little Explorers Zone -->
+        <div class="ps-gallery-item" data-category="toddlers" data-gallery-id="little-explorers-zone">
+          <img src="../assets/images/attractions/little-explorers-zone.jpg" alt="Little Explorers Zone" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 6 MONTHS – 3 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Little Explorers Zone</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">A gentle adventure space with mini slides, tunnels, and soft-play activities designed specially for toddlers.</p>
+          </div>
+        </div>
+
+        <!-- 11. Cargo Net Climber -->
+        <div class="ps-gallery-item" data-category="climbing" data-gallery-id="cargo-net-climber">
+          <img src="../assets/images/attractions/cargo-net-climber.jpg" alt="Cargo Net Climber" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 4 - 12 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Cargo Net Climber</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Climb through flexible net structures and discover new paths to explore high above the ground.</p>
+          </div>
+        </div>
+
+        <!-- 12. Balance & Bounce Trail -->
+        <div class="ps-gallery-item" data-category="toddlers" data-gallery-id="balance-bounce-trail">
+          <img src="../assets/images/attractions/balance-bounce-trail.jpg" alt="Balance & Bounce Trail" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 3 - 9 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Balance & Bounce Trail</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Hop across stepping stones, balance on beams, and complete fun movement trails that build motor coordination.</p>
+          </div>
+        </div>
+
+        <!-- 13. Neon Glow Adventure -->
+        <div class="ps-gallery-item" data-category="interactive" data-gallery-id="neon-glow-adventure">
+          <img src="../assets/images/attractions/neon-glow-adventure.jpg" alt="Neon Glow Adventure" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 4+</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Neon Glow Adventure</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Experience a colorful neon play zone with glowing lights, UV blacklight cannons, and exciting evening activities.</p>
+          </div>
+        </div>
+
+        <!-- 14. Mini Sports Arena -->
+        <div class="ps-gallery-item" data-category="trampolines" data-gallery-id="mini-sports-arena">
+          <img src="../assets/images/attractions/mini-sports-arena.jpg" alt="Mini Sports Arena" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 4 - 14 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Mini Sports Arena</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Enjoy mini basketball, target games, slam dunk runways, and friendly team competitions in an enclosed cage.</p>
+          </div>
+        </div>
+
+        <!-- 15. Mystery Tunnel Quest -->
+        <div class="ps-gallery-item" data-category="toddlers" data-gallery-id="mystery-tunnel-quest">
+          <img src="../assets/images/attractions/mystery-tunnel-quest.jpg" alt="Mystery Tunnel Quest" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 3 - 10 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Mystery Tunnel Quest</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Crawl through winding tunnels and discover hidden routes in a playful maze filled with observation bubble domes.</p>
+          </div>
+        </div>
+
+        <!-- 16. Spider Wall Climb -->
+        <div class="ps-gallery-item" data-category="climbing" data-gallery-id="spider-wall-climb">
+          <img src="../assets/images/attractions/spider-wall-climb.jpg" alt="Spider Wall Climb" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 4 - 12 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Spider Wall Climb</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Climb a padded, age-appropriate climbing wall wearing special sticky suits that let you stick right to the vertical surface.</p>
+          </div>
+        </div>
+
+        <!-- 17. Parkour Jump Zone -->
+        <div class="ps-gallery-item" data-category="trampolines" data-gallery-id="parkour-jump-zone">
+          <img src="../assets/images/attractions/parkour-jump-zone.jpg" alt="Parkour Jump Zone" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 6 - 15 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Parkour Jump Zone</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Navigate soft obstacles and jumping platforms designed to teach urban parkour and freerunning skills safely.</p>
+          </div>
+        </div>
+
+        <!-- 18. Adventure Tower -->
+        <div class="ps-gallery-item" data-category="climbing" data-gallery-id="adventure-tower">
+          <img src="../assets/images/attractions/adventure-tower.jpg" alt="Adventure Tower" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 4 - 14 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Adventure Tower</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Explore multi-level climbing and sliding structures with 3 tiers of vertical obstacles and lookout platforms.</p>
+          </div>
+        </div>
+
+        <!-- 19. Volcano Climb -->
+        <div class="ps-gallery-item" data-category="toddlers" data-gallery-id="volcano-climb">
+          <img src="../assets/images/attractions/volcano-climb.jpg" alt="Volcano Climb" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 3 - 10 YEARS</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Volcano Climb</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Climb a themed soft-play mountain featuring realistic vinyl rock slopes, climbing ropes, and an exit slide.</p>
+          </div>
+        </div>
+
+        <!-- 20. Wipeout Challenge -->
+        <div class="ps-gallery-item" data-category="interactive" data-gallery-id="wipeout-challenge">
+          <img src="../assets/images/attractions/wipeout-challenge.jpg" alt="Wipeout Challenge" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 6+</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Wipeout Challenge</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Test balance and timing on moving-style rotating obstacles in a thrilling last-one-standing challenge game.</p>
+          </div>
+        </div>
+
+        <!-- 21. Airbag Jump Zone -->
+        <div class="ps-gallery-item" data-category="trampolines" data-gallery-id="airbag-jump-zone">
+          <img src="../assets/images/attractions/airbag-jump-zone.jpg" alt="Airbag Jump Zone" loading="lazy">
+          <div class="ps-gallery-overlay">
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; align-self: flex-start; margin-bottom: 0.5rem; font-size: 0.72rem;">AGES 5+</span>
+            <h4 style="color: #FFFFFF; margin: 0 0 0.25rem 0;">Airbag Jump Zone</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0;">Experience supervised jumps onto a purpose-designed commercial stunt landing airbag with dual pressure chambers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Facility Zones Overview Breakdown -->
+  <section class="ps-section ps-section-alt">
+    <div class="ps-container">
+      <div class="ps-section-header text-center">
+        <span class="badge-tag">FACILITY TOUR</span>
+        <h2 style="margin-top: 0.75rem;">Our 6 Core Adventure Zones</h2>
+        <p class="text-muted">
+          Engineered for active safety, maximum fun, and progressive challenges for kids, teens, and parents alike.
+        </p>
+      </div>
+
+      <div class="ps-grid ps-grid-3">
+        <!-- Zone 1 -->
+        <div class="ps-card" style="padding: 2rem; border: 2px solid var(--ps-border-color); background: var(--ps-bg-card, #FFFFFF); border-radius: var(--ps-radius-xl);">
+          <div class="ps-icon-square ps-gallery-zone-icon" style="margin-bottom: 1.25rem;">🤸</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">1. Main Jump Arena</h3>
+          <p style="font-size: 0.92rem; color: var(--ps-text-muted); line-height: 1.6; margin: 0;">
+            Over 60 interconnected trampolines forming a continuous ocean of bounce. Features tumble tracks for gymnastic routines, angled rebound side pads, and wide walking decks.
+          </p>
+        </div>
+
+        <!-- Zone 2 -->
+        <div class="ps-card" style="padding: 2rem; border: 2px solid var(--ps-border-color); background: var(--ps-bg-card, #FFFFFF); border-radius: var(--ps-radius-xl);">
+          <div class="ps-icon-square ps-gallery-zone-icon" style="margin-bottom: 1.25rem;">👶</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">2. Toddler Soft Play Village</h3>
+          <p style="font-size: 0.92rem; color: var(--ps-text-muted); line-height: 1.6; margin: 0;">
+            A secluded, padded haven reserved exclusively for little jumpers aged 0–5. Zero older kids allowed, featuring soft foam crawling tunnels, tactile toys, and gentle foam slides.
+          </p>
+        </div>
+
+        <!-- Zone 3 -->
+        <div class="ps-card" style="padding: 2rem; border: 2px solid var(--ps-border-color); background: var(--ps-bg-card, #FFFFFF); border-radius: var(--ps-radius-xl);">
+          <div class="ps-icon-square ps-gallery-zone-icon" style="margin-bottom: 1.25rem;">🥷</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">3. Ninja Warrior Course</h3>
+          <p style="font-size: 0.92rem; color: var(--ps-text-muted); line-height: 1.6; margin: 0;">
+            Test your agility, grip strength, and balance across our 3-lane ninja obstacle course. Conclude with our 10-foot and 12-foot warped climbing walls with buzzer timers!
+          </p>
+        </div>
+
+        <!-- Zone 4 -->
+        <div class="ps-card" style="padding: 2rem; border: 2px solid var(--ps-border-color); background: var(--ps-bg-card, #FFFFFF); border-radius: var(--ps-radius-xl);">
+          <div class="ps-icon-square ps-gallery-zone-icon" style="margin-bottom: 1.25rem;">☁️</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">4. Stunt Airbag &amp; Foam Pits</h3>
+          <p style="font-size: 0.92rem; color: var(--ps-text-muted); line-height: 1.6; margin: 0;">
+            Launch from elevated jump platforms directly into our professional stunt cushion. Safe, soft landings allow jumpers to attempt aerial flips and tricks with zero fear.
+          </p>
+        </div>
+
+        <!-- Zone 5 -->
+        <div class="ps-card" style="padding: 2rem; border: 2px solid var(--ps-border-color); background: var(--ps-bg-card, #FFFFFF); border-radius: var(--ps-radius-xl);">
+          <div class="ps-icon-square ps-gallery-zone-icon" style="margin-bottom: 1.25rem;">🎂</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">5. VIP Celebration Suites</h3>
+          <p style="font-size: 0.92rem; color: var(--ps-text-muted); line-height: 1.6; margin: 0;">
+            Six soundproof, climate-controlled private party rooms equipped with 55" digital displays, custom theme lighting, comfortable seating, and direct kitchen service.
+          </p>
+        </div>
+
+        <!-- Zone 6 -->
+        <div class="ps-card" style="padding: 2rem; border: 2px solid var(--ps-border-color); background: var(--ps-bg-card, #FFFFFF); border-radius: var(--ps-radius-xl);">
+          <div class="ps-icon-square ps-gallery-zone-icon" style="margin-bottom: 1.25rem;">☕</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">6. Fuel Zone Café &amp; Lounge</h3>
+          <p style="font-size: 0.92rem; color: var(--ps-text-muted); line-height: 1.6; margin: 0;">
+            Relax in our elevated mezzanine lounge with panoramic arena views. Enjoy Starbucks espresso drinks, artisan pizzas, fresh fruit smoothies, and complimentary high-speed Wi-Fi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Safety & Cleanliness Standards Highlight -->
+  <section class="ps-section ps-section-white">
+    <div class="ps-container">
+      <div class="ps-section-header text-center">
+        <span class="badge-tag">SAFETY FIRST</span>
+        <h2 style="margin-top: 0.75rem;">Engineered for Clean, Safe Adventure</h2>
+        <p class="text-muted">
+          Your family's health and safety are the cornerstone of everything we build and maintain.
+        </p>
+      </div>
+
+      <div class="ps-grid ps-grid-4">
+        <div class="ps-card" style="padding: 1.75rem; border: 2px solid var(--ps-border-color); text-align: center;">
+          <div style="font-size: 2.2rem; margin-bottom: 0.75rem;">🛡️</div>
+          <h4 style="margin: 0 0 0.5rem 0;">ASTM F2970 Certified</h4>
+          <p style="font-size: 0.88rem; color: var(--ps-text-muted); margin: 0;">Fully compliant with the highest international trampoline court engineering standards.</p>
+        </div>
+
+        <div class="ps-card" style="padding: 1.75rem; border: 2px solid var(--ps-border-color); text-align: center;">
+          <div style="font-size: 2.2rem; margin-bottom: 0.75rem;">✨</div>
+          <h4 style="margin: 0 0 0.5rem 0;">Daily Sanitization Fog</h4>
+          <p style="font-size: 0.88rem; color: var(--ps-text-muted); margin: 0;">Hospital-grade electrostatic fogging and continuous contact surface cleaning all day.</p>
+        </div>
+
+        <div class="ps-card" style="padding: 1.75rem; border: 2px solid var(--ps-border-color); text-align: center;">
+          <div style="font-size: 2.2rem; margin-bottom: 0.75rem;">👥</div>
+          <h4 style="margin: 0 0 0.5rem 0;">Certified Court Marshals</h4>
+          <p style="font-size: 0.88rem; color: var(--ps-text-muted); margin: 0;">Vigilant, CPR and First Aid trained staff stationed on every single active court zone.</p>
+        </div>
+
+        <div class="ps-card" style="padding: 1.75rem; border: 2px solid var(--ps-border-color); text-align: center;">
+          <div style="font-size: 2.2rem; margin-bottom: 0.75rem;">🧦</div>
+          <h4 style="margin: 0 0 0.5rem 0;">Traction Grip Socks</h4>
+          <p style="font-size: 0.88rem; color: var(--ps-text-muted); margin: 0;">Specialized rubber-tread grip socks maintain maximum traction and court hygiene.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Parent Photography Tips & Social Community -->
+  <section class="ps-section ps-section-alt">
+    <div class="ps-container">
+      <div class="ps-grid ps-grid-2">
+        <div>
+          <span class="badge-tag">PHOTO PRO TIPS</span>
+          <h2 style="margin-top: 0.75rem;">How to Capture Epic Action Photos</h2>
+          <p class="text-muted" style="margin-bottom: 1.5rem;">
+            Want to take Instagram-worthy photos of your kids soaring through the air? Follow our quick arena photo guide!
+          </p>
+
+          <ul style="display: flex; flex-direction: column; gap: 1rem; padding: 0; margin: 0; list-style: none; font-size: 0.95rem; color: var(--ps-text-muted);">
+            <li>
+              <strong style="color: var(--ps-text-main); display: block;">1. Use Burst Mode for Mid-Air Flips:</strong>
+              Hold your smartphone camera shutter button to capture 10 shots per second right at the peak of their bounce.
+            </li>
+            <li>
+              <strong style="color: var(--ps-text-main); display: block;">2. Shoot from Low Angles:</strong>
+              Crouch slightly below trampoline pad level and aim up toward the arena lights to emphasize jump height!
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Community Callout Card -->
+        <div>
+          <div class="ps-card" style="height: 100%; background-color: #000000; color: #FFFFFF; border: 2px solid #FFCC00; padding: 2.5rem; border-radius: var(--ps-radius-xl); text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📸</div>
+            <span class="ps-badge" style="background: #FFCC00; color: #000000; font-weight: 800; margin-bottom: 0.75rem;">COMMUNITY SPOTLIGHT</span>
+            <h3 style="color: #FFFFFF; margin-top: 0.5rem; margin-bottom: 0.75rem;">Tag Us &amp; Get Featured!</h3>
+            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 1.5rem;">
+              Share your high-flying moments on Instagram or TikTok using <strong style="color: #FFCC00;">#JumpAtPlaySpace</strong> and tag <strong style="color: #FFCC00;">@PlaySpacePark</strong>. Weekly featured photos win free jump passes!
+            </p>
+            <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+              <span class="ps-badge ps-badge-dark" style="border: 1px solid rgba(255,255,255,0.3); color: #FFFFFF;">#PlaySpacePark</span>
+              <span class="ps-badge ps-badge-dark" style="border: 1px solid rgba(255,255,255,0.3); color: #FFFFFF;">#JumpAtPlaySpace</span>
+              <span class="ps-badge ps-badge-dark" style="border: 1px solid rgba(255,255,255,0.3); color: #FFFFFF;">#GlowNightFun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Bottom Call to Action Section -->
+  <section class="ps-section ps-section-dark" style="background-color: #000000; color: #FFFFFF; border-top: 3px solid #FFCC00; border-bottom: 3px solid #FFCC00; text-align: center; padding: 4rem 1.5rem;">
+    <div class="ps-container" style="max-width: 800px;">
+      <span class="badge-tag" style="background: #FFCC00; color: #000000; margin-bottom: 1rem; display: inline-block;">READY FOR TAKE-OFF?</span>
+      <h2 style="color: #FFFFFF; margin-bottom: 0.75rem; font-size: 2.25rem;">Experience the Thrill in Person</h2>
+      <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.05rem;">
+        Pictures only tell half the story. Book your family open jump session or celebrate an unforgettable birthday party at PlaySpace today!
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="booking.html" class="ps-btn ps-btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2rem;">
+          Book Jump Session
+        </a>
+        <a href="birthday-parties.html" class="ps-btn ps-btn-outline" style="border-color: #FFCC00; color: #FFCC00; font-size: 1.1rem; padding: 0.9rem 1.75rem;">
+          Book a Birthday Party
+        </a>
+        <a href="safety-guidelines.html" class="ps-btn ps-btn-outline" style="border-color: rgba(255,255,255,0.5); color: #FFFFFF; font-size: 1.1rem; padding: 0.9rem 1.75rem;">
+          Sign Safety Waiver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Interactive Gallery Modal and Lightbox Container -->
+  <div class="ps-gallery-modal" id="psGalleryViewModal" role="dialog" aria-modal="true" aria-labelledby="psModalTitle">
+    <div class="ps-gallery-modal-dialog">
+      <div class="ps-gallery-modal-header">
+        <div class="ps-gallery-modal-header-text">
+          <span class="ps-badge" id="psModalBadge" style="background:#FFCC00;color:#000000;font-size:0.75rem;font-weight:900;">COLLECTION</span>
+          <h3 class="ps-gallery-modal-title" id="psModalTitle">Gallery Title</h3>
+          <p class="ps-gallery-modal-desc" id="psModalDesc">Gallery Description</p>
+        </div>
+        <button type="button" class="ps-gallery-modal-close-btn" id="psModalClose" aria-label="Close Gallery View" title="Close (Esc)">✕</button>
+      </div>
+      <div class="ps-gallery-modal-body">
+        <div class="ps-gallery-modal-hint">
+          <span>3 Curated Photos in this Collection</span>
+          <span style="color:rgba(255,255,255,0.6);font-size:0.8rem;text-transform:none;">Click any photo to expand fullscreen</span>
+        </div>
+        <div class="ps-gallery-view-grid" id="psModalGrid"></div>
+      </div>
+      <div class="ps-gallery-modal-footer">
+        <button type="button" class="ps-btn ps-btn-outline ps-btn-sm" id="psModalBackBtn" style="border-color:rgba(255,255,255,0.3);color:#FFFFFF;">
+          ← Back to All Galleries
+        </button>
+        <a href="booking.html" class="ps-btn ps-btn-primary ps-btn-sm">
+          Book a Play Session ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div class="ps-lightbox" id="psLightboxModal" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+    <div class="ps-lightbox-topbar">
+      <div class="ps-lightbox-meta">
+        <span class="ps-lightbox-badge" id="psLightboxBadge">GALLERY</span>
+        <span class="ps-lightbox-counter" id="psLightboxCounter">Photo 1 of 3</span>
+      </div>
+      <button type="button" class="ps-lightbox-close-btn" id="psLightboxClose" aria-label="Close Lightbox" title="Close (Esc)">✕</button>
+    </div>
+    <button type="button" class="ps-lightbox-nav-btn ps-lightbox-nav-prev" id="psLightboxPrev" aria-label="Previous Image" title="Previous (Left Arrow)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button type="button" class="ps-lightbox-nav-btn ps-lightbox-nav-next" id="psLightboxNext" aria-label="Next Image" title="Next (Right Arrow)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+    <div class="ps-lightbox-viewport" id="psLightboxViewport">
+      <div class="ps-lightbox-image-wrap">
+        <img src="" alt="" class="ps-lightbox-img" id="psLightboxImg">
+      </div>
+    </div>
+    <div class="ps-lightbox-bottombar">
+      <div class="ps-lightbox-caption" id="psLightboxCaption"></div>
+    </div>
+  </div>
+  
+  
+<footer class="ps-footer">
+  <div class="ps-container">
+
+    <!-- ASTM & Safety Standards Assurance Ribbon -->
+    <div class="ps-footer-cert-ribbon">
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">ASTM F2970-20 Certified</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Daily engineered court &amp; airbag audits</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Hospital-Grade Sanitation</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Fogged &amp; disinfected every 120 minutes</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Red Cross CPR Marshals</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Dedicated safety team on active courts</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Anti-Slip Grip Safe</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Mandatory certified traction play socks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main 5-Column Grid -->
+    <div class="ps-footer-grid">
+      <!-- Col 1: Brand & Status & Socials -->
+      <div class="ps-footer-brand">
+        <a href="../index.html">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Brand Logo" style="height: 44px; margin-bottom: 0.75rem;">
+        </a>
+        <p>
+          PlaySpace is Adventure City's premier high-energy indoor trampoline arena, toddler soft play wonderland, and award-winning birthday celebration park for ages 1–14.
+        </p>
+
+        <div class="ps-footer-live-badge">
+          <span class="ps-pulse-dot"></span>
+          <span><strong>PARK STATUS:</strong> OPEN TODAY UNTIL 10 PM</span>
+        </div>
+
+        <div class="ps-footer-socials">
+          <a href="https://facebook.com" class="ps-social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com" class="ps-social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://youtube.com" class="ps-social-btn" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#000000"/></svg>
+          </a>
+          <a href="https://tiktok.com" class="ps-social-btn" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.4a6.33 6.33 0 0 0-.86-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 10.79 4.49 6.27 6.27 0 0 0 1.89-4.49V8.71a8.21 8.21 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.14z"/></svg>
+          </a>
+          <a href="https://x.com" class="ps-social-btn" aria-label="X Twitter" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Jump Arenas -->
+      <div class="ps-footer-col">
+        <h5>Jump Arenas</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/attractions.html">Trampoline Main Court</a></li>
+          <li><a href="../pages/attraction-details.html">Toddler Soft Play Haven</a></li>
+          <li><a href="../pages/attractions.html#ninja">Ninja Warrior Course</a></li>
+          <li><a href="../pages/attractions.html#airbag">Giant Stunt Airbag</a></li>
+          <li><a href="../pages/attractions.html#slamdunk">Slam Dunk Basketball</a></li>
+          <li><a href="../home-2.html#glow">Friday Neon Glow Arena</a></li>
+          <li><a href="../pages/attractions.html">Interactive Arcade Lounge</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Passes & Parties -->
+      <div class="ps-footer-col">
+        <h5>Passes &amp; Parties</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/pricing-passes.html">General Jump Admission</a></li>
+          <li><a href="../parent/purchase-pass.html">VIP 10-Session Punch Pass</a></li>
+          <li><a href="../pages/pricing-passes.html#toddler">Toddler Unlimited Pass</a></li>
+          <li><a href="../pages/birthday-parties.html">All-Inclusive Birthday Bash</a></li>
+          <li><a href="../pages/birthday-details.html">VIP Glow Birthday Package</a></li>
+          <li><a href="../pages/group-events.html">School Trips &amp; Field Camps</a></li>
+          <li><a href="../pages/group-events.html#buyout">Private Facility Rental</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Guest Services & Safety -->
+      <div class="ps-footer-col">
+        <h5>Guest Services</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/safety-guidelines.html" style="color: var(--ps-yellow); font-weight: 700;">★ Sign Safety Waiver</a></li>
+          <li><a href="../pages/booking.html">Book Jump Sessions</a></li>
+          <li><a href="../parent/dashboard.html">Parent Account Portal</a></li>
+          <li><a href="../parent/my-passes.html">Punch Pass Wallet</a></li>
+          <li><a href="../pages/safety-guidelines.html">Court Safety &amp; Grip Socks</a></li>
+          <li><a href="../pages/faq.html">Frequently Asked Questions</a></li>
+          <li><a href="../admin/dashboard.html">Admin Command Console</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Park Location & Hours -->
+      <div class="ps-footer-col ps-footer-col-contact">
+        <h5>Park &amp; Contact</h5>
+        <ul class="ps-footer-contact">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>4500 Bounce Boulevard, Adventure City, AC 90210</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span><a href="tel:5558397529" style="color: inherit;">(555) 839-PLAY</a> / <a href="tel:5558397529" style="color: inherit;">(555) 839-7529</a></span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span><a href="mailto:jump@playspacepark.com" style="color: inherit;">jump@playspacepark.com</a></span>
+          </li>
+          <li class="ps-hours-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div>
+              <strong style="color: var(--ps-white); display: block; margin-bottom: 2px;">Standard Operating Hours:</strong>
+              <div>Mon–Thu: 10:00 AM – 8:00 PM</div>
+              <div>Fri–Sat: 9:00 AM – 10:00 PM <span style="color: var(--ps-yellow); font-size: 0.78rem;">(Glow 7–10)</span></div>
+              <div>Sun: 10:00 AM – 7:00 PM</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="ps-back-to-top" id="psBackToTop" aria-label="Back to Top" title="Back to Top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- Docked Sticky Action Bar -->
+<aside class="ps-sticky-bar" id="psStickyBar" aria-label="Quick Action Bar">
+  <div class="ps-container ps-sticky-bar-inner">
+    <div class="ps-sticky-bar-info">
+      <span class="ps-pulse-dot"></span>
+      <span class="ps-sticky-bar-text">
+        <strong>Open Today:</strong> 9:00 AM – 10:00 PM <span class="ps-hide-sm">• Jump Patrol on Duty • ASTM F2970 Safety Certified</span>
+      </span>
+    </div>
+    <div class="ps-sticky-bar-actions">
+      <!-- Cart Button in Sticky Bar -->
+      <button type="button" class="ps-cart-toggle ps-btn ps-btn-sm ps-btn-outline" aria-label="Shopping Cart" title="View Cart" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF; position: relative;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        Cart (<span class="ps-cart-badge-text">0</span>)
+      </button>
+      <a href="../pages/safety-guidelines.html" class="ps-btn ps-btn-sm ps-btn-outline" style="border-color: var(--ps-yellow); color: var(--ps-yellow);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        Sign Waiver
+      </a>
+      <a href="../pages/booking.html" class="ps-btn ps-btn-sm ps-btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        Book Jump Session
+      </a>
+      <button class="ps-sticky-bar-close" id="psStickyBarClose" aria-label="Dismiss bottom bar" title="Dismiss">✕</button>
+    </div>
+  </div>
+</aside>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/gallery.js"></script>
+</body>
+</html>

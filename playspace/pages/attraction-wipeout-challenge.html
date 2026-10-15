@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wipeout Challenge — PlaySpace Attractions</title>
+  <meta name="description" content="Test balance and timing on moving-style rotating obstacles in a thrilling last-one-standing challenge game. Full details, safety rules, age suitability, and online booking for Wipeout Challenge at PlaySpace.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  
+<header class="ps-header">
+  <div class="ps-container ps-navbar">
+    <a href="../index.html" class="ps-navbar-brand">
+      <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+    </a>
+
+    <nav class="ps-nav-menu">
+      <!-- 1. Home -->
+      <div class="ps-nav-item">
+        <a href="../index.html" class="ps-nav-link ">Home <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../index.html" class="ps-dropdown-item">Homepage 1 (Main)</a>
+          <a href="../home-2.html" class="ps-dropdown-item">Homepage 2 (Adventure)</a>
+        </div>
+      </div>
+
+      <!-- 2. About (Immediately after Home) -->
+      <div class="ps-nav-item">
+        <a href="../pages/about.html" class="ps-nav-link ">About</a>
+      </div>
+
+      <!-- 3. Attractions -->
+      <div class="ps-nav-item">
+        <a href="../pages/attractions.html" class="ps-nav-link active">Attractions</a>
+      </div>
+
+      <!-- 4. Pricing & Passes -->
+      <div class="ps-nav-item">
+        <a href="../pages/pricing-passes.html" class="ps-nav-link ">Pricing &amp; Passes</a>
+      </div>
+
+      <!-- 5. Birthday Parties -->
+      <div class="ps-nav-item">
+        <a href="../pages/birthday-parties.html" class="ps-nav-link ">Birthday Parties <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../pages/birthday-parties.html" class="ps-dropdown-item">Birthday Packages</a>
+          <a href="../pages/birthday-details.html" class="ps-dropdown-item">VIP Glow Party</a>
+          <a href="../pages/group-events.html" class="ps-dropdown-item">Group Events &amp; Field Trips</a>
+        </div>
+      </div>
+
+      <!-- 6. Gallery -->
+      <div class="ps-nav-item">
+        <a href="../pages/gallery.html" class="ps-nav-link ">Gallery</a>
+      </div>
+
+      <!-- 7. Dashboard (Immediately after Gallery, styled like Gallery) -->
+      <div class="ps-nav-item">
+        <a href="../parent/dashboard.html" class="ps-nav-link ">Dashboard</a>
+      </div>
+
+      <!-- 8. Blog -->
+      <div class="ps-nav-item">
+        <a href="../pages/blog.html" class="ps-nav-link ">Blog</a>
+      </div>
+
+      <!-- 9. Contact -->
+      <div class="ps-nav-item">
+        <a href="../pages/contact.html" class="ps-nav-link ">Contact</a>
+      </div>
+
+      <!-- 10. Sign In / Account (Mobile Drawer) -->
+      <div class="ps-nav-item ps-nav-item-mobile-only">
+        <a href="../pages/login.html" class="ps-nav-link ps-nav-auth-btn ">Sign In</a>
+      </div>
+    </nav>
+
+    <div class="ps-nav-actions">
+      <!-- LTR / RTL Switcher directly in Nav Bar -->
+      <button class="ps-lang-toggle" aria-label="Toggle Layout Direction" title="Switch between LTR and RTL">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span>RTL</span>
+      </button>
+
+      <!-- Dark Mode Switcher directly in Nav Bar -->
+      <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <!-- Cart Button directly in Nav Bar -->
+      <button class="ps-cart-toggle ps-btn-icon position-relative" aria-label="Shopping Cart" title="View Cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="ps-cart-badge">0</span>
+      </button>
+
+      <!-- Sign In Option -->
+      <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm ps-nav-auth-btn">Sign In</a>
+
+      <!-- Primary Booking CTA -->
+      <a href="../pages/booking.html" class="ps-btn ps-btn-primary ps-btn-sm">Book Jump</a>
+
+      <button class="ps-mobile-toggle" aria-label="Open Mobile Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+  
+  <!-- Breadcrumb & Top Bar -->
+  <section class="ps-page-banner" style="padding: 2rem 0 1.5rem 0; background: #000000; border-bottom: 2px solid #FFCC00;">
+    <div class="ps-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div class="ps-breadcrumb">
+          <a href="../index.html">Home</a> <span class="sep">/</span> <a href="attractions.html">Attractions</a> <span class="sep">/</span> <span>Wipeout Challenge</span>
+        </div>
+        <a href="attractions.html" class="ps-btn ps-btn-outline ps-btn-sm" style="border-color: #FFCC00; color: #FFCC00; display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to All Attractions
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Hero Section -->
+  <section class="ps-section ps-section-dark" style="padding-top: 3rem; padding-bottom: 3.5rem;">
+    <div class="ps-container">
+      <div class="ps-grid ps-grid-2 ps-items-center" style="gap: 3.5rem;">
+        <div>
+          <div style="display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap;">
+            <span class="badge-tag">ZONE 20 OF 21</span>
+            <span class="ps-badge" style="background-color: #FFCC00; color: #000000; font-weight: 800;">INTERACTIVE & SPORTS ZONES</span>
+          </div>
+
+          <h1 style="color: #FFFFFF; font-size: 2.6rem; line-height: 1.15; margin: 0 0 1rem 0;">
+            Wipeout Challenge
+          </h1>
+
+          <p style="color: #FFCC00; font-size: 1.2rem; font-weight: 700; line-height: 1.4; margin-bottom: 1rem;">
+            Duck, jump, and stay on your pod as two rotating soft foam sweep arms test your timing and reflexes!
+          </p>
+
+          <p style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Test balance and timing on moving-style rotating obstacles in a thrilling last-one-standing challenge game.
+          </p>
+
+          <!-- Specs Badges -->
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            
+              <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 204, 0, 0.4); padding: 0.5rem 1rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                <span style="color: #FFCC00;">●</span> Rotating Foam Arm
+              </div>
+            
+              <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 204, 0, 0.4); padding: 0.5rem 1rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                <span style="color: #FFCC00;">●</span> 8 Jump Pods
+              </div>
+            
+              <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 204, 0, 0.4); padding: 0.5rem 1rem; border-radius: 8px; color: #FFFFFF; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                <span style="color: #FFCC00;">●</span> Variable Speed Operator
+              </div>
+            
+          </div>
+
+          <!-- Hero CTAs -->
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="booking-wipeout-challenge.html" class="ps-btn ps-btn-primary ps-btn-lg" style="box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4); text-decoration: none;">
+              Book This Zone
+            </a>
+            <button type="button" class="ps-btn ps-btn-outline ps-btn-lg ps-btn-add-cart" data-add-cart="attraction-wipeout-challenge" data-name="Wipeout Challenge" data-price="18.00" data-type="Zone Admission" data-icon="🤸" style="border: 2px solid #FFCC00; color: #FFCC00; font-weight: 800; background: rgba(0,0,0,0.5);">
+              Add to Cart 🛒
+            </button>
+            <a href="pricing-passes.html" class="ps-btn ps-btn-outline ps-btn-lg" style="border-color: #FFFFFF; color: #FFFFFF;">
+              View Pricing &amp; Passes
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div style="position: relative; border-radius: var(--ps-radius-xl); overflow: hidden; border: 3px solid #FFCC00; box-shadow: 0 15px 35px rgba(0,0,0,0.6);">
+            <img src="../assets/images/attractions/Wipeout%20Challenge/Wipeout_challenge_for_kids_2K_20261014003706.jpg" alt="Wipeout Challenge at PlaySpace" style="width: 100%; height: 420px; object-fit: cover; display: block;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding: 1.5rem 1.25rem 1rem 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem;">
+                <div>
+                  <span style="color: #FFCC00; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">Footwear Requirement</span>
+                  <div style="color: #FFFFFF; font-size: 0.95rem; font-weight: 700;">👟 Grip Socks Mandatory</div>
+                </div>
+                <span class="ps-badge ps-badge-dark" style="background: #000000; border: 1px solid #FFCC00; color: #FFCC00;">
+                  ASTM SAFETY COMPLIANT
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. About the Attraction -->
+  <section class="ps-section ps-section-white">
+    <div class="ps-container">
+      <div class="ps-grid ps-grid-2 ps-items-center" style="gap: 3.5rem;">
+        <div>
+          <span class="badge-tag">ENGINEERED FOR ADVENTURE</span>
+          <h2 style="margin-top: 0.5rem; margin-bottom: 1.25rem; font-size: 2.2rem;">
+            About the Wipeout Challenge
+          </h2>
+          <div style="color: var(--ps-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+            Step onto your circular jump pod and prepare to duck and jump! Inspired by classic television game shows, the Wipeout Challenge features 8 individual air-cushioned jumper pods surrounding a central motorized hub with two spinning padded foam sweep arms (one low to jump over, and one high to duck under).<br><br>Controlled by an experienced PlaySpace operator who tailors speed and rotation direction to the age group on court, players leap and duck as the arms spin faster and change direction. Who will be the last one standing?
+          </div>
+          
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem;">
+            <div style="background: var(--ps-bg-card); border: 1px solid var(--ps-border-color); padding: 1rem; border-radius: 8px;">
+              <div style="color: #FFCC00; font-size: 1.5rem; font-weight: 900; line-height: 1;">100%</div>
+              <div style="color: var(--ps-text-main); font-size: 0.85rem; font-weight: 700; margin-top: 4px;">Padded Safety Coverage</div>
+            </div>
+            <div style="background: var(--ps-bg-card); border: 1px solid var(--ps-border-color); padding: 1rem; border-radius: 8px;">
+              <div style="color: #FFCC00; font-size: 1.5rem; font-weight: 900; line-height: 1;">ASTM</div>
+              <div style="color: var(--ps-text-main); font-size: 0.85rem; font-weight: 700; margin-top: 4px;">F2970 / F1918 Certified</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- Feature Highlights Card -->
+          <div class="ps-card" style="border: 2px solid var(--ps-border-color); padding: 2rem; background: var(--ps-bg-card); box-shadow: var(--ps-shadow-md);">
+            <h3 style="margin-top: 0; margin-bottom: 1.25rem; font-size: 1.4rem; color: var(--ps-text-main); display: flex; align-items: center; gap: 8px;">
+              <span style="color: #FFCC00;">★</span> Unique Highlights &amp; Features
+            </h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: var(--ps-text-main);">
+                  <span style="color: #000000; background: #FFCC00; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900; flex-shrink: 0; margin-top: 2px;">✔</span>
+                  <span>Dual-height ultra-soft high-density foam rotating sweep arms that cause zero pain on contact</span>
+                </li>
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: var(--ps-text-main);">
+                  <span style="color: #000000; background: #FFCC00; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900; flex-shrink: 0; margin-top: 2px;">✔</span>
+                  <span>8 individual pneumatic air-cushioned jump pods with non-slip circular boundaries</span>
+                </li>
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: var(--ps-text-main);">
+                  <span style="color: #000000; background: #FFCC00; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900; flex-shrink: 0; margin-top: 2px;">✔</span>
+                  <span>Operator-controlled variable-speed console with instant-stop safety deadman brakes</span>
+                </li>
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: var(--ps-text-main);">
+                  <span style="color: #000000; background: #FFCC00; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900; flex-shrink: 0; margin-top: 2px;">✔</span>
+                  <span>Surrounding 24-inch zero-shock crash pad absorbing all stumble dismounts</span>
+                </li>
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: var(--ps-text-main);">
+                  <span style="color: #000000; background: #FFCC00; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900; flex-shrink: 0; margin-top: 2px;">✔</span>
+                  <span>Electronic arena music and game show sound effects synchronized to the action</span>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Activities & Experiences Available -->
+  <section class="ps-section" style="background: var(--ps-bg-main); border-top: 1px solid var(--ps-border-color); border-bottom: 1px solid var(--ps-border-color);">
+    <div class="ps-container">
+      <div class="ps-section-header text-center">
+        <span class="badge-tag">WHAT YOU CAN DO</span>
+        <h2 style="margin-top: 0.5rem;">Activities &amp; Experiences in this Zone</h2>
+        <p class="text-muted" style="max-width: 680px; margin: 0 auto;">
+          From beginner drills to exhilarating advanced challenges, discover every activity waiting for you inside the Wipeout Challenge.
+        </p>
+      </div>
+
+      <div class="ps-grid ps-grid-2" style="gap: 1.75rem;">
+        
+          <div class="ps-card" style="padding: 1.75rem; border: 1px solid var(--ps-border-color); display: flex; gap: 1.25rem; align-items: flex-start;">
+            <div style="background: #000000; color: #FFCC00; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; flex-shrink: 0; border: 2px solid #FFCC00;">
+              01
+            </div>
+            <div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--ps-text-main);">Jump Over the Low Arm</h4>
+              <p class="text-muted" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Time your vertical leap to jump cleanly over the sweeping soft foam bottom arm.</p>
+            </div>
+          </div>
+        
+          <div class="ps-card" style="padding: 1.75rem; border: 1px solid var(--ps-border-color); display: flex; gap: 1.25rem; align-items: flex-start;">
+            <div style="background: #000000; color: #FFCC00; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; flex-shrink: 0; border: 2px solid #FFCC00;">
+              02
+            </div>
+            <div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--ps-text-main);">Duck Under the High Arm</h4>
+              <p class="text-muted" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Crouch low on your circular pod as the top sweeping arm whistles right over your head.</p>
+            </div>
+          </div>
+        
+          <div class="ps-card" style="padding: 1.75rem; border: 1px solid var(--ps-border-color); display: flex; gap: 1.25rem; align-items: flex-start;">
+            <div style="background: #000000; color: #FFCC00; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; flex-shrink: 0; border: 2px solid #FFCC00;">
+              03
+            </div>
+            <div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--ps-text-main);">Last-One-Standing Tournament</h4>
+              <p class="text-muted" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Compete against 7 fellow jumpers in bracketed rounds to see who maintains balance the longest.</p>
+            </div>
+          </div>
+        
+          <div class="ps-card" style="padding: 1.75rem; border: 1px solid var(--ps-border-color); display: flex; gap: 1.25rem; align-items: flex-start;">
+            <div style="background: #000000; color: #FFCC00; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; flex-shrink: 0; border: 2px solid #FFCC00;">
+              04
+            </div>
+            <div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--ps-text-main);">Reverse Direction Spin</h4>
+              <p class="text-muted" style="margin: 0; font-size: 0.95rem; line-height: 1.6;">React quickly as the operator suddenly reverses rotation direction to test your reflexes!</p>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Recommended Age Group & Venue Policies -->
+  <section class="ps-section ps-section-white">
+    <div class="ps-container">
+      <div class="ps-grid ps-grid-2 ps-items-center" style="gap: 3.5rem;">
+        <div>
+          <span class="badge-tag">VENUE POLICIES</span>
+          <h2 style="margin-top: 0.5rem; margin-bottom: 1rem;">Recommended Age &amp; Requirements</h2>
+          <p class="text-muted" style="line-height: 1.6; margin-bottom: 1.5rem;">
+            To ensure safe, exhilarating play for everyone, PlaySpace strictly enforces zone-specific safety boundaries, age brackets, and supervisor-to-child ratios.
+          </p>
+
+          <div style="background: rgba(255, 204, 0, 0.12); border-left: 5px solid #FFCC00; padding: 1.25rem 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+            <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #000000;">Official Age Suitability</div>
+            <div style="font-size: 1.35rem; font-weight: 900; color: #000000; margin-top: 2px;">👶 Ages 6+ (Jump & Duck Thrill)</div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <strong style="color: var(--ps-text-main); min-width: 130px; font-size: 0.92rem;">Age Limit:</strong>
+              <span class="text-muted" style="font-size: 0.92rem;">6 Years old. Jumpers must be able to jump and duck independently.</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <strong style="color: var(--ps-text-main); min-width: 130px; font-size: 0.92rem;">Height / Weight:</strong>
+              <span class="text-muted" style="font-size: 0.92rem;">Maximum jumper weight: 220 lbs (100 kg).</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <strong style="color: var(--ps-text-main); min-width: 130px; font-size: 0.92rem;">Supervision:</strong>
+              <span class="text-muted" style="font-size: 0.92rem;">Dedicated operator controls every second of game speed and oversees safety.</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <strong style="color: var(--ps-text-main); min-width: 130px; font-size: 0.92rem;">Required Gear:</strong>
+              <span class="text-muted" style="font-size: 0.92rem;">Grip socks mandatory. All loose objects removed from pockets.</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- Safety Rules Box -->
+          <div style="background: #000000; border-radius: var(--ps-radius-xl); padding: 2.25rem; border: 2px solid #FFCC00; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem;">
+              <span style="font-size: 1.5rem;">🛡️</span>
+              <h3 style="color: #FFFFFF; margin: 0; font-size: 1.35rem;">Zone Safety Guidelines</h3>
+            </div>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem;">
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; color: rgba(255, 255, 255, 0.9); font-size: 0.92rem; line-height: 1.5;">
+                  <span style="color: #FFCC00; font-weight: 900; font-size: 0.95rem; min-width: 18px;">1.</span>
+                  <span>Remain centered on your designated circular pod throughout the game round.</span>
+                </li>
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; color: rgba(255, 255, 255, 0.9); font-size: 0.92rem; line-height: 1.5;">
+                  <span style="color: #FFCC00; font-weight: 900; font-size: 0.95rem; min-width: 18px;">2.</span>
+                  <span>Jump over the low arm or duck under the high arm — NEVER grab, kick, or climb onto rotating arms.</span>
+                </li>
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; color: rgba(255, 255, 255, 0.9); font-size: 0.92rem; line-height: 1.5;">
+                  <span style="color: #FFCC00; font-weight: 900; font-size: 0.95rem; min-width: 18px;">3.</span>
+                  <span>If the foam arm taps you and you fall off your pod, remain seated on the padded floor until the round stops.</span>
+                </li>
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; color: rgba(255, 255, 255, 0.9); font-size: 0.92rem; line-height: 1.5;">
+                  <span style="color: #FFCC00; font-weight: 900; font-size: 0.95rem; min-width: 18px;">4.</span>
+                  <span>Do not push or touch adjacent jumpers on neighboring pods.</span>
+                </li>
+              
+                <li style="display: flex; align-items: flex-start; gap: 10px; color: rgba(255, 255, 255, 0.9); font-size: 0.92rem; line-height: 1.5;">
+                  <span style="color: #FFCC00; font-weight: 900; font-size: 0.95rem; min-width: 18px;">5.</span>
+                  <span>Operator will immediately stop the rotating arms if any participant requests an exit.</span>
+                </li>
+              
+            </ul>
+            <div style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="color: rgba(255,255,255,0.6); font-size: 0.8rem;">Signed digital waiver required for all participants.</span>
+              <a href="safety-guidelines.html" style="color: #FFCC00; font-size: 0.85rem; font-weight: 700; text-decoration: underline;">Full Safety Rules &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Developmental Benefits & Reasons Kids Enjoy It -->
+  <section class="ps-section ps-section-white">
+    <div class="ps-container">
+      <div class="ps-section-header text-center">
+        <span class="badge-tag">GROWTH &amp; WELLNESS</span>
+        <h2 style="margin-top: 0.5rem;">Why Kids &amp; Parents Love This Zone</h2>
+        <p class="text-muted" style="max-width: 680px; margin: 0 auto;">
+          Active play at PlaySpace is intentionally engineered to nurture physical fitness, spatial confidence, and social joy.
+        </p>
+      </div>
+
+      <div class="ps-grid ps-grid-4" style="gap: 1.5rem;">
+        
+          <div class="ps-card" style="padding: 1.5rem; border: 1px solid var(--ps-border-color); text-align: center; border-radius: 12px; background: var(--ps-bg-card);">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,204,0,0.18); color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem;">
+              ✨
+            </div>
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--ps-text-main);">Lightning-Fast Reflexes</h4>
+            <p class="text-muted" style="margin: 0; font-size: 0.88rem; line-height: 1.5;">Reading incoming sweep arms hones visual processing speed and jump reaction timing.</p>
+          </div>
+        
+          <div class="ps-card" style="padding: 1.5rem; border: 1px solid var(--ps-border-color); text-align: center; border-radius: 12px; background: var(--ps-bg-card);">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,204,0,0.18); color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem;">
+              ✨
+            </div>
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--ps-text-main);">Dynamic Squat & Leap Power</h4>
+            <p class="text-muted" style="margin: 0; font-size: 0.88rem; line-height: 1.5;">Rapidly alternating between deep squats and vertical leaps provides an exceptional leg workout.</p>
+          </div>
+        
+          <div class="ps-card" style="padding: 1.5rem; border: 1px solid var(--ps-border-color); text-align: center; border-radius: 12px; background: var(--ps-bg-card);">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,204,0,0.18); color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem;">
+              ✨
+            </div>
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--ps-text-main);">Friendly Sportsmanship</h4>
+            <p class="text-muted" style="margin: 0; font-size: 0.88rem; line-height: 1.5;">Cheering on surviving jumpers builds lighthearted camaraderie and good sportsmanship.</p>
+          </div>
+        
+          <div class="ps-card" style="padding: 1.5rem; border: 1px solid var(--ps-border-color); text-align: center; border-radius: 12px; background: var(--ps-bg-card);">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,204,0,0.18); color: #000000; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem;">
+              ✨
+            </div>
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--ps-text-main);">Focus Under Pressure</h4>
+            <p class="text-muted" style="margin: 0; font-size: 0.88rem; line-height: 1.5;">Maintaining balance while anticipating arm reversals sharpens mental concentration.</p>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Attraction-Specific FAQs -->
+  <section class="ps-section" style="background: var(--ps-bg-main); border-top: 1px solid var(--ps-border-color);">
+    <div class="ps-container" style="max-width: 900px;">
+      <div class="ps-section-header text-center">
+        <span class="badge-tag">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 style="margin-top: 0.5rem;">Wipeout Challenge FAQs</h2>
+        <p class="text-muted">Common questions about visiting, gear, and booking this attraction zone.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        
+          <div class="ps-card" style="padding: 1.5rem; border: 1px solid var(--ps-border-color); background: var(--ps-bg-card);">
+            <h4 style="margin: 0 0 0.6rem 0; color: var(--ps-text-main); font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+              <span style="color: #FFCC00; font-weight: 900;">Q.</span> Does it hurt if the arm hits you?
+            </h4>
+            <p class="text-muted" style="margin: 0; font-size: 0.95rem; line-height: 1.6; padding-left: 1.5rem;">
+              Not at all! The sweep arms are made of lightweight, ultra-cushioned soft foam that gently knocks you off balance onto thick padding.
+            </p>
+          </div>
+        
+          <div class="ps-card" style="padding: 1.5rem; border: 1px solid var(--ps-border-color); background: var(--ps-bg-card);">
+            <h4 style="margin: 0 0 0.6rem 0; color: var(--ps-text-main); font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+              <span style="color: #FFCC00; font-weight: 900;">Q.</span> Can the operator control the speed for younger kids?
+            </h4>
+            <p class="text-muted" style="margin: 0; font-size: 0.95rem; line-height: 1.6; padding-left: 1.5rem;">
+              Yes! Our operators always start at gentle slow speeds and adjust appropriately based on the jumpers on court.
+            </p>
+          </div>
+        
+          <div class="ps-card" style="padding: 1.5rem; border: 1px solid var(--ps-border-color); background: var(--ps-bg-card);">
+            <h4 style="margin: 0 0 0.6rem 0; color: var(--ps-text-main); font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+              <span style="color: #FFCC00; font-weight: 900;">Q.</span> How many players can play at once?
+            </h4>
+            <p class="text-muted" style="margin: 0; font-size: 0.95rem; line-height: 1.6; padding-left: 1.5rem;">
+              Up to 8 players can compete simultaneously, making it ideal for birthday groups and family challenges.
+            </p>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Book This Zone CTA Banner -->
+  <section class="ps-section" style="background: #000000; border-top: 3px solid #FFCC00; border-bottom: 3px solid #FFCC00; padding: 4rem 0;">
+    <div class="ps-container text-center">
+      <span class="badge-tag" style="background: #FFCC00; color: #000000;">INSTANT ONLINE RESERVATION</span>
+      <h2 style="color: #FFFFFF; font-size: 2.4rem; margin: 0.75rem 0 1rem 0;">
+        Ready to Jump into the Wipeout Challenge?
+      </h2>
+      <p style="color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 700px; margin: 0 auto 2rem auto; line-height: 1.6;">
+        Every standard PlaySpace jump pass grants all-inclusive access to this zone and all 25 other adventure attractions across our 35,000 sq ft park!
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="booking-wipeout-challenge.html" class="ps-btn ps-btn-primary" style="font-size: 1.1rem; padding: 0.95rem 2rem; text-decoration: none;">Book This Zone &bull; Book Your Play Session</a>
+        <button type="button" class="ps-btn ps-btn-outline ps-btn-lg ps-btn-add-cart" data-add-cart="attraction-wipeout-challenge" data-name="Wipeout Challenge" data-price="18.00" data-type="Zone Admission" data-icon="🤸" style="border: 2px solid #FFCC00; color: #FFCC00; font-size: 1.1rem; padding: 0.95rem 2rem; font-weight: 800; background: rgba(0,0,0,0.5);">
+          Add to Cart 🛒
+        </button>
+        <a href="birthday-parties.html" class="ps-btn ps-btn-outline ps-btn-lg" style="border-color: #FFCC00; color: #FFCC00;">
+          Plan a Birthday Party Here
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Related Attractions -->
+  <section class="ps-section ps-section-white">
+    <div class="ps-container">
+      <div class="ps-flex-between" style="margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge-tag">MORE ADVENTURE</span>
+          <h2 style="margin: 0.25rem 0 0 0;">Related Attractions You'll Love</h2>
+        </div>
+        <a href="attractions.html" class="ps-btn ps-btn-outline-dark ps-btn-sm">
+          View All 21 Attractions &rarr;
+        </a>
+      </div>
+
+      <div class="ps-grid ps-grid-3" style="gap: 2rem;">
+        
+          <div class="ps-attraction-card" style="border: 1px solid var(--ps-border-color); border-radius: var(--ps-radius-xl); overflow: hidden; background: var(--ps-bg-card); display: flex; flex-direction: column;">
+            <div class="ps-attraction-thumb" style="position: relative; height: 210px; overflow: hidden;">
+              <img src="../assets/images/attractions/Interactive%20Play%20Arena/Interactive_play_arena_for_children_2K_20261013232047.jpg" alt="Interactive Play Arena" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="ps-attraction-body" style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <div class="ps-attraction-specs" style="color: var(--ps-text-muted); font-size: 0.8rem; margin-bottom: 0.5rem; font-weight: 700;">
+                <span>● Augmented Projection</span> <span>● Motion Gaming Floor</span>
+              </div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: var(--ps-text-main);">Interactive Play Arena</h4>
+              <p class="text-muted" style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.25rem; flex-grow: 1;">
+                Play movement-based games with interactive lights, projections, and real-time motion-tracking video challenges.
+              </p>
+              <div class="ps-attraction-actions" style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--ps-border-color); display: flex; flex-direction: column; gap: 0.5rem; width: 100%;">
+                <div style="display: flex; gap: 0.5rem; width: 100%;">
+                  <a href="attraction-interactive-play-arena.html" class="ps-btn ps-btn-dark ps-btn-sm" style="flex: 1; text-align: center;">View Details</a>
+                  <a href="booking-interactive-play-arena.html" class="ps-btn ps-btn-primary ps-btn-sm" style="flex: 1; text-align: center;">Book This Zone</a>
+                </div>
+                <button type="button" class="ps-btn ps-btn-outline ps-btn-sm ps-btn-add-cart" data-add-cart="attraction-interactive-play-arena" data-name="Interactive Play Arena" data-price="18.00" data-type="Zone Admission" data-icon="🤸" style="width: 100%; text-align: center; border: 2px solid #FFCC00; color: var(--ps-text-main); font-weight: 800; background: rgba(255, 204, 0, 0.1);">
+                  Add to Cart 🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="ps-attraction-card" style="border: 1px solid var(--ps-border-color); border-radius: var(--ps-radius-xl); overflow: hidden; background: var(--ps-bg-card); display: flex; flex-direction: column;">
+            <div class="ps-attraction-thumb" style="position: relative; height: 210px; overflow: hidden;">
+              <img src="../assets/images/attractions/Airbag%20Jump%20Zone/Child_jumping_on_airbag_zone_2K_20261014010208.jpg" alt="Airbag Jump Zone" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="ps-attraction-body" style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <div class="ps-attraction-specs" style="color: var(--ps-text-muted); font-size: 0.8rem; margin-bottom: 0.5rem; font-weight: 700;">
+                <span>● Stunt Airbag</span> <span>● Dual Jump Runways</span>
+              </div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: var(--ps-text-main);">Airbag Jump Zone</h4>
+              <p class="text-muted" style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.25rem; flex-grow: 1;">
+                Experience supervised jumps onto a purpose-designed commercial stunt landing airbag with dual pressure chambers.
+              </p>
+              <div class="ps-attraction-actions" style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--ps-border-color); display: flex; flex-direction: column; gap: 0.5rem; width: 100%;">
+                <div style="display: flex; gap: 0.5rem; width: 100%;">
+                  <a href="attraction-airbag-jump-zone.html" class="ps-btn ps-btn-dark ps-btn-sm" style="flex: 1; text-align: center;">View Details</a>
+                  <a href="booking-airbag-jump-zone.html" class="ps-btn ps-btn-primary ps-btn-sm" style="flex: 1; text-align: center;">Book This Zone</a>
+                </div>
+                <button type="button" class="ps-btn ps-btn-outline ps-btn-sm ps-btn-add-cart" data-add-cart="attraction-airbag-jump-zone" data-name="Airbag Jump Zone" data-price="18.00" data-type="Zone Admission" data-icon="🤸" style="width: 100%; text-align: center; border: 2px solid #FFCC00; color: var(--ps-text-main); font-weight: 800; background: rgba(255, 204, 0, 0.1);">
+                  Add to Cart 🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="ps-attraction-card" style="border: 1px solid var(--ps-border-color); border-radius: var(--ps-radius-xl); overflow: hidden; background: var(--ps-bg-card); display: flex; flex-direction: column;">
+            <div class="ps-attraction-thumb" style="position: relative; height: 210px; overflow: hidden;">
+              <img src="../assets/images/attractions/Mini%20Sports%20Arena/Kids_playing_in_sports_arena_2K_20261013235314.jpg" alt="Mini Sports Arena" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="ps-attraction-body" style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <div class="ps-attraction-specs" style="color: var(--ps-text-muted); font-size: 0.8rem; margin-bottom: 0.5rem; font-weight: 700;">
+                <span>● Slam Dunk Hoops</span> <span>● Rebound Enclosure</span>
+              </div>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: var(--ps-text-main);">Mini Sports Arena</h4>
+              <p class="text-muted" style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.25rem; flex-grow: 1;">
+                Enjoy mini basketball, target games, slam dunk runways, and friendly team competitions in an enclosed cage.
+              </p>
+              <div class="ps-attraction-actions" style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--ps-border-color); display: flex; flex-direction: column; gap: 0.5rem; width: 100%;">
+                <div style="display: flex; gap: 0.5rem; width: 100%;">
+                  <a href="attraction-mini-sports-arena.html" class="ps-btn ps-btn-dark ps-btn-sm" style="flex: 1; text-align: center;">View Details</a>
+                  <a href="booking-mini-sports-arena.html" class="ps-btn ps-btn-primary ps-btn-sm" style="flex: 1; text-align: center;">Book This Zone</a>
+                </div>
+                <button type="button" class="ps-btn ps-btn-outline ps-btn-sm ps-btn-add-cart" data-add-cart="attraction-mini-sports-arena" data-name="Mini Sports Arena" data-price="18.00" data-type="Zone Admission" data-icon="🤸" style="width: 100%; text-align: center; border: 2px solid #FFCC00; color: var(--ps-text-main); font-weight: 800; background: rgba(255, 204, 0, 0.1);">
+                  Add to Cart 🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  
+<footer class="ps-footer">
+  <div class="ps-container">
+
+    <!-- ASTM & Safety Standards Assurance Ribbon -->
+    <div class="ps-footer-cert-ribbon">
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">ASTM F2970-20 Certified</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Daily engineered court &amp; airbag audits</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Hospital-Grade Sanitation</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Fogged &amp; disinfected every 120 minutes</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Red Cross CPR Marshals</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Dedicated safety team on active courts</span>
+        </div>
+      </div>
+
+      <div class="ps-cert-item">
+        <div class="ps-cert-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <div>
+          <strong style="color: var(--ps-white); font-size: 0.95rem; display: block;">Anti-Slip Grip Safe</strong>
+          <span style="color: rgba(255,255,255,0.65); font-size: 0.8rem;">Mandatory certified traction play socks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main 5-Column Grid -->
+    <div class="ps-footer-grid">
+      <!-- Col 1: Brand & Status & Socials -->
+      <div class="ps-footer-brand">
+        <a href="../index.html">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Brand Logo" style="height: 44px; margin-bottom: 0.75rem;">
+        </a>
+        <p>
+          PlaySpace is Adventure City's premier high-energy indoor trampoline arena, toddler soft play wonderland, and award-winning birthday celebration park for ages 1–14.
+        </p>
+
+        <div class="ps-footer-live-badge">
+          <span class="ps-pulse-dot"></span>
+          <span><strong>PARK STATUS:</strong> OPEN TODAY UNTIL 10 PM</span>
+        </div>
+
+        <div class="ps-footer-socials">
+          <a href="https://facebook.com" class="ps-social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com" class="ps-social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://youtube.com" class="ps-social-btn" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#000000"/></svg>
+          </a>
+          <a href="https://tiktok.com" class="ps-social-btn" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.4a6.33 6.33 0 0 0-.86-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 10.79 4.49 6.27 6.27 0 0 0 1.89-4.49V8.71a8.21 8.21 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.14z"/></svg>
+          </a>
+          <a href="https://x.com" class="ps-social-btn" aria-label="X Twitter" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Jump Arenas -->
+      <div class="ps-footer-col">
+        <h5>Jump Arenas</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/attractions.html">Trampoline Main Court</a></li>
+          <li><a href="../pages/attraction-details.html">Toddler Soft Play Haven</a></li>
+          <li><a href="../pages/attractions.html#ninja">Ninja Warrior Course</a></li>
+          <li><a href="../pages/attractions.html#airbag">Giant Stunt Airbag</a></li>
+          <li><a href="../pages/attractions.html#slamdunk">Slam Dunk Basketball</a></li>
+          <li><a href="../home-2.html#glow">Friday Neon Glow Arena</a></li>
+          <li><a href="../pages/attractions.html">Interactive Arcade Lounge</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Passes & Parties -->
+      <div class="ps-footer-col">
+        <h5>Passes &amp; Parties</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/pricing-passes.html">General Jump Admission</a></li>
+          <li><a href="../parent/purchase-pass.html">VIP 10-Session Punch Pass</a></li>
+          <li><a href="../pages/pricing-passes.html#toddler">Toddler Unlimited Pass</a></li>
+          <li><a href="../pages/birthday-parties.html">All-Inclusive Birthday Bash</a></li>
+          <li><a href="../pages/birthday-details.html">VIP Glow Birthday Package</a></li>
+          <li><a href="../pages/group-events.html">School Trips &amp; Field Camps</a></li>
+          <li><a href="../pages/group-events.html#buyout">Private Facility Rental</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Guest Services & Safety -->
+      <div class="ps-footer-col">
+        <h5>Guest Services</h5>
+        <ul class="ps-footer-links">
+          <li><a href="../pages/safety-guidelines.html" style="color: var(--ps-yellow); font-weight: 700;">★ Sign Safety Waiver</a></li>
+          <li><a href="../pages/booking.html">Book Jump Sessions</a></li>
+          <li><a href="../parent/dashboard.html">Parent Account Portal</a></li>
+          <li><a href="../parent/my-passes.html">Punch Pass Wallet</a></li>
+          <li><a href="../pages/safety-guidelines.html">Court Safety &amp; Grip Socks</a></li>
+          <li><a href="../pages/faq.html">Frequently Asked Questions</a></li>
+          <li><a href="../admin/dashboard.html">Admin Command Console</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Park Location & Hours -->
+      <div class="ps-footer-col ps-footer-col-contact">
+        <h5>Park &amp; Contact</h5>
+        <ul class="ps-footer-contact">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>4500 Bounce Boulevard, Adventure City, AC 90210</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span><a href="tel:5558397529" style="color: inherit;">(555) 839-PLAY</a> / <a href="tel:5558397529" style="color: inherit;">(555) 839-7529</a></span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span><a href="mailto:jump@playspacepark.com" style="color: inherit;">jump@playspacepark.com</a></span>
+          </li>
+          <li class="ps-hours-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div>
+              <strong style="color: var(--ps-white); display: block; margin-bottom: 2px;">Standard Operating Hours:</strong>
+              <div>Mon–Thu: 10:00 AM – 8:00 PM</div>
+              <div>Fri–Sat: 9:00 AM – 10:00 PM <span style="color: var(--ps-yellow); font-size: 0.78rem;">(Glow 7–10)</span></div>
+              <div>Sun: 10:00 AM – 7:00 PM</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="ps-back-to-top" id="psBackToTop" aria-label="Back to Top" title="Back to Top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- Docked Sticky Action Bar -->
+<aside class="ps-sticky-bar" id="psStickyBar" aria-label="Quick Action Bar">
+  <div class="ps-container ps-sticky-bar-inner">
+    <div class="ps-sticky-bar-info">
+      <span class="ps-pulse-dot"></span>
+      <span class="ps-sticky-bar-text">
+        <strong>Open Today:</strong> 9:00 AM – 10:00 PM <span class="ps-hide-sm">• Jump Patrol on Duty • ASTM F2970 Safety Certified</span>
+      </span>
+    </div>
+    <div class="ps-sticky-bar-actions">
+      <!-- Cart Button in Sticky Bar -->
+      <button type="button" class="ps-cart-toggle ps-btn ps-btn-sm ps-btn-outline" aria-label="Shopping Cart" title="View Cart" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF; position: relative;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        Cart (<span class="ps-cart-badge-text">0</span>)
+      </button>
+      <a href="../pages/safety-guidelines.html" class="ps-btn ps-btn-sm ps-btn-outline" style="border-color: var(--ps-yellow); color: var(--ps-yellow);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        Sign Waiver
+      </a>
+      <a href="../pages/booking.html" class="ps-btn ps-btn-sm ps-btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        Book Jump Session
+      </a>
+      <button class="ps-sticky-bar-close" id="psStickyBarClose" aria-label="Dismiss bottom bar" title="Dismiss">✕</button>
+    </div>
+  </div>
+</aside>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

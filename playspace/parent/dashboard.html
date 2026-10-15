@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Overview — Parent Portal | PlaySpace</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Top Navigation Bar for Parent Portal (No top bar, toggles inside navbar) -->
+  <header class="ps-header">
+    <div class="ps-container-fluid ps-navbar">
+      <div class="ps-flex ps-items-center ps-gap-md">
+        <a href="../index.html" class="ps-navbar-brand">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+        </a>
+        <span class="ps-badge ps-badge-yellow-outline" style="font-size: 0.75rem;">PARENT PORTAL</span>
+      </div>
+
+      <div class="ps-nav-actions">
+        <!-- LTR / RTL toggle right in nav bar -->
+        <button class="ps-lang-toggle" aria-label="Toggle Layout Direction">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span>RTL</span>
+        </button>
+
+        <!-- Dark Mode toggle right in nav bar -->
+        <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <a href="book-session.html" class="ps-btn ps-btn-primary ps-btn-sm">+ New Jump Booking</a>
+        <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm" data-action-logout>Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ps-dashboard-layout">
+    
+  <aside class="ps-dash-sidebar">
+    <nav class="ps-sidebar-nav">
+      
+    <a href="dashboard.html" class="ps-sidebar-link active">
+      <span>📊</span>
+      <span>Overview</span>
+    </a>
+  
+    <a href="children.html" class="ps-sidebar-link ">
+      <span>👶</span>
+      <span>Child Profiles & Waivers</span>
+    </a>
+  
+    <a href="book-session.html" class="ps-sidebar-link ">
+      <span>🎟️</span>
+      <span>Book Jump Session</span>
+    </a>
+  
+    <a href="my-bookings.html" class="ps-sidebar-link ">
+      <span>📅</span>
+      <span>My Bookings</span>
+    </a>
+  
+    <a href="birthday-booking.html" class="ps-sidebar-link ">
+      <span>🎂</span>
+      <span>Birthday Reservation</span>
+    </a>
+  
+    <a href="my-passes.html" class="ps-sidebar-link ">
+      <span>💳</span>
+      <span>Punch Pass Wallet</span>
+    </a>
+  
+    <a href="purchase-pass.html" class="ps-sidebar-link ">
+      <span>🛍️</span>
+      <span>Buy Passes & Packs</span>
+    </a>
+  
+    <a href="order-history.html" class="ps-sidebar-link ">
+      <span>🧾</span>
+      <span>Order History</span>
+    </a>
+  
+    <a href="payment-history.html" class="ps-sidebar-link ">
+      <span>💲</span>
+      <span>Payment Receipts</span>
+    </a>
+  
+    <a href="notifications.html" class="ps-sidebar-link ">
+      <span>🔔</span>
+      <span>Notifications</span>
+    </a>
+  
+    <a href="profile.html" class="ps-sidebar-link ">
+      <span>👤</span>
+      <span>Parent Profile</span>
+    </a>
+  
+    <a href="settings.html" class="ps-sidebar-link ">
+      <span>⚙️</span>
+      <span>Account Settings</span>
+    </a>
+  
+    </nav>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+      <a href="../index.html" class="ps-sidebar-link">
+        <span>🏠</span> <span>Return to Main Website</span>
+      </a>
+      <a href="../pages/login.html" class="ps-sidebar-link" data-action-logout>
+        <span>🚪</span> <span>Sign Out</span>
+      </a>
+    </div>
+  </aside>
+  
+    <main class="ps-dash-content">
+      
+  <div class="ps-dash-header">
+    <div>
+      <h2 style="margin: 0;" id="psDashGreeting">Welcome Back, Sarah!</h2>
+      <p class="text-muted" style="margin: 0;" id="psDashSubtitle">Here is a summary of your active passes and upcoming jump bookings.</p>
+    </div>
+    <a href="book-session.html" class="ps-btn ps-btn-primary">Book Next Session</a>
+  </div>
+
+  <div class="ps-stat-grid">
+    <div class="ps-stat-card">
+      <div class="stat-icon">🎟️</div>
+      <div class="stat-val">7</div>
+      <div class="stat-lbl">Remaining Jump Punches</div>
+    </div>
+    <div class="ps-stat-card">
+      <div class="stat-icon">📅</div>
+      <div class="stat-val">1</div>
+      <div class="stat-lbl">Upcoming Session (Saturday)</div>
+    </div>
+    <div class="ps-stat-card">
+      <div class="stat-icon">👶</div>
+      <div class="stat-val">2</div>
+      <div class="stat-lbl">Children (Waivers Signed)</div>
+    </div>
+    <div class="ps-stat-card">
+      <div class="stat-icon">⭐</div>
+      <div class="stat-val">450</div>
+      <div class="stat-lbl">PlayPoints Earned</div>
+    </div>
+  </div>
+
+  <div class="ps-grid ps-grid-2" style="margin-bottom: 2.5rem;">
+    <!-- Active Pass Widget -->
+    <div class="ps-pass-wallet-card">
+      <div class="ps-flex-between">
+        <span class="ps-badge">ACTIVE PASS</span>
+        <span style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Expires Dec 31, 2026</span>
+      </div>
+      <h3 style="color: #FFFFFF; margin-top: 1rem; margin-bottom: 0.25rem;">10-Session Punch Pass</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Leo &amp; Maya Jenkins</p>
+      <div class="ps-punch-counter">
+        <div class="ps-punch-hole used">1</div>
+        <div class="ps-punch-hole used">2</div>
+        <div class="ps-punch-hole used">3</div>
+        <div class="ps-punch-hole">4</div>
+        <div class="ps-punch-hole">5</div>
+        <div class="ps-punch-hole">6</div>
+        <div class="ps-punch-hole">7</div>
+        <div class="ps-punch-hole">8</div>
+        <div class="ps-punch-hole">9</div>
+        <div class="ps-punch-hole">10</div>
+      </div>
+      <div class="ps-flex-between" style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1rem;">
+        <div>
+          <span style="font-size: 1.3rem; font-weight: 900; color: #FFCC00;">7 Jumps</span>
+          <span style="font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-left: 6px;">Available</span>
+        </div>
+        <a href="my-passes.html" class="ps-btn ps-btn-primary ps-btn-sm">Open Wallet</a>
+      </div>
+    </div>
+
+    <!-- Upcoming Booking Card -->
+    <div class="ps-card" style="border: 2px solid var(--ps-border-color);">
+      <div class="ps-flex-between" style="margin-bottom: 1rem;">
+        <span class="ps-badge ps-badge-dark">UPCOMING RESERVATION</span>
+        <span style="font-weight: 800; font-size: 0.85rem;">Ref #PS-9842</span>
+      </div>
+      <h4>Open Jump (90 Minutes)</h4>
+      <p class="text-muted" style="font-size: 0.95rem; margin-bottom: 1.25rem;">
+        📍 Saturday, Oct 17, 2026 • 10:00 AM – 11:30 AM<br>
+        Jumpers: Leo Jenkins (7), Maya Jenkins (4) • 2 Grip Socks
+      </p>
+      <div class="ps-flex ps-gap-sm">
+        <a href="booking-details.html" class="ps-btn ps-btn-dark ps-btn-sm">View QR Pass</a>
+        <a href="invoice.html" class="ps-btn ps-btn-outline-dark ps-btn-sm">Print Invoice</a>
+      </div>
+    </div>
+  </div>
+  
+    </main>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/parent-dashboard.js"></script>
+</body>
+</html>

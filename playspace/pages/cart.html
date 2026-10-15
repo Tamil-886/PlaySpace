@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart — PlaySpace</title>
+  <meta name="description" content="Review your PlaySpace jump sessions, party packages, group bookings, and grip socks before proceeding to reservation details.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  
+<header class="ps-header">
+  <div class="ps-container ps-navbar">
+    <a href="../index.html" class="ps-navbar-brand">
+      <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+    </a>
+
+    <nav class="ps-nav-menu">
+      <!-- 1. Home -->
+      <div class="ps-nav-item">
+        <a href="../index.html" class="ps-nav-link ">Home <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../index.html" class="ps-dropdown-item">Homepage 1 (Main)</a>
+          <a href="../home-2.html" class="ps-dropdown-item">Homepage 2 (Adventure)</a>
+        </div>
+      </div>
+
+      <!-- 2. About -->
+      <div class="ps-nav-item">
+        <a href="../pages/about.html" class="ps-nav-link ">About</a>
+      </div>
+
+      <!-- 3. Attractions -->
+      <div class="ps-nav-item">
+        <a href="../pages/attractions.html" class="ps-nav-link ">Attractions</a>
+      </div>
+
+      <!-- 4. Pricing & Passes -->
+      <div class="ps-nav-item">
+        <a href="../pages/pricing-passes.html" class="ps-nav-link ">Pricing &amp; Passes</a>
+      </div>
+
+      <!-- 5. Birthday Parties -->
+      <div class="ps-nav-item">
+        <a href="../pages/birthday-parties.html" class="ps-nav-link ">Birthday Parties <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../pages/birthday-parties.html" class="ps-dropdown-item">Birthday Packages</a>
+          <a href="../pages/birthday-details.html" class="ps-dropdown-item">VIP Glow Party</a>
+          <a href="../pages/group-events.html" class="ps-dropdown-item">Group Events &amp; Field Trips</a>
+        </div>
+      </div>
+
+      <!-- 6. Gallery -->
+      <div class="ps-nav-item">
+        <a href="../pages/gallery.html" class="ps-nav-link ">Gallery</a>
+      </div>
+
+      <!-- 7. Dashboard -->
+      <div class="ps-nav-item">
+        <a href="../parent/dashboard.html" class="ps-nav-link ">Dashboard</a>
+      </div>
+
+      <!-- 8. Blog -->
+      <div class="ps-nav-item">
+        <a href="../pages/blog.html" class="ps-nav-link ">Blog</a>
+      </div>
+
+      <!-- 9. Contact -->
+      <div class="ps-nav-item">
+        <a href="../pages/contact.html" class="ps-nav-link ">Contact</a>
+      </div>
+
+      <!-- 10. Sign In / Account (Mobile Drawer) -->
+      <div class="ps-nav-item ps-nav-item-mobile-only">
+        <a href="../pages/login.html" class="ps-nav-link ps-nav-auth-btn ">Sign In</a>
+      </div>
+    </nav>
+
+    <div class="ps-nav-actions">
+      <!-- LTR / RTL Switcher -->
+      <button class="ps-lang-toggle" aria-label="Toggle Layout Direction" title="Switch between LTR and RTL">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span>RTL</span>
+      </button>
+
+      <!-- Dark Mode Switcher -->
+      <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <!-- Cart Button directly in Nav Bar -->
+      <button class="ps-cart-toggle ps-btn-icon position-relative" aria-label="Shopping Cart" title="View Cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="ps-cart-badge">0</span>
+      </button>
+
+      <!-- Sign In Option -->
+      <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm ps-nav-auth-btn">Sign In</a>
+
+      <!-- Primary Booking CTA -->
+      <a href="booking.html" class="ps-btn ps-btn-primary ps-btn-sm">Book Jump</a>
+
+      <button class="ps-mobile-toggle" aria-label="Open Mobile Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Banner / Breadcrumbs -->
+  <section class="ps-page-banner">
+    <div class="ps-container">
+      <div class="ps-breadcrumb">
+        <a href="../index.html">Home</a> <span class="sep">/</span> <span>Shopping Cart</span>
+      </div>
+      <h1 style="color: #FFFFFF; margin: 0;">Your Shopping Cart</h1>
+      <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 740px; margin: 0.75rem 0 0 0; line-height: 1.6;">
+        Review your selected jump passes, birthday packages, and grip socks before proceeding to your reservation details.
+      </p>
+    </div>
+  </section>
+
+  <!-- Shopping Cart Layout -->
+  <section class="ps-section ps-cart-page-section">
+    <div class="ps-container">
+      <div class="ps-cart-page-layout">
+        
+        <!-- Left: Items List & Actions -->
+        <div class="ps-cart-page-main">
+          <div class="ps-cart-page-header-card">
+            <div class="ps-cart-page-title-row">
+              <h2 style="margin: 0; font-size: 1.5rem; display: flex; align-items: center; gap: 0.75rem; color: var(--ps-text-main);">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Items in Your Cart</span>
+              </h2>
+              <span class="badge-tag ps-cart-page-count" id="psCartPageItemCount">0 Items</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Items Container -->
+          <div id="psCartPageItemsContainer" class="ps-cart-page-items">
+            <!-- Dynamically populated by cart.js -->
+          </div>
+
+          <!-- Cart Bottom Actions: Continue Shopping & Clear Cart -->
+          <div class="ps-cart-page-bottom-actions" id="psCartPageBottomActions">
+            <a href="pricing-passes.html" class="ps-btn ps-btn-outline ps-btn-sm" style="border-color: var(--ps-border-color); color: var(--ps-text-main); display: inline-flex; align-items: center; gap: 0.5rem;">
+              &larr; Continue Shopping
+            </a>
+            <button type="button" class="ps-btn ps-btn-dark ps-btn-sm" id="psCartPageClearBtn" style="border: 1px solid var(--ps-border-color); color: #FFFFFF;">
+              Clear Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Sticky Order Summary & Proceed to Booking -->
+        <div class="ps-cart-page-sidebar">
+          <div class="ps-card ps-cart-summary-card">
+            <h3 style="margin-top: 0; font-size: 1.35rem; border-bottom: 2px solid var(--ps-yellow); padding-bottom: 0.75rem;">
+              Order Summary
+            </h3>
+
+            <div class="ps-cart-page-summary-rows">
+              <div class="ps-cart-summary-line">
+                <span>Items Subtotal:</span>
+                <strong id="psCartPageSubtotal">$0.00</strong>
+              </div>
+              <div class="ps-cart-summary-line" id="psCartPageDiscountRow" style="display: none;">
+                <span style="color: var(--ps-yellow);">15% Multi-Ticket VIP Discount:</span>
+                <strong style="color: var(--ps-yellow);" id="psCartPageDiscount">-$0.00</strong>
+              </div>
+              <div class="ps-cart-summary-line" id="psCartPagePromoRow" style="display: none;">
+                <span style="color: #4cd964;">Promo (<span id="psAppliedPromoCode">VIP10</span>):</span>
+                <strong style="color: #4cd964;" id="psCartPagePromoDiscount">-$0.00</strong>
+              </div>
+              <div class="ps-cart-summary-line">
+                <span>ASTM Safety &amp; Facility Fee:</span>
+                <strong style="color: #4cd964;">$0.00 (Included)</strong>
+              </div>
+              <div class="ps-cart-summary-total" style="margin-top: 1rem;">
+                <span>Total Due:</span>
+                <span class="price" id="psCartPageTotal">$0.00</span>
+              </div>
+            </div>
+
+            <!-- Promo Code Input -->
+            <div class="ps-promo-box" style="margin-top: 1.5rem; background: rgba(255,204,0,0.06); border: 1px dashed var(--ps-yellow); border-radius: var(--ps-radius-md); padding: 1rem;">
+              <label style="font-size: 0.85rem; font-weight: 800; display: block; margin-bottom: 0.4rem; color: var(--ps-text-main);">
+                🏷️ Have a Promo Code?
+              </label>
+              <div style="display: flex; gap: 0.5rem;">
+                <input type="text" id="psPromoInput" class="ps-form-control ps-form-control-sm" placeholder="Try VIP10 or SIBLING" style="text-transform: uppercase;">
+                <button type="button" id="psApplyPromoBtn" class="ps-btn ps-btn-sm ps-btn-dark" style="border: 1px solid var(--ps-yellow); color: var(--ps-yellow); white-space: nowrap;">
+                  Apply
+                </button>
+              </div>
+              <div id="psPromoMessage" style="font-size: 0.8rem; margin-top: 0.4rem; display: none;"></div>
+            </div>
+
+            <!-- Proceed to Booking CTA -->
+            <div style="margin-top: 1.5rem;">
+              <a href="booking.html" class="ps-btn ps-btn-primary ps-btn-block ps-btn-lg" id="psCartPageProceedBtn" style="font-weight: 800; text-align: center; justify-content: center; font-size: 1.1rem; padding: 0.95rem 1.5rem;">
+                Proceed to Booking &rarr;
+              </a>
+            </div>
+
+            <!-- Trust and Safety Badges -->
+            <div class="ps-cart-assurances" style="margin-top: 1.5rem; border-top: 1px solid var(--ps-border-color); padding-top: 1.25rem; font-size: 0.82rem; color: var(--ps-text-muted); display: flex; flex-direction: column; gap: 0.65rem;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="font-size: 1.1rem;">🔒</span>
+                <span><strong>Demo Booking Checkout:</strong> No live payment required for frontend demo</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="font-size: 1.1rem;">🛡️</span>
+                <span><strong>ASTM F2970-20 Certified</strong> Court, Netting &amp; Foam Safety</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="font-size: 1.1rem;">🔄</span>
+                <span><strong>Free Rescheduling:</strong> Change reservation date up to 72 hrs prior</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

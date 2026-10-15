@@ -1,0 +1,245 @@
+[
+  {
+    "category": "trampolines",
+    "imgSrc": "../assets/images/attractions/Mega%20Trampoline%20Arena/Mega_Trampoline_Arena_for_kids_20261013224655.jpg",
+    "imgAlt": "Mega Trampoline Arena",
+    "badge": "AGES 4+",
+    "num": 1,
+    "title": "Mega Trampoline Arena",
+    "desc": "Jump high, bounce freely, and enjoy energetic jumping challenges across our flagship court designed for jumpers of all ages."
+  },
+  {
+    "category": "climbing",
+    "imgSrc": "../assets/images/attractions/Ninja%20Warrior%20Course/Child_running_ninja_course_2K_20261013225811.jpg",
+    "imgAlt": "Ninja Warrior Course",
+    "badge": "AGES 6 - 15 YEARS",
+    "num": 2,
+    "title": "Ninja Warrior Course",
+    "desc": "Climb, crawl, balance, and conquer exciting obstacle challenges that test your grip, speed, and agility."
+  },
+  {
+    "category": "climbing",
+    "imgSrc": "../assets/images/attractions/Adventure%20Climbing%20Zone/Adventure_climbing_zone_for_chil%E2%80%A6_2K_20261013230351.jpg",
+    "imgAlt": "Adventure Climbing Zone",
+    "badge": "AGES 5 - 14 YEARS",
+    "num": 3,
+    "title": "Adventure Climbing Zone",
+    "desc": "Explore climbing frames, fun pathways, and exciting elevated play structures with 100% fail-safe auto-belay descenders."
+  },
+  {
+    "category": "softplay",
+    "imgSrc": "https://images.unsplash.com/photo-1750082828854-61333b7b9e95?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Super Slide Mountain",
+    "badge": "AGES 3 - 12 YEARS",
+    "num": 4,
+    "title": "Super Slide Mountain",
+    "desc": "Race down colorful slides and enjoy thrilling rides into the soft-play area with safe, padded deceleration lanes."
+  },
+  {
+    "category": "softplay",
+    "imgSrc": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Rainbow Ball Pit",
+    "badge": "AGES 1 - 6 YEARS",
+    "num": 5,
+    "title": "Rainbow Ball Pit",
+    "desc": "Dive into a colorful ball pool filled with playful activities, sensory chutes, and sparkling clean surprises."
+  },
+  {
+    "category": "climbing",
+    "imgSrc": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Sky-High Rope Adventure",
+    "badge": "AGES 6 - 14 YEARS",
+    "num": 6,
+    "title": "Sky-High Rope Adventure",
+    "desc": "Test balance and coordination on exciting rope bridges and net obstacles with continuous overhead lifeline protection."
+  },
+  {
+    "category": "trampolines",
+    "imgSrc": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Foam Pit Challenge",
+    "badge": "AGES 5+",
+    "num": 7,
+    "title": "Foam Pit Challenge",
+    "desc": "Jump into a soft foam landing zone and enjoy playful jumping challenges with zero-shock impact absorption."
+  },
+  {
+    "category": "interactive",
+    "imgSrc": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Laser Maze Mission",
+    "badge": "AGES 5+",
+    "num": 8,
+    "title": "Laser Maze Mission",
+    "desc": "Navigate through a light-based maze and complete exciting secret agent missions with live countdown timers."
+  },
+  {
+    "category": "interactive",
+    "imgSrc": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Interactive Play Arena",
+    "badge": "AGES 3+",
+    "num": 9,
+    "title": "Interactive Play Arena",
+    "desc": "Play movement-based games with interactive lights, projections, and real-time motion-tracking video challenges."
+  },
+  {
+    "category": "toddlers",
+    "imgSrc": "https://images.unsplash.com/photo-1566454544259-f4b94c3d758c?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Little Explorers Zone",
+    "badge": "AGES 6 MONTHS – 3 YEARS",
+    "num": 10,
+    "title": "Little Explorers Zone",
+    "desc": "A gentle adventure space with mini slides, tunnels, and soft-play activities designed specially for toddlers."
+  },
+  {
+    "category": "climbing",
+    "imgSrc": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Cargo Net Climber",
+    "badge": "AGES 4 - 12 YEARS",
+    "num": 11,
+    "title": "Cargo Net Climber",
+    "desc": "Climb through flexible net structures and discover new paths to explore high above the ground."
+  },
+  {
+    "category": "toddlers",
+    "imgSrc": "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Balance & Bounce Trail",
+    "badge": "AGES 3 - 9 YEARS",
+    "num": 12,
+    "title": "Balance & Bounce Trail",
+    "desc": "Hop across stepping stones, balance on beams, and complete fun movement trails that build motor coordination."
+  },
+  {
+    "category": "interactive",
+    "imgSrc": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Neon Glow Adventure",
+    "badge": "AGES 4+",
+    "num": 13,
+    "title": "Neon Glow Adventure",
+    "desc": "Experience a colorful neon play zone with glowing lights, UV blacklight cannons, and exciting evening activities."
+  },
+  {
+    "category": "trampolines",
+    "imgSrc": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Mini Sports Arena",
+    "badge": "AGES 4 - 14 YEARS",
+    "num": 14,
+    "title": "Mini Sports Arena",
+    "desc": "Enjoy mini basketball, target games, slam dunk runways, and friendly team competitions in an enclosed cage."
+  },
+  {
+    "category": "toddlers",
+    "imgSrc": "https://images.unsplash.com/photo-1780932333368-4995b2e14174?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Mystery Tunnel Quest",
+    "badge": "AGES 3 - 10 YEARS",
+    "num": 15,
+    "title": "Mystery Tunnel Quest",
+    "desc": "Crawl through winding tunnels and discover hidden routes in a playful maze filled with observation bubble domes."
+  },
+  {
+    "category": "climbing",
+    "imgSrc": "https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Spider Wall Climb",
+    "badge": "AGES 4 - 12 YEARS",
+    "num": 16,
+    "title": "Spider Wall Climb",
+    "desc": "Climb a padded, age-appropriate climbing wall wearing special sticky suits that let you stick right to the vertical surface."
+  },
+  {
+    "category": "trampolines",
+    "imgSrc": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Parkour Jump Zone",
+    "badge": "AGES 6 - 15 YEARS",
+    "num": 17,
+    "title": "Parkour Jump Zone",
+    "desc": "Navigate soft obstacles and jumping platforms designed to teach urban parkour and freerunning skills safely."
+  },
+  {
+    "category": "climbing",
+    "imgSrc": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Adventure Tower",
+    "badge": "AGES 4 - 14 YEARS",
+    "num": 18,
+    "title": "Adventure Tower",
+    "desc": "Explore multi-level climbing and sliding structures with 3 tiers of vertical obstacles and lookout platforms."
+  },
+  {
+    "category": "toddlers",
+    "imgSrc": "https://images.unsplash.com/photo-1780932333368-4995b2e14174?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Volcano Climb",
+    "badge": "AGES 3 - 10 YEARS",
+    "num": 19,
+    "title": "Volcano Climb",
+    "desc": "Climb a themed soft-play mountain featuring realistic vinyl rock slopes, climbing ropes, and an exit slide."
+  },
+  {
+    "category": "interactive",
+    "imgSrc": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Wipeout Challenge",
+    "badge": "AGES 6+",
+    "num": 20,
+    "title": "Wipeout Challenge",
+    "desc": "Test balance and timing on moving-style rotating obstacles in a thrilling last-one-standing challenge game."
+  },
+  {
+    "category": "trampolines",
+    "imgSrc": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Airbag Jump Zone",
+    "badge": "AGES 5+",
+    "num": 21,
+    "title": "Airbag Jump Zone",
+    "desc": "Experience supervised jumps onto a purpose-designed commercial stunt landing airbag with dual pressure chambers."
+  },
+  {
+    "category": "climbing",
+    "imgSrc": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Mini Zipline Adventure",
+    "badge": "AGES 4 - 12 YEARS",
+    "num": 22,
+    "title": "Mini Zipline Adventure",
+    "desc": "Enjoy a short, exhilarating ride on a properly installed children's zipline with staff-assisted launch and landing."
+  },
+  {
+    "category": "toddlers",
+    "imgSrc": "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Treasure Hunt Zone",
+    "badge": "AGES 3 - 10 YEARS",
+    "num": 23,
+    "title": "Treasure Hunt Zone",
+    "desc": "Solve clues, crack riddles, and find hidden treasures around the play area on a fun, cooperative family quest."
+  },
+  {
+    "category": "softplay",
+    "imgSrc": "https://images.unsplash.com/photo-1780932333368-4995b2e14174?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Soft Play Zone",
+    "badge": "AGES 2 - 8 YEARS",
+    "num": 24,
+    "title": "Soft Play Zone",
+    "desc": "Explore a giant multi-tier padded adventure maze filled with foam obstacles, spiral slides, and crawl-through tubes."
+  },
+  {
+    "category": "trampolines",
+    "imgSrc": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Extreme Dodgeball Arena",
+    "badge": "AGES 6+",
+    "num": 25,
+    "title": "Extreme Dodgeball Arena",
+    "desc": "Experience referee-bracketed dodgeball showdowns on high-tension sprung courts enclosed by rebound net walls."
+  },
+  {
+    "category": "toddlers",
+    "imgSrc": "https://images.unsplash.com/photo-1566454544259-f4b94c3d758c?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Toddler Soft Play Lagoon",
+    "badge": "AGES 0 - 4 YEARS",
+    "num": 26,
+    "title": "Toddler Soft Play Lagoon",
+    "desc": "A peaceful sensory wonderland with gentle foam mounds, shallow ball pools, and soft tunnels for toddlers under 4."
+  },
+  {
+    "category": "trampolines",
+    "imgSrc": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
+    "imgAlt": "Battle Beam Arena",
+    "badge": "AGES 5 - 15 YEARS",
+    "num": 27,
+    "title": "Battle Beam Arena",
+    "desc": "Challenge friends to an epic, giggly balance joust on suspended padded beams over a deep, zero-shock foam cube pit."
+  }
+]

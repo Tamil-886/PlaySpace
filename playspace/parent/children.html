@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Child Profiles & Waivers — Parent Portal | PlaySpace</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Top Navigation Bar for Parent Portal (No top bar, toggles inside navbar) -->
+  <header class="ps-header">
+    <div class="ps-container-fluid ps-navbar">
+      <div class="ps-flex ps-items-center ps-gap-md">
+        <a href="../index.html" class="ps-navbar-brand">
+          <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+        </a>
+        <span class="ps-badge ps-badge-yellow-outline" style="font-size: 0.75rem;">PARENT PORTAL</span>
+      </div>
+
+      <div class="ps-nav-actions">
+        <!-- LTR / RTL toggle right in nav bar -->
+        <button class="ps-lang-toggle" aria-label="Toggle Layout Direction">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span>RTL</span>
+        </button>
+
+        <!-- Dark Mode toggle right in nav bar -->
+        <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <a href="book-session.html" class="ps-btn ps-btn-primary ps-btn-sm">+ New Jump Booking</a>
+        <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm" data-action-logout>Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ps-dashboard-layout">
+    
+  <aside class="ps-dash-sidebar">
+    <nav class="ps-sidebar-nav">
+      
+    <a href="dashboard.html" class="ps-sidebar-link ">
+      <span>📊</span>
+      <span>Overview</span>
+    </a>
+  
+    <a href="children.html" class="ps-sidebar-link active">
+      <span>👶</span>
+      <span>Child Profiles & Waivers</span>
+    </a>
+  
+    <a href="book-session.html" class="ps-sidebar-link ">
+      <span>🎟️</span>
+      <span>Book Jump Session</span>
+    </a>
+  
+    <a href="my-bookings.html" class="ps-sidebar-link ">
+      <span>📅</span>
+      <span>My Bookings</span>
+    </a>
+  
+    <a href="birthday-booking.html" class="ps-sidebar-link ">
+      <span>🎂</span>
+      <span>Birthday Reservation</span>
+    </a>
+  
+    <a href="my-passes.html" class="ps-sidebar-link ">
+      <span>💳</span>
+      <span>Punch Pass Wallet</span>
+    </a>
+  
+    <a href="purchase-pass.html" class="ps-sidebar-link ">
+      <span>🛍️</span>
+      <span>Buy Passes & Packs</span>
+    </a>
+  
+    <a href="order-history.html" class="ps-sidebar-link ">
+      <span>🧾</span>
+      <span>Order History</span>
+    </a>
+  
+    <a href="payment-history.html" class="ps-sidebar-link ">
+      <span>💲</span>
+      <span>Payment Receipts</span>
+    </a>
+  
+    <a href="notifications.html" class="ps-sidebar-link ">
+      <span>🔔</span>
+      <span>Notifications</span>
+    </a>
+  
+    <a href="profile.html" class="ps-sidebar-link ">
+      <span>👤</span>
+      <span>Parent Profile</span>
+    </a>
+  
+    <a href="settings.html" class="ps-sidebar-link ">
+      <span>⚙️</span>
+      <span>Account Settings</span>
+    </a>
+  
+    </nav>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+      <a href="../index.html" class="ps-sidebar-link">
+        <span>🏠</span> <span>Return to Main Website</span>
+      </a>
+      <a href="../pages/login.html" class="ps-sidebar-link" data-action-logout>
+        <span>🚪</span> <span>Sign Out</span>
+      </a>
+    </div>
+  </aside>
+  
+    <main class="ps-dash-content">
+      
+  <div class="ps-dash-header">
+    <div>
+      <h2 style="margin: 0;">Child Profiles &amp; Safety Waivers</h2>
+      <p class="text-muted" style="margin: 0;">Manage your linked children and verify annual safety waiver validity.</p>
+    </div>
+    <button class="ps-btn ps-btn-primary" data-modal-target="#ps-modal-add-child">+ Add Child Profile</button>
+  </div>
+
+  <div class="ps-grid ps-grid-2">
+    <div class="ps-card" style="border: 2px solid var(--ps-border-color);">
+      <div class="ps-flex-between">
+        <span class="ps-badge">WAIVER ACTIVE</span>
+        <span style="font-size: 0.8rem; color: var(--ps-text-muted);">Signed: Oct 2026</span>
+      </div>
+      <div class="ps-flex ps-items-center ps-gap-md" style="margin: 1.5rem 0;">
+        <div class="ps-avatar-circle" style="width: 54px; height: 54px; font-size: 1.25rem;">LJ</div>
+        <div>
+          <h4 style="margin: 0;">Leo Jenkins</h4>
+          <span class="text-muted">Age 7 • Born April 12, 2019</span>
+        </div>
+      </div>
+      <div class="ps-flex-between" style="border-top: 1px solid var(--ps-border-color); padding-top: 1rem;">
+        <span style="font-size: 0.85rem; font-weight: 700;">Waiver valid through Oct 2027</span>
+        <button class="ps-btn ps-btn-outline-dark ps-btn-sm">Edit Profile</button>
+      </div>
+    </div>
+
+    <div class="ps-card" style="border: 2px solid var(--ps-border-color);">
+      <div class="ps-flex-between">
+        <span class="ps-badge">WAIVER ACTIVE</span>
+        <span style="font-size: 0.8rem; color: var(--ps-text-muted);">Signed: Oct 2026</span>
+      </div>
+      <div class="ps-flex ps-items-center ps-gap-md" style="margin: 1.5rem 0;">
+        <div class="ps-avatar-circle" style="width: 54px; height: 54px; font-size: 1.25rem;">MJ</div>
+        <div>
+          <h4 style="margin: 0;">Maya Jenkins</h4>
+          <span class="text-muted">Age 4 • Born August 25, 2022</span>
+        </div>
+      </div>
+      <div class="ps-flex-between" style="border-top: 1px solid var(--ps-border-color); padding-top: 1rem;">
+        <span style="font-size: 0.85rem; font-weight: 700;">Waiver valid through Oct 2027</span>
+        <button class="ps-btn ps-btn-outline-dark ps-btn-sm">Edit Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Child Modal -->
+  <div class="ps-modal-overlay" id="ps-modal-add-child">
+    <div class="ps-modal-box">
+      <button class="ps-modal-close" data-modal-close>&times;</button>
+      <h3>Add Child Profile</h3>
+      <p class="text-muted">Link a child to your parent account and authorize digital safety coverage.</p>
+      <form id="ps-add-child-form" style="margin-top: 1.5rem;">
+        <div class="ps-form-group">
+          <label class="ps-form-label">Child Full Name</label>
+          <input type="text" id="child-name" class="ps-form-control" data-type="name" required placeholder="e.g. Liam Jenkins">
+          <div class="ps-form-error">Child name must contain letters and spaces only.</div>
+        </div>
+        <div class="ps-form-group">
+          <label class="ps-form-label">Date of Birth</label>
+          <input type="date" id="child-dob" class="ps-form-control" required>
+          <div class="ps-form-error">Date of birth is required.</div>
+        </div>
+        <div class="ps-form-group">
+          <label class="ps-checkbox-label">
+            <input type="checkbox" class="ps-checkbox" required checked>
+            <span>I certify I am the parent/legal guardian and agree to the ASTM waiver.</span>
+          </label>
+        </div>
+        <button type="submit" class="ps-btn ps-btn-primary ps-btn-block">Save Child Profile</button>
+      </form>
+    </div>
+  </div>
+  
+    </main>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/rtl.js"></script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/authentication.js"></script>
+<script src="../assets/js/navigation.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/parent-dashboard.js"></script>
+</body>
+</html>

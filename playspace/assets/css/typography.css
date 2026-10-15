@@ -1,0 +1,108 @@
+/* ==========================================================================
+   PlaySpace - Typography
+   Strict 3-Color Hierarchy: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ps-font-sans);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: inherit;
+  margin-bottom: var(--ps-space-md);
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p {
+  margin-bottom: var(--ps-space-md);
+}
+
+p.lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Color Modifier Classes */
+.text-yellow {
+  color: var(--ps-yellow) !important;
+}
+
+.text-black {
+  color: var(--ps-black) !important;
+}
+
+.text-white {
+  color: var(--ps-white) !important;
+}
+
+.text-muted {
+  color: var(--ps-text-muted) !important;
+}
+
+.text-light-muted {
+  color: var(--ps-text-light-muted) !important;
+}
+
+/* Text Transform & Utilities */
+.text-uppercase { text-transform: uppercase; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: var(--ps-radius-full);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background-color: var(--ps-yellow);
+  color: var(--ps-black);
+  white-space: nowrap !important;
+}
+
+.badge-tag-dark {
+  background-color: var(--ps-black);
+  color: var(--ps-yellow);
+  border: 1px solid var(--ps-yellow);
+}

@@ -1,0 +1,106 @@
+/* ==========================================================================
+   PlaySpace - RTL (Right-to-Left) Stylesheet
+   Strict 3-Color Palette: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .ps-navbar {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+[dir="rtl"] .ps-navbar-brand {
+  text-align: right;
+  justify-content: flex-start;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+[dir="rtl"] .ps-navbar-brand .ps-brand-text,
+[dir="rtl"] .ps-navbar-brand .ps-brand-name {
+  text-align: right;
+}
+
+[dir="rtl"] .ps-nav-actions {
+  flex-direction: row;
+}
+
+[dir="rtl"] .ps-dropdown-menu {
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+
+[dir="rtl"] .ps-breadcrumb {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ps-breadcrumb .sep {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .ps-footer-col h5::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .ps-footer-vip-box::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .ps-back-to-top {
+  right: auto;
+  left: 24px;
+}
+
+[dir="rtl"] .ps-sticky-bar-close {
+  margin-left: 0;
+  margin-right: 0.25rem;
+}
+
+[dir="rtl"] .ps-footer-links a:hover {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+[dir="rtl"] .ps-hero-stat-floating {
+  left: auto;
+  right: -20px;
+}
+
+[dir="rtl"] select.ps-form-control {
+  background-position: left 1rem center;
+  padding-right: 1.15rem;
+  padding-left: 2.5rem;
+}
+
+[dir="rtl"] .ps-table {
+  text-align: right;
+}
+
+[dir="rtl"] .ps-dashboard-layout,
+[dir="rtl"] .ps-admin-layout {
+  grid-template-columns: 1fr 280px;
+}
+
+[dir="rtl"] .ps-dash-sidebar,
+[dir="rtl"] .ps-admin-sidebar {
+  border-right: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  order: 2;
+}
+
+[dir="rtl"] .ps-dash-content,
+[dir="rtl"] .ps-admin-content {
+  order: 1;
+}
+
+[dir="rtl"] .ps-schedule-event {
+  border-left: none;
+  border-right: 3px solid var(--ps-yellow);
+}

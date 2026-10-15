@@ -1,0 +1,130 @@
+/* ==========================================================================
+   PlaySpace - Forms & Form Controls
+   Strict 3-Color Palette: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+.ps-form-group {
+  margin-bottom: var(--ps-space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ps-form-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.ps-form-control {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  font-family: var(--ps-font-sans);
+  font-size: 0.95rem;
+  background-color: var(--ps-bg-card);
+  color: var(--ps-text-main);
+  border: 1.5px solid var(--ps-border-color);
+  border-radius: var(--ps-radius-md);
+  outline: none;
+  transition: border-color var(--ps-transition-fast), box-shadow var(--ps-transition-fast);
+}
+
+.ps-form-control:focus {
+  border-color: var(--ps-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.25);
+}
+
+.ps-form-control::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Dark variant inputs (e.g. inside dark sections or dark mode) */
+.ps-form-control-dark {
+  background-color: var(--ps-black);
+  color: var(--ps-white);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ps-form-control-dark::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.ps-form-control-dark:focus {
+  border-color: var(--ps-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.35);
+}
+
+textarea.ps-form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select.ps-form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+/* Checkboxes and Radios */
+.ps-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ps-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--ps-border-color);
+  border-radius: var(--ps-radius-sm);
+  background-color: var(--ps-bg-card);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: all var(--ps-transition-fast);
+}
+
+.ps-checkbox:checked {
+  background-color: var(--ps-yellow);
+  border-color: var(--ps-yellow);
+}
+
+.ps-checkbox:checked::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--ps-black);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.ps-form-help {
+  font-size: 0.8rem;
+  color: var(--ps-text-muted);
+}
+
+.ps-form-error {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e74c3c;
+  display: none;
+  margin-top: 0.35rem;
+  line-height: 1.4;
+}
+
+.is-invalid {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.25) !important;
+}
+
+.is-invalid + .ps-form-error,
+.is-invalid ~ .ps-form-error {
+  display: block;
+}

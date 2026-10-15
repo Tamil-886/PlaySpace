@@ -1,0 +1,94 @@
+/* ==========================================================================
+   PlaySpace - Design Tokens & Variables
+   Strict 3-Color Palette: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+:root {
+  /* Strict 3-Color Palette */
+  --ps-black: #000000;
+  --ps-white: #FFFFFF;
+  --ps-yellow: #FFCC00;
+  --ps-yellow-hover: #E6B800;
+  --ps-yellow-active: #CCA300;
+
+  /* Opacity Variations - Black */
+  --ps-black-90: rgba(0, 0, 0, 0.90);
+  --ps-black-80: rgba(0, 0, 0, 0.80);
+  --ps-black-60: rgba(0, 0, 0, 0.60);
+  --ps-black-40: rgba(0, 0, 0, 0.40);
+  --ps-black-20: rgba(0, 0, 0, 0.20);
+  --ps-black-10: rgba(0, 0, 0, 0.10);
+  --ps-black-05: rgba(0, 0, 0, 0.05);
+
+  /* Opacity Variations - White */
+  --ps-white-90: rgba(255, 255, 255, 0.90);
+  --ps-white-80: rgba(255, 255, 255, 0.80);
+  --ps-white-60: rgba(255, 255, 255, 0.60);
+  --ps-white-40: rgba(255, 255, 255, 0.40);
+  --ps-white-20: rgba(255, 255, 255, 0.20);
+  --ps-white-10: rgba(255, 255, 255, 0.10);
+  --ps-white-05: rgba(255, 255, 255, 0.05);
+
+  /* Opacity Variations - Yellow */
+  --ps-yellow-80: rgba(255, 204, 0, 0.80);
+  --ps-yellow-40: rgba(255, 204, 0, 0.40);
+  --ps-yellow-20: rgba(255, 204, 0, 0.20);
+  --ps-yellow-10: rgba(255, 204, 0, 0.10);
+  --ps-yellow-05: rgba(255, 204, 0, 0.05);
+
+  /* Semantic Theme Tokens - Default (Light Content / Black Navbar & Footer) */
+  --ps-bg-main: #FFFFFF;
+  --ps-bg-surface: #FFFFFF;
+  --ps-bg-surface-alt: #F8F9FA;
+  --ps-bg-card: #FFFFFF;
+  --ps-bg-header: #000000;
+  --ps-bg-footer: #000000;
+  --ps-bg-alt: #F8F9FA;
+
+  --ps-text-main: #000000;
+  --ps-text-color: #000000;
+  --ps-text-muted: rgba(0, 0, 0, 0.70);
+  --ps-text-light: #FFFFFF;
+  --ps-text-light-muted: rgba(255, 255, 255, 0.75);
+  --ps-text-accent: #FFCC00;
+
+  --ps-border-color: rgba(0, 0, 0, 0.12);
+  --ps-border-color-dark: rgba(255, 255, 255, 0.15);
+  --ps-border-yellow: #FFCC00;
+
+  /* Typography */
+  --ps-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --ps-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+  /* Spacing */
+  --ps-space-xs: 0.25rem;  /* 4px */
+  --ps-space-sm: 0.5rem;   /* 8px */
+  --ps-space-md: 1rem;     /* 16px */
+  --ps-space-lg: 1.5rem;   /* 24px */
+  --ps-space-xl: 2rem;     /* 32px */
+  --ps-space-2xl: 3rem;    /* 48px */
+  --ps-space-3xl: 4.5rem;  /* 72px */
+  --ps-space-4xl: 6rem;    /* 96px */
+
+  /* Border Radii */
+  --ps-radius-sm: 4px;
+  --ps-radius-md: 8px;
+  --ps-radius-lg: 14px;
+  --ps-radius-xl: 22px;
+  --ps-radius-full: 9999px;
+
+  /* Elevation / Shadows (Strictly monochrome rgba) */
+  --ps-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --ps-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.10);
+  --ps-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.14);
+  --ps-shadow-yellow: 0 8px 24px rgba(255, 204, 0, 0.35);
+
+  /* Transitions */
+  --ps-transition-fast: 150ms ease;
+  --ps-transition-base: 250ms ease;
+  --ps-transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Container Widths */
+  --ps-container-max: 1440px;
+  --ps-header-height: 80px;
+}

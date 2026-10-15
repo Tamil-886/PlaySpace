@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Birthday Party — PlaySpace</title>
+  <meta name="description" content="Reserve an unforgettable kids birthday party celebration at PlaySpace. Choose your party package, date, timeslot, theme, and food options.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .ps-party-pkg-card {
+      border: 2px solid var(--ps-border-color);
+      border-radius: var(--ps-radius-lg);
+      padding: 1.25rem;
+      background: var(--ps-bg-card);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .ps-party-pkg-card:hover {
+      border-color: #FFCC00;
+      transform: translateY(-2px);
+    }
+    .ps-party-pkg-card.selected {
+      border-color: #FFCC00;
+      background: rgba(255, 204, 0, 0.08);
+      box-shadow: 0 0 0 2px #FFCC00;
+    }
+    .ps-time-slot-pill {
+      border: 1.5px solid var(--ps-border-color);
+      border-radius: 999px;
+      padding: 0.5rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      background: var(--ps-bg-card);
+      color: var(--ps-text-main);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .ps-time-slot-pill:hover {
+      border-color: #FFCC00;
+      color: #000;
+      background: #FFCC00;
+    }
+    .ps-time-slot-pill.active {
+      border-color: #FFCC00;
+      background: #FFCC00;
+      color: #000000;
+    }
+    .ps-counter-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid var(--ps-border-color);
+      background: var(--ps-bg-card);
+      color: var(--ps-text-main);
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .ps-counter-btn:hover {
+      background: #FFCC00;
+      color: #000000;
+      border-color: #FFCC00;
+    }
+
+    /* Birthday booking form refresh */
+    #psPartyBookingForm .ps-party-form-section {
+      border: 1px solid var(--ps-border-color);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.045);
+      background: var(--ps-bg-card);
+    }
+
+    #psPartyBookingForm .ps-party-form-section > h3 {
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--ps-border-color);
+      line-height: 1.35;
+    }
+
+    #psPartyBookingForm .ps-party-step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 2.1rem;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+      background: #FFCC00;
+      color: #000000 !important;
+      font-size: 1rem !important;
+      font-weight: 900;
+    }
+
+    #psPartyBookingForm .ps-party-form-section .ps-grid {
+      align-items: start;
+    }
+
+    #psPartyBookingForm .ps-party-form-section .ps-form-group {
+      min-width: 0;
+      gap: 0.5rem;
+      margin-bottom: 1.15rem;
+    }
+
+    #psPartyBookingForm .ps-party-form-section .ps-label {
+      color: var(--ps-text-main);
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    #psPartyBookingForm .ps-party-form-section .ps-input,
+    #psPartyBookingForm .ps-party-form-section .ps-select,
+    #psPartyBookingForm .ps-party-form-section .ps-textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      min-height: 46px;
+      box-sizing: border-box;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--ps-border-color);
+      border-radius: 10px;
+      background-color: var(--ps-bg-card);
+      color: var(--ps-text-main);
+      font: inherit;
+      font-size: 0.92rem;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    #psPartyBookingForm .ps-party-form-section .ps-input:focus,
+    #psPartyBookingForm .ps-party-form-section .ps-select:focus,
+    #psPartyBookingForm .ps-party-form-section .ps-textarea:focus {
+      border-color: #D9AD00;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.22);
+    }
+
+    #psPartyBookingForm .ps-party-form-section .ps-textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    #psPartyBookingForm .ps-party-form-section .ps-form-hint {
+      color: var(--ps-text-muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    #psPartyBookingForm .ps-party-counter {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      min-height: 42px;
+    }
+
+    #psPartyBookingForm .ps-party-counter .ps-counter-btn {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+    }
+
+    #psPartyBookingForm .ps-party-counter .ps-input {
+      flex: 0 0 76px;
+      min-height: 40px;
+      padding: 0.4rem;
+      border-radius: 9px;
+    }
+
+    #psPartyBookingForm .ps-party-counter-note {
+      color: var(--ps-text-muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    #psPartyBookingForm .ps-party-timeslots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    #psPartyBookingForm .ps-time-slot-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.55rem 0.9rem;
+      font-size: 0.82rem;
+      line-height: 1.3;
+    }
+
+    #psPartyBookingForm .ps-party-addon-panel {
+      padding: 1.15rem 1.25rem !important;
+      border-radius: 12px !important;
+      background: var(--ps-bg-surface-alt, #F8F9FA) !important;
+    }
+
+    #psPartyBookingForm .ps-party-addon-option {
+      display: flex;
+      align-items: flex-start !important;
+      gap: 0.75rem !important;
+      color: var(--ps-text-main);
+      font-size: 0.86rem !important;
+      line-height: 1.5;
+    }
+
+    #psPartyBookingForm .ps-party-addon-option input[type="checkbox"] {
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      margin: 0.15rem 0 0;
+      accent-color: #FFCC00;
+    }
+
+    #psPartyBookingForm .ps-party-addon-option span {
+      min-width: 0;
+    }
+
+    @media (max-width: 768px) {
+      #psPartyBookingForm .ps-party-form-section {
+        padding: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+      }
+
+      #psPartyBookingForm .ps-party-form-section > h3 {
+        align-items: flex-start;
+        font-size: 1.08rem !important;
+      }
+
+      #psPartyBookingForm .ps-party-timeslots {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #psPartyBookingForm .ps-time-slot-pill {
+        padding-inline: 0.55rem;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #psPartyBookingForm .ps-party-form-section {
+        padding: 1rem !important;
+      }
+
+      #psPartyBookingForm .ps-party-timeslots {
+        grid-template-columns: 1fr;
+      }
+
+      #psPartyBookingForm .ps-party-counter {
+        gap: 0.45rem;
+      }
+
+      #psPartyBookingForm .ps-party-counter-note {
+        flex-basis: 100%;
+        padding-left: 0.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+<header class="ps-header">
+  <div class="ps-container ps-navbar">
+    <a href="../index.html" class="ps-navbar-brand">
+      <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+    </a>
+
+    <nav class="ps-nav-menu">
+      <!-- 1. Home -->
+      <div class="ps-nav-item">
+        <a href="../index.html" class="ps-nav-link ">Home <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../index.html" class="ps-dropdown-item">Homepage 1 (Main)</a>
+          <a href="../home-2.html" class="ps-dropdown-item">Homepage 2 (Adventure)</a>
+        </div>
+      </div>
+
+      <!-- 2. About -->
+      <div class="ps-nav-item">
+        <a href="../pages/about.html" class="ps-nav-link ">About</a>
+      </div>
+
+      <!-- 3. Attractions -->
+      <div class="ps-nav-item">
+        <a href="../pages/attractions.html" class="ps-nav-link ">Attractions</a>
+      </div>
+
+      <!-- 4. Pricing & Passes -->
+      <div class="ps-nav-item">
+        <a href="../pages/pricing-passes.html" class="ps-nav-link ">Pricing &amp; Passes</a>
+      </div>
+
+      <!-- 5. Birthday Parties -->
+      <div class="ps-nav-item">
+        <a href="../pages/birthday-parties.html" class="ps-nav-link active">Birthday Parties <span class="arrow">▾</span></a>
+        <div class="ps-dropdown-menu">
+          <a href="../pages/birthday-parties.html" class="ps-dropdown-item">Birthday Packages</a>
+          <a href="../pages/birthday-details.html" class="ps-dropdown-item">VIP Glow Party</a>
+          <a href="../pages/group-events.html" class="ps-dropdown-item">Group Events &amp; Field Trips</a>
+        </div>
+      </div>
+
+      <!-- 6. Gallery -->
+      <div class="ps-nav-item">
+        <a href="../pages/gallery.html" class="ps-nav-link ">Gallery</a>
+      </div>
+
+      <!-- 7. Dashboard -->
+      <div class="ps-nav-item">
+        <a href="../parent/dashboard.html" class="ps-nav-link ">Dashboard</a>
+      </div>
+
+      <!-- 8. Blog -->
+      <div class="ps-nav-item">
+        <a href="../pages/blog.html" class="ps-nav-link ">Blog</a>
+      </div>
+
+      <!-- 9. Contact -->
+      <div class="ps-nav-item">
+        <a href="../pages/contact.html" class="ps-nav-link ">Contact</a>
+      </div>
+
+      <!-- 10. Sign In / Account -->
+      <div class="ps-nav-item ps-nav-item-mobile-only">
+        <a href="../pages/login.html" class="ps-nav-link ps-nav-auth-btn ">Sign In</a>
+      </div>
+    </nav>
+
+    <div class="ps-nav-actions">
+      <!-- LTR / RTL Switcher -->
+      <button class="ps-lang-toggle" aria-label="Toggle Layout Direction" title="Switch between LTR and RTL">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span>RTL</span>
+      </button>
+
+      <!-- Dark Mode Switcher -->
+      <button class="ps-theme-toggle ps-btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <!-- Cart Button directly in Nav Bar -->
+      <button class="ps-cart-toggle ps-btn-icon position-relative" aria-label="Shopping Cart" title="View Cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="ps-cart-badge">0</span>
+      </button>
+
+      <!-- Sign In Option -->
+      <a href="../pages/login.html" class="ps-btn ps-btn-outline ps-btn-sm ps-nav-auth-btn">Sign In</a>
+
+      <!-- Primary Booking CTA -->
+      <a href="booking.html" class="ps-btn ps-btn-primary ps-btn-sm">Book Jump</a>
+
+      <button class="ps-mobile-toggle" aria-label="Open Mobile Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Banner / Breadcrumbs -->
+  <section class="ps-page-banner">
+    <div class="ps-container">
+      <div class="ps-breadcrumb">
+        <a href="../index.html">Home</a> <span class="sep">/</span> <a href="birthday-parties.html">Birthday Parties</a> <span class="sep">/</span> <span>Party Booking</span>
+      </div>
+      <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+        <span class="badge-tag">STRESS-FREE CELEBRATION</span>
+        <span class="ps-badge" style="background-color: #FFCC00; color: #000000; font-weight: 800;">100% HOSTED &amp; MANAGED</span>
+      </div>
+      <h1 style="color: #FFFFFF; margin: 0; font-size: 2.2rem;">Book Your Birthday Party</h1>
+      <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 740px; margin: 0.75rem 0 0 0; line-height: 1.6;">
+        Choose your celebration package, party date, themed decorations, and food choices. We handle all planning, setup, entertainment, and cleanup!
+      </p>
+    </div>
+  </section>
+
+  <!-- Standalone Birthday Party Booking Section -->
+  <section class="ps-section ps-booking-section">
+    <div class="ps-container">
+
+      <!-- Form Validation Error Alert -->
+      <div id="psPartyValidationAlert" class="ps-alert ps-alert-danger" style="display: none; background: #fff3f3; border: 2px solid #e74c3c; border-radius: var(--ps-radius-md); padding: 1rem 1.25rem; margin-bottom: 2rem; color: #c0392b; font-weight: 700; font-size: 0.95rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.4rem;">⚠️</span>
+          <div id="psPartyAlertMessage">Please complete all required party booking fields before confirming your celebration.</div>
+        </div>
+      </div>
+
+      <!-- Successful Booking Confirmation View (displayed upon successful submit) -->
+      <div id="psPartySuccessView" style="display: none; max-width: 820px; margin: 0 auto; text-align: center;">
+        <div class="ps-card" style="padding: 3rem 2rem; border: 2px solid var(--ps-yellow); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 50%; background: var(--ps-yellow); color: #000; font-size: 2.5rem; margin-bottom: 1.25rem; font-weight: 900; box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);">
+            🎂
+          </div>
+          <h2 style="font-size: 2.2rem; margin: 0 0 0.75rem 0; color: var(--ps-text-main);">Birthday Party Booking Completed Successfully!</h2>
+          <p style="font-size: 1.15rem; color: var(--ps-text-muted); max-width: 620px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+            Your celebration has been reserved successfully! Our Senior Event Coordinator will reach out within 24 hours to finalize all setup details. Thank you for choosing PLAYSPACE!
+          </p>
+
+          <div style="display: inline-block; background: rgba(255, 204, 0, 0.15); border: 1.5px solid var(--ps-yellow); padding: 0.5rem 1.25rem; border-radius: 20px; margin-bottom: 2rem;">
+            <span style="font-size: 0.85rem; font-weight: 800; color: var(--ps-text-muted);">BOOKING REFERENCE: </span>
+            <strong id="partySuccessRef" style="font-size: 1.1rem; color: var(--ps-text-main); margin-left: 0.25rem;">#PS-PARTY-5892</strong>
+          </div>
+
+          <!-- Booking Summary Table -->
+          <div style="border: 1px solid var(--ps-border-color); border-radius: var(--ps-radius-lg); overflow: hidden; margin-bottom: 2rem; text-align: left;">
+            <table class="ps-table" style="margin: 0; width: 100%;">
+              <tbody>
+                <tr>
+                  <th style="width: 35%; background: var(--ps-bg-card);">Selected Package</th>
+                  <td id="partySuccessPackage"><strong>Glow Adventure VIP Birthday Party</strong></td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Child's Name &amp; Birthday</th>
+                  <td id="partySuccessChild">Leo Jenkins (Turning 7)</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Party Date</th>
+                  <td id="partySuccessDate">Saturday, Oct 24, 2026</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Time Slot</th>
+                  <td id="partySuccessTime">1:00 PM - 3:00 PM</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Number of Children</th>
+                  <td id="partySuccessChildren">12 Jumpers</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Number of Adults</th>
+                  <td id="partySuccessAdults">6 Adults (Free Spectator Lounge)</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Parent Contact Details</th>
+                  <td id="partySuccessParent">Sarah Jenkins &bull; sarah.jenkins@example.com &bull; (555) 234-5678</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Food Preferences</th>
+                  <td id="partySuccessFood">Pepperoni &amp; Cheese Pizzas, Fruit Platter</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card);">Decoration Theme</th>
+                  <td id="partySuccessTheme">Neon Glow Blacklight Cyberpunk</td>
+                </tr>
+                <tr>
+                  <th style="background: var(--ps-bg-card); font-size: 1.1rem;">Total Price</th>
+                  <td><strong id="partySuccessTotal" style="font-size: 1.3rem; color: var(--ps-yellow);">$449.00</strong> <span style="font-size: 0.85rem; color: var(--ps-text-muted);">(Demo Checkout &bull; No Deposit Charged)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="../index.html" class="ps-btn ps-btn-primary ps-btn-lg" style="font-weight: 800;">
+              🏠 Back to Home
+            </a>
+            <a href="birthday-parties.html" class="ps-btn ps-btn-outline ps-btn-lg" style="border-color: var(--ps-border-color); color: var(--ps-text-main);">
+              🎂 View Party Packages
+            </a>
+            <button type="button" class="ps-btn ps-btn-dark ps-btn-lg" onclick="window.print()">
+              🖨️ Print Confirmation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Booking Form & Summary Container -->
+      <div id="psPartyFormView" class="ps-grid ps-grid-3" style="gap: 2.5rem; align-items: start;">
+        
+        <!-- Left 2 Cols: Form -->
+        <div style="grid-column: span 2;">
+          <form id="psPartyBookingForm" novalidate>
+
+            <!-- 1. Select Party Package -->
+            <div class="ps-card" style="padding: 1.75rem; margin-bottom: 2rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+                <h3 style="margin: 0; font-size: 1.25rem; display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #FFCC00; font-size: 1.4rem;">1.</span> Select Birthday Party Package <span style="color: #e74c3c;">*</span>
+                </h3>
+                <span class="text-muted" style="font-size: 0.82rem;">All packages include 100% clean-up &amp; dedicated host</span>
+              </div>
+
+              <div class="ps-grid ps-grid-3" style="gap: 1rem;" id="partyPackageList">
+                
+                <!-- Package 1: Basic -->
+                <div class="ps-party-pkg-card" data-pkg-id="party-basic" data-price="299" data-base-kids="10" data-extra-rate="22" onclick="selectPartyPackage('party-basic')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.4rem;">🎈</span>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.72rem;">VALUE</span>
+                  </div>
+                  <h4 style="margin: 0 0 0.35rem 0; font-size: 1.05rem; color: var(--ps-text-main);">Basic Bouncer</h4>
+                  <div style="font-size: 1.25rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.5rem;">
+                    $299 <span style="font-size: 0.8rem; font-weight: 500; color: var(--ps-text-muted);">/ up to 10 kids</span>
+                  </div>
+                  <ul style="padding-left: 1.1rem; margin: 0; font-size: 0.82rem; color: var(--ps-text-muted); line-height: 1.5;">
+                    <li>90 min Jump Court Access</li>
+                    <li>45 min Private Party Room</li>
+                    <li>2 Large Cheese Pizzas</li>
+                    <li>Dedicated Party Host</li>
+                  </ul>
+                </div>
+
+                <!-- Package 2: VIP Glow (Default) -->
+                <div class="ps-party-pkg-card selected" data-pkg-id="party-vip" data-price="449" data-base-kids="15" data-extra-rate="25" onclick="selectPartyPackage('party-vip')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.4rem;">✨</span>
+                    <span class="ps-badge" style="background: #FFCC00; color: #000; font-size: 0.72rem; font-weight: 800;">MOST POPULAR</span>
+                  </div>
+                  <h4 style="margin: 0 0 0.35rem 0; font-size: 1.05rem; color: var(--ps-text-main);">VIP Glow Adventure</h4>
+                  <div style="font-size: 1.25rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.5rem;">
+                    $449 <span style="font-size: 0.8rem; font-weight: 500; color: var(--ps-text-muted);">/ up to 15 kids</span>
+                  </div>
+                  <ul style="padding-left: 1.1rem; margin: 0; font-size: 0.82rem; color: var(--ps-text-muted); line-height: 1.5;">
+                    <li>120 min All-Park + Glow Jump</li>
+                    <li>60 min Neon Blacklight Suite</li>
+                    <li>3 Large Pizzas + Pitchers</li>
+                    <li>Glow Swag &amp; Favor Bags</li>
+                  </ul>
+                </div>
+
+                <!-- Package 3: Ultimate Takeover -->
+                <div class="ps-party-pkg-card" data-pkg-id="party-ultimate" data-price="699" data-base-kids="25" data-extra-rate="28" onclick="selectPartyPackage('party-ultimate')">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.4rem;">👑</span>
+                    <span class="ps-badge ps-badge-dark" style="font-size: 0.72rem; border: 1px solid #FFCC00; color: #FFCC00;">PREMIUM</span>
+                  </div>
+                  <h4 style="margin: 0 0 0.35rem 0; font-size: 1.05rem; color: var(--ps-text-main);">Ultimate Takeover</h4>
+                  <div style="font-size: 1.25rem; font-weight: 900; color: var(--ps-text-main); margin-bottom: 0.5rem;">
+                    $699 <span style="font-size: 0.8rem; font-weight: 500; color: var(--ps-text-muted);">/ up to 25 kids</span>
+                  </div>
+                  <ul style="padding-left: 1.1rem; margin: 0; font-size: 0.82rem; color: var(--ps-text-muted); line-height: 1.5;">
+                    <li>Unlimited Jump All Facility</li>
+                    <li>Full VIP Suite for 2.5 hrs</li>
+                    <li>5 Pizzas + Ice Cream Feast</li>
+                    <li>Mascot Visit &amp; T-Shirt</li>
+                  </ul>
+                </div>
+
+              </div>
+              <input type="hidden" id="selectedPackageId" name="selectedPackageId" value="party-vip">
+            </div>
+
+            <!-- 2. Birthday Child & Guest Details -->
+            <div class="ps-card ps-party-form-section" style="padding: 1.75rem; margin-bottom: 2rem;">
+              <h3 style="margin: 0 0 1.25rem 0; font-size: 1.25rem; display: flex; align-items: center; gap: 8px;">
+                <span class="ps-party-step-number" style="color: #FFCC00; font-size: 1.4rem;">2.</span> Birthday Child &amp; Guest Counts
+              </h3>
+
+              <div class="ps-grid ps-grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyChildName">Birthday Child's Full Name <span style="color: #e74c3c;">*</span></label>
+                  <input type="text" id="partyChildName" class="ps-input" data-type="name" placeholder="e.g. Leo Jenkins" required>
+                  <div class="ps-form-error" id="partyChildNameError">Child name must contain letters and spaces only.</div>
+                </div>
+
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyChildAge">Child's Turning Age <span style="color: #e74c3c;">*</span></label>
+                  <input type="number" id="partyChildAge" class="ps-input" data-type="age" placeholder="e.g. 7" min="1" max="17" required>
+                  <div class="ps-form-error" id="partyChildAgeError">Age must be a valid number between 1 and 17.</div>
+                </div>
+              </div>
+
+              <div class="ps-grid ps-grid-2" style="gap: 1.25rem;">
+                <!-- Number of Children -->
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyChildrenCount">Number of Children (Jumpers) <span style="color: #e74c3c;">*</span></label>
+                  <div class="ps-party-counter" style="display: flex; align-items: center; gap: 0.75rem;">
+                    <button type="button" class="ps-counter-btn" onclick="stepPartyChildren(-1)">−</button>
+                    <input type="number" id="partyChildrenCount" class="ps-input text-center" style="width: 80px; font-weight: 800; font-size: 1.1rem;" value="15" min="5" max="60" onchange="updatePartyPrice()">
+                    <button type="button" class="ps-counter-btn" onclick="stepPartyChildren(1)">+</button>
+                    <span class="text-muted ps-party-counter-note" style="font-size: 0.85rem;" id="partyKidsBaseNote">15 included in VIP</span>
+                  </div>
+                </div>
+
+                <!-- Number of Adults -->
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyAdultsCount">Number of Adults (Spectators)</label>
+                  <div class="ps-party-counter" style="display: flex; align-items: center; gap: 0.75rem;">
+                    <button type="button" class="ps-counter-btn" onclick="stepPartyAdults(-1)">−</button>
+                    <input type="number" id="partyAdultsCount" class="ps-input text-center" style="width: 80px; font-weight: 800; font-size: 1.1rem;" value="4" min="1" max="50">
+                    <button type="button" class="ps-counter-btn" onclick="stepPartyAdults(1)">+</button>
+                    <span class="text-muted ps-party-counter-note" style="font-size: 0.85rem;">FREE Spectator Access</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Party Date & Available Time Slot -->
+            <div class="ps-card ps-party-form-section" style="padding: 1.75rem; margin-bottom: 2rem;">
+              <h3 style="margin: 0 0 1.25rem 0; font-size: 1.25rem; display: flex; align-items: center; gap: 8px;">
+                <span class="ps-party-step-number" style="color: #FFCC00; font-size: 1.4rem;">3.</span> Party Date &amp; Available Time Slot <span style="color: #e74c3c;">*</span>
+              </h3>
+
+              <div class="ps-grid ps-grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyDate">Party Date <span style="color: #e74c3c;">*</span></label>
+                  <input type="date" id="partyDate" class="ps-input" required>
+                  <div class="ps-form-hint" style="color: #e74c3c; display: none;" id="partyDateError">Please select a party date.</div>
+                </div>
+
+                <div class="ps-form-group">
+                  <label class="ps-label">Select Available Time Slot <span style="color: #e74c3c;">*</span></label>
+                  <div class="ps-party-timeslots" style="display: flex; flex-wrap: wrap; gap: 0.5rem;" id="partyTimeSlotContainer">
+                    <div class="ps-time-slot-pill" data-time="10:00 AM - 12:00 PM" onclick="selectPartyTime(this)">10:00 AM - 12:00 PM</div>
+                    <div class="ps-time-slot-pill active" data-time="1:00 PM - 3:00 PM" onclick="selectPartyTime(this)">1:00 PM - 3:00 PM</div>
+                    <div class="ps-time-slot-pill" data-time="3:30 PM - 5:30 PM" onclick="selectPartyTime(this)">3:30 PM - 5:30 PM</div>
+                    <div class="ps-time-slot-pill" data-time="6:00 PM - 8:00 PM" onclick="selectPartyTime(this)">6:00 PM - 8:00 PM (Glow)</div>
+                  </div>
+                  <input type="hidden" id="selectedPartyTime" value="1:00 PM - 3:00 PM">
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Food Preferences & Decoration Options -->
+            <div class="ps-card ps-party-form-section" style="padding: 1.75rem; margin-bottom: 2rem;">
+              <h3 style="margin: 0 0 1.25rem 0; font-size: 1.25rem; display: flex; align-items: center; gap: 8px;">
+                <span class="ps-party-step-number" style="color: #FFCC00; font-size: 1.4rem;">4.</span> Food Preferences &amp; Decoration Theme
+              </h3>
+
+              <div class="ps-grid ps-grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyFood">Included Food &amp; Pizza Choices</label>
+                  <select id="partyFood" class="ps-select">
+                    <option value="Pepperoni &amp; Mozzarella Cheese Pizzas (Half &amp; Half)">Pepperoni &amp; Mozzarella Cheese Pizzas (Half &amp; Half)</option>
+                    <option value="All Cheese Pizzas (Vegetarian Friendly)">All Cheese Pizzas (Vegetarian Friendly)</option>
+                    <option value="All Pepperoni Pizzas">All Pepperoni Pizzas</option>
+                    <option value="Gluten-Free Crust + Vegan Cheese Option">Gluten-Free Crust + Vegan Cheese Option</option>
+                    <option value="Pizza + Fresh Fruit &amp; Veggie Platters">Pizza + Fresh Fruit &amp; Veggie Platters</option>
+                  </select>
+                  <div class="ps-form-hint">You may also bring your own commercially baked celebration cake or cupcakes.</div>
+                </div>
+
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyTheme">Party Decoration Theme</label>
+                  <select id="partyTheme" class="ps-select">
+                    <option value="Neon Glow Blacklight Cyberpunk">Neon Glow Blacklight Cyberpunk (Recommended)</option>
+                    <option value="Classic Yellow &amp; Black PLAYSPACE">Classic Yellow &amp; Black PLAYSPACE</option>
+                    <option value="Superhero High-Flying Arena">Superhero High-Flying Arena</option>
+                    <option value="Princess &amp; Magic Kingdom Fantasy">Princess &amp; Magic Kingdom Fantasy</option>
+                    <option value="Jungle Safari Adventure">Jungle Safari Adventure</option>
+                  </select>
+                  <div class="ps-form-hint">Table runners, paperware, banners, and balloons included.</div>
+                </div>
+              </div>
+
+              <!-- Add-ons -->
+              <div class="ps-party-addon-panel" style="background: var(--ps-bg-surface-alt, rgba(0,0,0,0.02)); border: 1px solid var(--ps-border-color); border-radius: var(--ps-radius-md); padding: 1rem;">
+                <span style="font-size: 0.88rem; font-weight: 800; color: var(--ps-text-main); display: block; margin-bottom: 0.75rem;">Optional Party Add-Ons:</span>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                  <label class="ps-party-addon-option" style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; cursor: pointer;">
+                    <input type="checkbox" id="partyAddonArcade" value="60" onchange="updatePartyPrice()">
+                    <span>🕹️ <strong>Arcade Power-Up Boost:</strong> 100 Arcade Game Tokens (+$60.00)</span>
+                  </label>
+                  <label class="ps-party-addon-option" style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; cursor: pointer;">
+                    <input type="checkbox" id="partyAddonFavors" value="45" onchange="updatePartyPrice()">
+                    <span>✨ <strong>LED Glow Favor Packs:</strong> Light-up glasses &amp; glow wand packs (+$45.00)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Additional Requirements / Notes -->
+              <div class="ps-form-group" style="margin-top: 1.25rem;">
+                <label class="ps-label" for="partyNotes">Special Dietary Requirements / Additional Notes</label>
+                <textarea id="partyNotes" class="ps-textarea" rows="2" placeholder="e.g. Peanut allergy, request room closer to toddler area, bringing own themed cake..."></textarea>
+              </div>
+            </div>
+
+            <!-- 5. Parent Contact Details -->
+            <div class="ps-card ps-party-form-section" style="padding: 1.75rem;">
+              <h3 style="margin: 0 0 1.25rem 0; font-size: 1.25rem; display: flex; align-items: center; gap: 8px;">
+                <span class="ps-party-step-number" style="color: #FFCC00; font-size: 1.4rem;">5.</span> Parent / Host Contact Details <span style="color: #e74c3c;">*</span>
+              </h3>
+
+              <div class="ps-grid ps-grid-3" style="gap: 1rem;">
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyParentName">Parent / Host Name <span style="color: #e74c3c;">*</span></label>
+                  <input type="text" id="partyParentName" class="ps-input" data-type="name" placeholder="e.g. Ranjith Kumar" required>
+                  <div class="ps-form-error" id="partyParentNameError">Name must contain letters and spaces only.</div>
+                </div>
+
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyParentEmail">Email Address <span style="color: #e74c3c;">*</span></label>
+                  <input type="email" id="partyParentEmail" class="ps-input" data-type="email" placeholder="e.g. ranjith@gmail.com" required>
+                  <div class="ps-form-error" id="partyParentEmailError">Valid email with @ and domain required.</div>
+                </div>
+
+                <div class="ps-form-group">
+                  <label class="ps-label" for="partyParentPhone">Phone Number <span style="color: #e74c3c;">*</span></label>
+                  <input type="tel" id="partyParentPhone" class="ps-input" data-type="mobile" placeholder="e.g. 9876543210" maxlength="10" required>
+                  <div class="ps-form-error" id="partyParentPhoneError">Mobile number must contain exactly 10 digits.</div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Right 1 Col: Live Price Summary & Submit -->
+        <div>
+          <div class="ps-card" style="position: sticky; top: 100px; padding: 1.75rem; border: 2px solid var(--ps-border-color); box-shadow: var(--ps-shadow-md);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--ps-border-color);">
+              <h3 style="margin: 0; font-size: 1.2rem; color: var(--ps-text-main);">Party Summary</h3>
+              <span class="ps-badge" style="background: #FFCC00; color: #000; font-weight: 800;">LIVE QUOTE</span>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <div style="font-size: 0.85rem; color: var(--ps-text-muted); margin-bottom: 0.25rem;">Selected Package</div>
+              <div style="font-weight: 800; font-size: 1.1rem; color: var(--ps-text-main);" id="summaryPkgTitle">VIP Glow Adventure</div>
+              <div style="font-size: 0.85rem; color: var(--ps-text-muted); margin-top: 2px;" id="summaryPkgBaseDesc">Base package: $449 (up to 15 kids)</div>
+            </div>
+
+            <div style="border-top: 1px dashed var(--ps-border-color); padding-top: 0.85rem; margin-bottom: 0.85rem; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span class="text-muted">Base Package Price:</span>
+                <span style="font-weight: 700;" id="summaryBasePrice">$449.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;" id="summaryExtraKidsRow">
+                <span class="text-muted" id="summaryExtraKidsLabel">Extra Jumpers (0):</span>
+                <span style="font-weight: 700;" id="summaryExtraKidsPrice">$0.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;" id="summaryAddonsRow">
+                <span class="text-muted">Selected Add-Ons:</span>
+                <span style="font-weight: 700;" id="summaryAddonsPrice">$0.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span class="text-muted">Adult Spectators:</span>
+                <span style="color: #27ae60; font-weight: 700;">FREE</span>
+              </div>
+            </div>
+
+            <div style="border-top: 2px solid var(--ps-border-color); padding-top: 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--ps-text-muted); display: block;">Total Estimate</span>
+                <span style="font-size: 0.75rem; color: var(--ps-text-muted);">Taxes &amp; clean-up included</span>
+              </div>
+              <div style="font-size: 2rem; font-weight: 900; color: var(--ps-text-main);" id="summaryTotalPrice">$449.00</div>
+            </div>
+
+            <button type="button" class="ps-btn ps-btn-primary ps-btn-block ps-btn-lg" id="btnConfirmPartyBooking" onclick="submitPartyBooking()" style="font-size: 1.1rem; font-weight: 900; box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);">
+              Confirm Birthday Booking &rarr;
+            </button>
+
+            <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--ps-text-muted); display: flex; flex-direction: column; gap: 0.25rem;">
+              <span>🔒 100% Secure Frontend Demo</span>
+              <span>📅 Free date change up to 7 days before event</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clean Footer -->
+  <footer class="ps-footer">
+    <div class="ps-container">
+      <div class="ps-footer-grid">
+        <div class="ps-footer-brand">
+          <a href="../index.html" class="ps-footer-logo">
+            <img src="../assets/images/brand/logo.svg" alt="PlaySpace Logo">
+          </a>
+          <p>
+            PlaySpace is the ultimate indoor trampoline and adventure soft play center for kids and families. Safe, clean, and endlessly fun.
+          </p>
+          <div class="ps-social-links">
+            <a href="https://facebook.com" class="ps-social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://instagram.com" class="ps-social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://youtube.com" class="ps-social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="ps-footer-col">
+          <h5>Play Zones</h5>
+          <ul class="ps-footer-links">
+            <li><a href="attractions.html">Trampoline Main Court</a></li>
+            <li><a href="attraction-details.html">Toddler Soft Play Haven</a></li>
+            <li><a href="attraction-ninja-warrior-course.html">Ninja Warrior Course</a></li>
+            <li><a href="attraction-airbag-jump-zone.html">Giant Stunt Airbag</a></li>
+          </ul>
+        </div>
+
+        <div class="ps-footer-col">
+          <h5>Quick Links</h5>
+          <ul class="ps-footer-links">
+            <li><a href="pricing-passes.html">Pricing &amp; Passes</a></li>
+            <li><a href="birthday-parties.html">Birthday Parties</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Hours &amp; Location</a></li>
+          </ul>
+        </div>
+
+        <div class="ps-footer-col">
+          <h5>Legal &amp; Safety</h5>
+          <ul class="ps-footer-links">
+            <li><a href="waiver.html">Sign Online Waiver</a></li>
+            <li><a href="safety-guidelines.html">Park Safety Rules</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ps-footer-bottom">
+        <p>&copy; 2026 PLAYSPACE Indoor Trampoline &amp; Soft Play Center. All rights reserved.</p>
+        <p>Built for healthy fun, high energy, and unforgettable memories.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/authentication.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/validation.js"></script>
+  <script src="../assets/js/birthday-booking.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    // Birthday Party Booking Engine
+    const PARTY_PACKAGES = {
+      'party-basic': {
+        id: 'party-basic',
+        name: 'Basic Bouncer Party',
+        basePrice: 299,
+        includedKids: 10,
+        extraRate: 22,
+        desc: 'Base package: $299 (up to 10 kids)'
+      },
+      'party-vip': {
+        id: 'party-vip',
+        name: 'VIP Glow Adventure Birthday Party',
+        basePrice: 449,
+        includedKids: 15,
+        extraRate: 25,
+        desc: 'Base package: $449 (up to 15 kids)'
+      },
+      'party-ultimate': {
+        id: 'party-ultimate',
+        name: 'Ultimate Arena Takeover VIP',
+        basePrice: 699,
+        includedKids: 25,
+        extraRate: 28,
+        desc: 'Base package: $699 (up to 25 kids)'
+      }
+    };
+
+    let currentPkgId = 'party-vip';
+
+    // Set default party date (tomorrow)
+    document.addEventListener('DOMContentLoaded', function() {
+      const dateInput = document.getElementById('partyDate');
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const yyyy = tomorrow.getFullYear();
+        const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+        const dd = String(tomorrow.getDate()).padStart(2, '0');
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+        dateInput.value = `${yyyy}-${mm}-${dd}`;
+      }
+
+      // Check URL parameters for package preselection
+      const urlParams = new URLSearchParams(window.location.search);
+      const pkgParam = urlParams.get('package');
+      if (pkgParam && PARTY_PACKAGES[pkgParam]) {
+        selectPartyPackage(pkgParam);
+      } else {
+        updatePartyPrice();
+      }
+    });
+
+    function selectPartyPackage(pkgId) {
+      if (!PARTY_PACKAGES[pkgId]) return;
+      currentPkgId = pkgId;
+      document.getElementById('selectedPackageId').value = pkgId;
+
+      // Update package card styles
+      document.querySelectorAll('.ps-party-pkg-card').forEach(card => {
+        if (card.getAttribute('data-pkg-id') === pkgId) {
+          card.classList.add('selected');
+        } else {
+          card.classList.remove('selected');
+        }
+      });
+
+      const pkg = PARTY_PACKAGES[pkgId];
+      document.getElementById('summaryPkgTitle').textContent = pkg.name;
+      document.getElementById('summaryPkgBaseDesc').textContent = pkg.desc;
+
+      const kidsInput = document.getElementById('partyChildrenCount');
+      if (parseInt(kidsInput.value, 10) < pkg.includedKids) {
+        kidsInput.value = pkg.includedKids;
+      }
+      document.getElementById('partyKidsBaseNote').textContent = `${pkg.includedKids} included in ${pkg.name.split(' ')[0]}`;
+
+      updatePartyPrice();
+    }
+
+    function selectPartyTime(pill) {
+      document.querySelectorAll('#partyTimeSlotContainer .ps-time-slot-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      document.getElementById('selectedPartyTime').value = pill.getAttribute('data-time');
+    }
+
+    function stepPartyChildren(delta) {
+      const input = document.getElementById('partyChildrenCount');
+      let val = parseInt(input.value, 10) || 10;
+      val = Math.max(5, Math.min(60, val + delta));
+      input.value = val;
+      updatePartyPrice();
+    }
+
+    function stepPartyAdults(delta) {
+      const input = document.getElementById('partyAdultsCount');
+      let val = parseInt(input.value, 10) || 2;
+      val = Math.max(1, Math.min(50, val + delta));
+      input.value = val;
+    }
+
+    function updatePartyPrice() {
+      const pkg = PARTY_PACKAGES[currentPkgId] || PARTY_PACKAGES['party-vip'];
+      const basePrice = pkg.basePrice;
+      const numKids = parseInt(document.getElementById('partyChildrenCount').value, 10) || pkg.includedKids;
+      
+      const extraKids = Math.max(0, numKids - pkg.includedKids);
+      const extraKidsCost = extraKids * pkg.extraRate;
+
+      let addonsCost = 0;
+      if (document.getElementById('partyAddonArcade') && document.getElementById('partyAddonArcade').checked) {
+        addonsCost += 60;
+      }
+      if (document.getElementById('partyAddonFavors') && document.getElementById('partyAddonFavors').checked) {
+        addonsCost += 45;
+      }
+
+      const total = basePrice + extraKidsCost + addonsCost;
+
+      document.getElementById('summaryBasePrice').textContent = `$${basePrice.toFixed(2)}`;
+      
+      const extraKidsRow = document.getElementById('summaryExtraKidsRow');
+      if (extraKids > 0) {
+        extraKidsRow.style.display = 'flex';
+        document.getElementById('summaryExtraKidsLabel').textContent = `Extra Jumpers (${extraKids} × $${pkg.extraRate}):`;
+        document.getElementById('summaryExtraKidsPrice').textContent = `$${extraKidsCost.toFixed(2)}`;
+      } else {
+        extraKidsRow.style.display = 'none';
+      }
+
+      const addonsRow = document.getElementById('summaryAddonsRow');
+      if (addonsCost > 0) {
+        addonsRow.style.display = 'flex';
+        document.getElementById('summaryAddonsPrice').textContent = `$${addonsCost.toFixed(2)}`;
+      } else {
+        addonsRow.style.display = 'none';
+      }
+
+      document.getElementById('summaryTotalPrice').textContent = `$${total.toFixed(2)}`;
+      return total;
+    }
+
+    function submitPartyBooking() {
+      const alertBox = document.getElementById('psPartyValidationAlert');
+      const alertMsg = document.getElementById('psPartyAlertMessage');
+      alertBox.style.display = 'none';
+
+      const partyForm = document.getElementById('psPartyBookingForm');
+      if (window.PlaySpaceValidation && partyForm) {
+        const isFormValid = window.PlaySpaceValidation.validateForm(partyForm);
+        if (!isFormValid) {
+          alertMsg.textContent = 'Please correct the highlighted errors in the form before submitting.';
+          alertBox.style.display = 'block';
+          window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+          return;
+        }
+      }
+
+      // Explicit field validations
+      const childName = document.getElementById('partyChildName').value.trim();
+      const childAge = document.getElementById('partyChildAge').value.trim();
+      const partyDate = document.getElementById('partyDate').value;
+      const timeSlot = document.getElementById('selectedPartyTime').value;
+      const numKids = parseInt(document.getElementById('partyChildrenCount').value, 10);
+      const numAdults = parseInt(document.getElementById('partyAdultsCount').value, 10) || 0;
+      const parentName = document.getElementById('partyParentName').value.trim();
+      const parentEmail = document.getElementById('partyParentEmail').value.trim();
+      const parentPhone = document.getElementById('partyParentPhone').value.trim();
+      const food = document.getElementById('partyFood').value;
+      const theme = document.getElementById('partyTheme').value;
+      const notes = document.getElementById('partyNotes').value.trim();
+
+      const v = window.PlaySpaceValidation;
+      let errors = [];
+
+      if (!partyDate) errors.push("Party date is required.");
+      if (v) {
+        const childNameRes = v.validateName(childName, "Birthday child's name");
+        if (!childNameRes.valid) errors.push(childNameRes.message);
+
+        const childAgeRes = v.validateNumber(childAge, 1, 17, "Child turning age");
+        if (!childAgeRes.valid) errors.push(childAgeRes.message);
+
+        const parentNameRes = v.validateName(parentName, 'Parent / host name');
+        if (!parentNameRes.valid) errors.push(parentNameRes.message);
+
+        const parentEmailRes = v.validateEmail(parentEmail, 'Email address');
+        if (!parentEmailRes.valid) errors.push(parentEmailRes.message);
+
+        const parentPhoneRes = v.validateMobile(parentPhone, 'Phone number');
+        if (!parentPhoneRes.valid) errors.push(parentPhoneRes.message);
+      } else {
+        if (!childName || !/^[A-Za-z\s]+$/.test(childName)) errors.push("Birthday child name must contain letters only.");
+        if (!childAge || isNaN(childAge)) errors.push("Valid child age is required.");
+        if (!parentName || !/^[A-Za-z\s]+$/.test(parentName)) errors.push("Parent / host name must contain letters only.");
+        if (!parentEmail || !parentEmail.includes('@')) errors.push("Valid email address is required.");
+        if (!parentPhone || parentPhone.replace(/\D/g, '').length !== 10) errors.push("Phone number must contain exactly 10 digits.");
+      }
+
+      if (errors.length > 0) {
+        alertMsg.innerHTML = errors.join('<br>');
+        alertBox.style.display = 'block';
+        window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+        return;
+      }
+
+      const pkg = PARTY_PACKAGES[currentPkgId] || PARTY_PACKAGES['party-vip'];
+      const totalPrice = updatePartyPrice();
+      const bookingRef = '#PS-PARTY-' + Math.floor(1000 + Math.random() * 9000);
+
+      // Backend Schema Validation before saving
+      const bookingRecord = {
+        bookingRef,
+        category: 'birthday',
+        packageId: currentPkgId,
+        packageName: pkg.name,
+        childName,
+        childAge: parseInt(childAge, 10),
+        partyDate,
+        timeSlot,
+        numKids,
+        numAdults,
+        parentName,
+        parentEmail,
+        parentPhone,
+        food,
+        theme,
+        notes,
+        totalPrice: `$${totalPrice.toFixed(2)}`,
+        bookedAt: new Date().toISOString()
+      };
+
+      const birthdaySchema = {
+        childName: { type: 'name', required: true, label: "Birthday Child's Name" },
+        childAge: { type: 'number', required: true, min: 1, max: 17, label: "Child's Age" },
+        partyDate: { type: 'text', required: true, label: 'Party Date' },
+        numKids: { type: 'number', required: true, min: 5, max: 60, label: 'Number of Children' },
+        parentName: { type: 'name', required: true, label: 'Parent / Host Name' },
+        parentEmail: { type: 'email', required: true, label: 'Parent Email' },
+        parentPhone: { type: 'mobile', required: true, label: 'Parent Phone' }
+      };
+
+      try {
+        if (v && v.saveToStorage) {
+          v.saveToStorage('playspace_birthday_bookings', bookingRecord, birthdaySchema);
+        } else {
+          const storedBookings = JSON.parse(localStorage.getItem('playspace_birthday_bookings') || '[]');
+          storedBookings.push(bookingRecord);
+          localStorage.setItem('playspace_birthday_bookings', JSON.stringify(storedBookings));
+          localStorage.setItem('playspace_last_booking', JSON.stringify(bookingRecord));
+        }
+      } catch (err) {
+        console.error('Security / Validation Error while saving booking:', err);
+        alertMsg.textContent = err.message || 'Validation error while saving booking.';
+        alertBox.style.display = 'block';
+        return;
+      }
+
+      // Populate confirmation view
+      document.getElementById('partySuccessRef').textContent = bookingRef;
+      document.getElementById('partySuccessPackage').innerHTML = `<strong>${pkg.name}</strong>`;
+      document.getElementById('partySuccessChild').textContent = `${childName} (${childAge})`;
+      document.getElementById('partySuccessDate').textContent = partyDate;
+      document.getElementById('partySuccessTime').textContent = timeSlot;
+      document.getElementById('partySuccessChildren').textContent = `${numKids} Children (Jumpers)`;
+      document.getElementById('partySuccessAdults').textContent = `${numAdults} Adults (Free Spectator Lounge)`;
+      document.getElementById('partySuccessParent').textContent = `${parentName} • ${parentEmail} • ${parentPhone}`;
+      document.getElementById('partySuccessFood').textContent = food;
+      document.getElementById('partySuccessTheme').textContent = theme;
+      document.getElementById('partySuccessTotal').textContent = `$${totalPrice.toFixed(2)}`;
+
+      // Switch view: Hide form, Show success confirmation
+      document.getElementById('psPartyFormView').style.display = 'none';
+      document.getElementById('psPartySuccessView').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

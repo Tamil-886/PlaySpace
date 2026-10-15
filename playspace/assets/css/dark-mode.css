@@ -1,0 +1,597 @@
+/* ==========================================================================
+   PlaySpace - Complete & Robust Dark Mode & Light Mode Rules
+   Strict 3-Color Palette: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+/* Dark Mode Tokens & Overrides */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ps-bg-main: #000000;
+  --ps-bg-surface: #000000;
+  --ps-bg-surface-alt: rgba(255, 255, 255, 0.06);
+  --ps-bg-card: #000000;
+  --ps-bg-header: #000000;
+  --ps-bg-footer: #000000;
+  --ps-bg-alt: #000000;
+
+  --ps-text-main: #FFFFFF;
+  --ps-text-color: #FFFFFF;
+  --ps-text-muted: rgba(255, 255, 255, 0.75);
+
+  --ps-border-color: rgba(255, 255, 255, 0.18);
+  --ps-border-color-dark: rgba(255, 255, 255, 0.28);
+}
+
+[data-theme="dark"] body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* White and alternate sections flip to black */
+[data-theme="dark"] .ps-section-white,
+[data-theme="dark"] .ps-section-alt {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-section {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .ps-section[style*="background-color"] {
+  background-color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-nav-actions .ps-cart-toggle.ps-btn-icon {
+  display: inline-flex !important;
+  flex: 0 0 40px;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: rgba(255, 204, 0, 0.14) !important;
+  border: 1.5px solid rgba(255, 204, 0, 0.8) !important;
+  color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-nav-actions .ps-cart-toggle.ps-btn-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+[data-theme="dark"] .ps-nav-actions .ps-cart-toggle.ps-btn-icon:hover,
+[data-theme="dark"] .ps-nav-actions .ps-cart-toggle.ps-btn-icon:focus-visible {
+  background-color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-about-cta {
+  background-color: #E6B800 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-about-cta h2,
+[data-theme="dark"] .ps-about-cta p {
+  color: #000000 !important;
+}
+
+/* Headings & Text */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] .text-muted {
+  color: rgba(255, 255, 255, 0.70) !important;
+}
+
+/* Cards & Containers */
+[data-theme="dark"] .ps-card,
+[data-theme="dark"] .ps-feature-box,
+[data-theme="dark"] .ps-attraction-card,
+[data-theme="dark"] .ps-pricing-card,
+[data-theme="dark"] .ps-blog-card,
+[data-theme="dark"] .ps-step-box,
+[data-theme="dark"] .ps-stat-card,
+[data-theme="dark"] .ps-table-wrap,
+[data-theme="dark"] .ps-accordion-item,
+[data-theme="dark"] .ps-timeslot-btn,
+[data-theme="dark"] .ps-schedule-col,
+[data-theme="dark"] .ps-comparison-table-wrap {
+  background-color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+
+/* Card hovers */
+[data-theme="dark"] .ps-card:hover,
+[data-theme="dark"] .ps-feature-box:hover,
+[data-theme="dark"] .ps-attraction-card:hover,
+[data-theme="dark"] .ps-blog-card:hover,
+[data-theme="dark"] .ps-pricing-card:hover,
+[data-theme="dark"] .ps-step-box:hover,
+[data-theme="dark"] .ps-stat-card:hover {
+  border-color: #FFCC00 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Featured and standard pricing cards in Dark Mode */
+[data-theme="dark"] .ps-pricing-card {
+  background-color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-pricing-card:not(.featured) h3,
+[data-theme="dark"] .ps-pricing-card:not(.featured) h4,
+[data-theme="dark"] .ps-pricing-card:not(.featured) h5,
+[data-theme="dark"] .ps-pricing-card:not(.featured) h6,
+[data-theme="dark"] .ps-pricing-card.featured h3,
+[data-theme="dark"] .ps-pricing-card.featured h4,
+[data-theme="dark"] .ps-pricing-card.featured h5,
+[data-theme="dark"] .ps-pricing-card.featured h6 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-pricing-card p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+[data-theme="dark"] .ps-pricing-card:not(.featured) .ps-price-amount {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-pricing-card.featured {
+  background-color: #000000 !important;
+  border-color: #FFCC00 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-pricing-card.featured .ps-price-amount {
+  color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-pricing-card .ps-pricing-features li {
+  color: #FFFFFF !important;
+}
+
+/* Feature Boxes */
+[data-theme="dark"] .ps-feature-box .ps-feature-icon {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+}
+
+/* Step badges */
+[data-theme="dark"] .ps-step-badge {
+  background-color: #000000 !important;
+  color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+}
+
+/* Comparison Table in Dark Mode */
+[data-theme="dark"] .ps-comparison-table th {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+[data-theme="dark"] .ps-comparison-table td {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .ps-comparison-table th.featured {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-comparison-table td.featured {
+  background-color: rgba(255, 204, 0, 0.12) !important;
+  color: #FFFFFF !important;
+}
+
+/* Accordion */
+[data-theme="dark"] .ps-accordion-header {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-accordion-header .icon {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-accordion-item.active .ps-accordion-header .icon {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-accordion-body {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Tables & Lists */
+[data-theme="dark"] .ps-table th {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+[data-theme="dark"] .ps-table td {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-table tr:hover td {
+  background-color: rgba(255, 204, 0, 0.08) !important;
+}
+
+/* Form Inputs & Selects */
+[data-theme="dark"] .ps-form-control {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-theme="dark"] .ps-form-control:focus {
+  border-color: #FFCC00 !important;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .ps-form-control::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+[data-theme="dark"] select.ps-form-control {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+}
+
+[data-theme="dark"] select.ps-form-control option {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-form-label {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] input[type="date"] {
+  color-scheme: dark;
+}
+
+/* Buttons */
+[data-theme="dark"] .ps-btn-dark {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .ps-btn-dark:hover {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-btn-outline-dark,
+[data-theme="dark"] .ps-pricing-card:not(.featured) .ps-btn-outline,
+[data-theme="dark"] .ps-pricing-card:not(.featured) .ps-btn-outline-dark {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .ps-btn-outline-dark:hover,
+[data-theme="dark"] .ps-pricing-card:not(.featured) .ps-btn-outline:hover,
+[data-theme="dark"] .ps-pricing-card:not(.featured) .ps-btn-outline-dark:hover {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+}
+
+/* Keep cart actions prominent even when card-level outline rules apply. */
+[data-theme="dark"] .ps-card .ps-btn-add-cart,
+[data-theme="dark"] .ps-pricing-card .ps-btn-add-cart,
+[data-theme="dark"] .ps-attraction-card .ps-btn-add-cart,
+[data-theme="dark"] .ps-section .ps-btn-add-cart {
+  background-color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-card .ps-btn-add-cart:hover,
+[data-theme="dark"] .ps-pricing-card .ps-btn-add-cart:hover,
+[data-theme="dark"] .ps-attraction-card .ps-btn-add-cart:hover,
+[data-theme="dark"] .ps-section .ps-btn-add-cart:hover,
+[data-theme="dark"] .ps-card .ps-btn-add-cart:focus-visible,
+[data-theme="dark"] .ps-pricing-card .ps-btn-add-cart:focus-visible,
+[data-theme="dark"] .ps-attraction-card .ps-btn-add-cart:focus-visible,
+[data-theme="dark"] .ps-section .ps-btn-add-cart:focus-visible {
+  background-color: #FFE066 !important;
+  border-color: #FFE066 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.28);
+}
+
+/* Outlined cart buttons have legacy dark-container rules with higher specificity. */
+[data-theme="dark"] .ps-card-dark .ps-btn-add-cart.ps-btn-outline,
+[data-theme="dark"] .ps-card.featured .ps-btn-add-cart.ps-btn-outline,
+[data-theme="dark"] .ps-pricing-card.featured .ps-btn-add-cart.ps-btn-outline,
+[data-theme="dark"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-add-cart.ps-btn-outline,
+[data-theme="dark"] .ps-pricing-card:not(.featured) .ps-btn-add-cart.ps-btn-outline,
+[data-theme="dark"] .ps-section-dark .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+[data-theme="dark"] .ps-section[style*="#000"] .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *),
+[data-theme="dark"] .ps-section[style*="black"] .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *) {
+  background-color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-card-dark .ps-btn-add-cart.ps-btn-outline:hover,
+[data-theme="dark"] .ps-card.featured .ps-btn-add-cart.ps-btn-outline:hover,
+[data-theme="dark"] .ps-pricing-card.featured .ps-btn-add-cart.ps-btn-outline:hover,
+[data-theme="dark"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-add-cart.ps-btn-outline:hover,
+[data-theme="dark"] .ps-pricing-card:not(.featured) .ps-btn-add-cart.ps-btn-outline:hover,
+[data-theme="dark"] .ps-section-dark .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+[data-theme="dark"] .ps-section[style*="#000"] .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover,
+[data-theme="dark"] .ps-section[style*="black"] .ps-btn-add-cart.ps-btn-outline:not(.ps-pricing-card:not(.featured) *):not(.ps-card:not(.ps-card-dark):not(.featured) *):hover {
+  background-color: #FFE066 !important;
+  border-color: #FFE066 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-explore-attractions {
+  background-color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-explore-attractions:hover,
+[data-theme="dark"] .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-explore-attractions:focus-visible {
+  background-color: #FFE066 !important;
+  border-color: #FFE066 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.28);
+}
+
+/* Tabs */
+[data-theme="dark"] .ps-tabs {
+  border-bottom-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+[data-theme="dark"] .ps-tab-btn {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+[data-theme="dark"] .ps-tab-btn:hover,
+[data-theme="dark"] .ps-tab-btn.active {
+  color: #FFFFFF !important;
+  border-bottom-color: #FFCC00 !important;
+}
+
+/* Gallery Filter Buttons */
+[data-theme="dark"] .ps-filter-btn {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .ps-filter-btn.active,
+[data-theme="dark"] .ps-filter-btn:hover {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+}
+
+/* Modals */
+[data-theme="dark"] .ps-modal-box {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-modal-close {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+}
+
+/* Signature Pad in Dark Mode */
+[data-theme="dark"] .ps-signature-pad {
+  background-color: #FFFFFF !important; /* Keep white for signature contrast */
+}
+
+/* Booking Wizard in Dark Mode */
+[data-theme="dark"] .ps-wizard-step {
+  background-color: #000000 !important;
+}
+
+[data-theme="dark"] .ps-wizard-steps::before {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .ps-wizard-step .ps-step-num {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .ps-wizard-step.active .ps-step-num {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-wizard-step.completed .ps-step-num {
+  background-color: #000000 !important;
+  color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-wizard-step .ps-step-label {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+[data-theme="dark"] .ps-wizard-step.active .ps-step-label {
+  color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-counter-btn {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .ps-counter-btn:hover {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-counter-value {
+  color: #FFFFFF !important;
+}
+
+/* Checkbox & Controls in Dark Mode */
+[data-theme="dark"] .ps-checkbox {
+  background-color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+[data-theme="dark"] .ps-checkbox:checked {
+  background-color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+}
+
+/* Dashboard & Admin in Dark Mode */
+[data-theme="dark"] .ps-dash-layout,
+[data-theme="dark"] .ps-admin-layout,
+[data-theme="dark"] .ps-dash-content,
+[data-theme="dark"] .ps-admin-main {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-dash-header {
+  border-bottom-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+[data-theme="dark"] .ps-stat-card .stat-icon {
+  color: #FFCC00 !important;
+  background-color: rgba(255, 204, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .ps-schedule-event {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 204, 0, 0.15) !important;
+}
+
+[data-theme="dark"] .ps-status-pill.inactive {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Quick Booking Ribbon in Dark Mode */
+[data-theme="dark"] .ps-quick-booking {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-quick-booking label {
+  color: #FFFFFF !important;
+}
+
+/* Homepage 2 Cards in Dark Mode */
+[data-theme="dark"] .ps-timetable-card,
+[data-theme="dark"] .ps-staff-card {
+  background-color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-timetable-card:hover,
+[data-theme="dark"] .ps-staff-card:hover {
+  border-color: #FFCC00 !important;
+}
+
+/* Safety Feature Callout Cards in Dark Mode */
+[data-theme="dark"] .ps-safety-feature-item {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  border-left-color: #FFCC00 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-safety-feature-item strong {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-safety-feature-item p,
+[data-theme="dark"] .ps-safety-feature-item .text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Dual Theme Brand Logo in Dark Mode */
+[data-theme="dark"] .ps-brand-logo-light {
+  display: none !important;
+}
+
+[data-theme="dark"] .ps-brand-logo-dark {
+  display: block !important;
+}
+
+[data-theme="dark"] .ps-auth-link {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-auth-link:hover {
+  color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-checkbox-label {
+  color: #FFFFFF !important;
+}
+
+/* Fallback: any single img referencing logo-dark.svg inside dark mode card */
+[data-theme="dark"] .ps-card img[src*="logo-dark.svg"]:not(.ps-brand-logo-light) {
+  content: url("../../assets/images/brand/logo.svg") !important;
+}
+
+/* Play Philosophy Cards Dark Mode Overrides */
+[data-theme="dark"] .ps-philosophy-card {
+  background-color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  border-top-color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-philosophy-card .ps-icon-square {
+  background-color: #FFCC00 !important;
+}
+
+[data-theme="dark"] .ps-philosophy-card h4 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .ps-philosophy-card p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-theme="dark"] .ps-philosophy-badge {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border: 1px solid #E6B800 !important;
+}

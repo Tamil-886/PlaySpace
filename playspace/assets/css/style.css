@@ -1,0 +1,58 @@
+/* ==========================================================================
+   PlaySpace - Main Stylesheet
+   Strict 3-Color Palette: Black (#000000), White (#FFFFFF), Yellow (#FFCC00)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+@import url('variables.css');
+@import url('reset.css');
+@import url('typography.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('cart.css');
+@import url('forms.css');
+@import url('pages.css');
+@import url('booking.css');
+@import url('dashboard.css');
+@import url('admin.css');
+@import url('dark-mode.css');
+@import url('rtl.css');
+@import url('responsive.css');
+
+/* ==========================================================================
+   Global Helper & Utility Classes
+   ========================================================================== */
+.bg-black { background-color: var(--ps-black) !important; color: var(--ps-white); }
+.bg-white { background-color: var(--ps-white) !important; color: var(--ps-black); }
+.bg-yellow { background-color: var(--ps-yellow) !important; color: var(--ps-black); }
+
+.border-yellow { border-color: var(--ps-yellow) !important; }
+.border-light { border-color: rgba(255, 255, 255, 0.15) !important; }
+.border-dark { border-color: rgba(0, 0, 0, 0.12) !important; }
+
+.rounded-sm { border-radius: var(--ps-radius-sm) !important; }
+.rounded-md { border-radius: var(--ps-radius-md) !important; }
+.rounded-lg { border-radius: var(--ps-radius-lg) !important; }
+.rounded-full { border-radius: var(--ps-radius-full) !important; }
+
+.shadow-sm { box-shadow: var(--ps-shadow-sm) !important; }
+.shadow-md { box-shadow: var(--ps-shadow-md) !important; }
+.shadow-lg { box-shadow: var(--ps-shadow-lg) !important; }
+
+.overflow-hidden { overflow: hidden !important; }
+.position-relative { position: relative !important; }
+.w-100 { width: 100% !important; }
+.h-100 { height: 100% !important; }
+
+.mt-1 { margin-top: var(--ps-space-xs); }
+.mt-2 { margin-top: var(--ps-space-sm); }
+.mt-3 { margin-top: var(--ps-space-md); }
+.mt-4 { margin-top: var(--ps-space-lg); }
+.mt-5 { margin-top: var(--ps-space-xl); }
+
+.mb-1 { margin-bottom: var(--ps-space-xs); }
+.mb-2 { margin-bottom: var(--ps-space-sm); }
+.mb-3 { margin-bottom: var(--ps-space-md); }
+.mb-4 { margin-bottom: var(--ps-space-lg); }
+.mb-5 { margin-bottom: var(--ps-space-xl); }
