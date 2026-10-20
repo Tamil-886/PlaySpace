@@ -263,6 +263,284 @@
         padding-left: 0.15rem;
       }
     }
+
+    /* ==========================================================================
+       Birthday Booking Success Popup Modal (Yellow-and-White Theme)
+       ========================================================================== */
+    .ps-party-success-modal {
+      background-color: #FFFFFF !important;
+      color: #111827 !important;
+      border: 2.5px solid #FFCC00 !important;
+      border-radius: 24px !important;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35), 0 0 35px rgba(255, 204, 0, 0.28) !important;
+      max-width: 520px !important;
+      width: 100% !important;
+      padding: 2.5rem 2rem 2rem 2rem !important;
+      text-align: center !important;
+      position: relative !important;
+      box-sizing: border-box !important;
+    }
+
+    .ps-success-checkmark-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .ps-success-checkmark-circle {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: #eafaf1;
+      border: 3.5px solid #2ecc71;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 24px rgba(46, 204, 113, 0.28);
+      animation: psCheckBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+
+    .ps-success-checkmark-svg {
+      width: 44px;
+      height: 44px;
+      stroke: #2ecc71;
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .ps-checkmark-check {
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: psCheckStroke 0.45s 0.2s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    @keyframes psCheckBounce {
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      60% {
+        transform: scale(1.12);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes psCheckStroke {
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .ps-party-modal-heading {
+      font-size: 1.9rem !important;
+      font-weight: 900 !important;
+      color: #111827 !important;
+      margin: 0 0 0.4rem 0 !important;
+      line-height: 1.2 !important;
+      letter-spacing: -0.02em;
+    }
+
+    .ps-party-modal-subheading {
+      font-size: 1.05rem !important;
+      color: #4b5563 !important;
+      margin: 0 0 1.5rem 0 !important;
+      line-height: 1.5 !important;
+      font-weight: 500 !important;
+    }
+
+    .ps-party-modal-card {
+      background: #FFFDF0;
+      border: 1.5px solid #FFCC00;
+      border-radius: 16px;
+      padding: 1.15rem 1.25rem;
+      margin-bottom: 1.6rem;
+      text-align: left;
+      box-shadow: 0 2px 10px rgba(255, 204, 0, 0.08);
+    }
+
+    .ps-party-modal-pill {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 204, 0, 0.22);
+      border-radius: 10px;
+      padding: 0.4rem 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .ps-party-modal-pill-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #78350f;
+    }
+
+    .ps-party-modal-pill-val {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #111827;
+      letter-spacing: 0.03em;
+    }
+
+    .ps-party-modal-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .ps-party-modal-info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #374151;
+      padding: 0.25rem 0;
+      border-bottom: 1px dashed rgba(209, 213, 219, 0.8);
+    }
+
+    .ps-party-modal-info-label {
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    .ps-party-modal-info-val {
+      color: #111827;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .ps-party-modal-info-row.ps-party-modal-info-total {
+      border-bottom: none;
+      border-top: 2px solid rgba(255, 204, 0, 0.6);
+      padding-top: 0.6rem;
+      margin-top: 0.2rem;
+    }
+
+    .ps-party-modal-info-total .ps-party-modal-info-label {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #111827;
+      text-transform: uppercase;
+    }
+
+    .ps-party-modal-info-total-val {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #111827;
+    }
+
+    .ps-party-modal-actions {
+      display: flex;
+      gap: 0.85rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .ps-party-modal-btn {
+      padding: 0.85rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      flex: 1 1 auto;
+    }
+
+    .ps-party-modal-btn.ps-btn-primary {
+      background: #FFCC00 !important;
+      color: #000000 !important;
+      border: 2px solid #FFCC00 !important;
+      box-shadow: 0 4px 14px rgba(255, 204, 0, 0.45);
+    }
+
+    .ps-party-modal-btn.ps-btn-primary:hover {
+      background: #e6b800 !important;
+      border-color: #e6b800 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 204, 0, 0.55);
+    }
+
+    .ps-party-modal-btn.ps-btn-outline {
+      background: transparent !important;
+      color: #1f2937 !important;
+      border: 2px solid #d1d5db !important;
+    }
+
+    .ps-party-modal-btn.ps-btn-outline:hover {
+      background: #f3f4f6 !important;
+      border-color: #9ca3af !important;
+      color: #111827 !important;
+    }
+
+    @media (max-width: 480px) {
+      .ps-party-success-modal {
+        padding: 1.75rem 1.15rem 1.4rem 1.15rem !important;
+        border-radius: 20px !important;
+        max-width: calc(100vw - 24px) !important;
+      }
+      .ps-success-checkmark-circle {
+        width: 66px;
+        height: 66px;
+      }
+      .ps-success-checkmark-svg {
+        width: 38px;
+        height: 38px;
+      }
+      .ps-party-modal-heading {
+        font-size: 1.5rem !important;
+      }
+      .ps-party-modal-subheading {
+        font-size: 0.92rem !important;
+        margin-bottom: 1.15rem !important;
+      }
+      .ps-party-modal-card {
+        padding: 0.9rem 1rem !important;
+        margin-bottom: 1.25rem !important;
+      }
+      .ps-party-modal-actions {
+        flex-direction: column !important;
+        gap: 0.65rem !important;
+      }
+      .ps-party-modal-btn {
+        width: 100% !important;
+        flex: none !important;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .ps-party-success-modal {
+        padding: 1.35rem 0.85rem 1.15rem 0.85rem !important;
+        border-radius: 16px !important;
+        max-width: calc(100vw - 16px) !important;
+      }
+      .ps-party-modal-heading {
+        font-size: 1.35rem !important;
+      }
+      .ps-party-modal-subheading {
+        font-size: 0.85rem !important;
+      }
+      .ps-party-modal-card {
+        padding: 0.75rem 0.8rem !important;
+      }
+      .ps-party-modal-info-row {
+        font-size: 0.82rem !important;
+      }
+      .ps-party-modal-info-total-val {
+        font-size: 1.15rem !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -764,6 +1042,64 @@
     </div>
   </section>
 
+  <!-- Birthday Booking Success Popup Modal -->
+  <div id="psPartySuccessModal" class="ps-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="psPartyModalHeading">
+    <div class="ps-modal-box ps-party-success-modal">
+      <button type="button" class="ps-modal-close" id="btnDismissPartyModal" aria-label="Close confirmation dialog">&times;</button>
+      
+      <!-- Green Checkmark Icon -->
+      <div class="ps-success-checkmark-wrap">
+        <div class="ps-success-checkmark-circle">
+          <svg class="ps-success-checkmark-svg" viewBox="0 0 52 52" aria-hidden="true">
+            <circle class="ps-checkmark-circle" cx="26" cy="26" r="24" fill="none"/>
+            <path class="ps-checkmark-check" fill="none" d="M14.5 27.2l7.3 7.3 16-16"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Success Heading & Subtitle -->
+      <h2 id="psPartyModalHeading" class="ps-party-modal-heading">Successfully Booked!</h2>
+      <p class="ps-party-modal-subheading">Your birthday booking has been confirmed.</p>
+
+      <!-- Booking Brief Details Box (Yellow-and-white theme) -->
+      <div class="ps-party-modal-card">
+        <div class="ps-party-modal-pill">
+          <span class="ps-party-modal-pill-label">BOOKING REFERENCE</span>
+          <strong id="partyModalRef" class="ps-party-modal-pill-val">#PS-PARTY-0000</strong>
+        </div>
+
+        <div class="ps-party-modal-info-list">
+          <div class="ps-party-modal-info-row">
+            <span class="ps-party-modal-info-label">Package</span>
+            <strong id="partyModalPackage" class="ps-party-modal-info-val">VIP Glow Adventure</strong>
+          </div>
+          <div class="ps-party-modal-info-row">
+            <span class="ps-party-modal-info-label">Birthday Child</span>
+            <span id="partyModalChild" class="ps-party-modal-info-val">Leo (Turning 7)</span>
+          </div>
+          <div class="ps-party-modal-info-row">
+            <span class="ps-party-modal-info-label">Date &amp; Time</span>
+            <span id="partyModalDateTime" class="ps-party-modal-info-val">Oct 24, 2026 &bull; 1:00 PM</span>
+          </div>
+          <div class="ps-party-modal-info-row ps-party-modal-info-total">
+            <span class="ps-party-modal-info-label">Total Amount</span>
+            <strong id="partyModalTotal" class="ps-party-modal-info-total-val">$449.00</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="ps-party-modal-actions">
+        <button type="button" class="ps-btn ps-btn-primary ps-party-modal-btn" id="btnViewFullPartySummary">
+          View Booking Details &rarr;
+        </button>
+        <a href="../index.html" class="ps-btn ps-btn-outline ps-party-modal-btn">
+          🏠 Return to Home
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- 8. Footer -->
 <footer class="ps-footer">
   <div class="ps-container">
@@ -1209,7 +1545,64 @@
       document.getElementById('psPartyFormView').style.display = 'none';
       document.getElementById('psPartySuccessView').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Populate & open success popup modal
+      const modalRef = document.getElementById('partyModalRef');
+      const modalPkg = document.getElementById('partyModalPackage');
+      const modalChild = document.getElementById('partyModalChild');
+      const modalDateTime = document.getElementById('partyModalDateTime');
+      const modalTotal = document.getElementById('partyModalTotal');
+
+      if (modalRef) modalRef.textContent = bookingRef;
+      if (modalPkg) modalPkg.textContent = pkg.name;
+      if (modalChild) modalChild.textContent = `${childName} (Turning ${childAge})`;
+      if (modalDateTime) modalDateTime.textContent = `${partyDate} • ${timeSlot}`;
+      if (modalTotal) modalTotal.textContent = `$${totalPrice.toFixed(2)}`;
+
+      openPartySuccessModal();
     }
+
+    function openPartySuccessModal() {
+      const modal = document.getElementById('psPartySuccessModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.classList.add('ps-modal-open');
+      }
+    }
+
+    function closePartySuccessModal() {
+      const modal = document.getElementById('psPartySuccessModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.classList.remove('ps-modal-open');
+      }
+    }
+
+    // Modal controls: Close button, summary button, backdrop click, Escape key
+    document.addEventListener('DOMContentLoaded', function() {
+      const dismissBtn = document.getElementById('btnDismissPartyModal');
+      const detailsBtn = document.getElementById('btnViewFullPartySummary');
+      const modal = document.getElementById('psPartySuccessModal');
+
+      if (dismissBtn) {
+        dismissBtn.addEventListener('click', closePartySuccessModal);
+      }
+      if (detailsBtn) {
+        detailsBtn.addEventListener('click', closePartySuccessModal);
+      }
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closePartySuccessModal();
+          }
+        });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closePartySuccessModal();
+        }
+      });
+    });
   </script>
 </body>
 </html>
