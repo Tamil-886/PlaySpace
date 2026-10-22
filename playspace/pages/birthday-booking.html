@@ -1058,7 +1058,7 @@
       </div>
 
       <!-- Success Heading & Subtitle -->
-      <h2 id="psPartyModalHeading" class="ps-party-modal-heading">Successfully Booked!</h2>
+      <h2 id="psPartyModalHeading" class="ps-party-modal-heading" data-status="Successfully Booked!">Booking Successful!</h2>
       <p class="ps-party-modal-subheading">Your birthday booking has been confirmed.</p>
 
       <!-- Booking Brief Details Box (Yellow-and-white theme) -->
@@ -1090,6 +1090,7 @@
 
       <!-- Action Buttons -->
       <div class="ps-party-modal-actions">
+        <button type="button" class="ps-btn ps-btn-outline ps-party-modal-btn" id="btnClosePartyModal">Close</button>
         <button type="button" class="ps-btn ps-btn-primary ps-party-modal-btn" id="btnViewFullPartySummary">
           View Booking Details &rarr;
         </button>
@@ -1581,9 +1582,13 @@
     // Modal controls: Close button, summary button, backdrop click, Escape key
     document.addEventListener('DOMContentLoaded', function() {
       const dismissBtn = document.getElementById('btnDismissPartyModal');
+      const closeBtn = document.getElementById('btnClosePartyModal');
       const detailsBtn = document.getElementById('btnViewFullPartySummary');
       const modal = document.getElementById('psPartySuccessModal');
 
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closePartySuccessModal);
+      }
       if (dismissBtn) {
         dismissBtn.addEventListener('click', closePartySuccessModal);
       }
