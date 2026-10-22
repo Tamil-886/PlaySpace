@@ -58,11 +58,6 @@
   left: 24px;
 }
 
-[dir="rtl"] .ps-sticky-bar-close {
-  margin-left: 0;
-  margin-right: 0.25rem;
-}
-
 [dir="rtl"] .ps-footer-links a:hover {
   padding-left: 0;
   padding-right: 4px;

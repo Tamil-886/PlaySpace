@@ -102,44 +102,6 @@
       }
     });
 
-    // Sticky Bottom Action Bar Logic
-    const stickyBar = document.getElementById('psStickyBar');
-    const stickyClose = document.getElementById('psStickyBarClose');
-    if (stickyBar) {
-      const isDismissed = sessionStorage.getItem('ps_sticky_bar_dismissed');
-      if (isDismissed === 'true') {
-        stickyBar.classList.add('is-hidden');
-      } else {
-        const heroSection = document.querySelector('.ps-hero');
-        if (heroSection) {
-          stickyBar.classList.add('is-hidden');
-          const onScrollCheck = function () {
-            if (sessionStorage.getItem('ps_sticky_bar_dismissed') === 'true') return;
-            const heroRect = heroSection.getBoundingClientRect();
-            if (heroRect.bottom <= 100) {
-              stickyBar.classList.remove('is-hidden');
-              document.body.classList.add('has-sticky-bar');
-            } else {
-              stickyBar.classList.add('is-hidden');
-              document.body.classList.remove('has-sticky-bar');
-            }
-          };
-          window.addEventListener('scroll', onScrollCheck, { passive: true });
-          onScrollCheck();
-        } else {
-          document.body.classList.add('has-sticky-bar');
-        }
-      }
-
-      if (stickyClose) {
-        stickyClose.addEventListener('click', function () {
-          stickyBar.classList.add('is-hidden');
-          document.body.classList.remove('has-sticky-bar');
-          sessionStorage.setItem('ps_sticky_bar_dismissed', 'true');
-        });
-      }
-    }
-
     // Back to Top Button Logic
     const backToTopBtn = document.getElementById('psBackToTop');
     if (backToTopBtn) {

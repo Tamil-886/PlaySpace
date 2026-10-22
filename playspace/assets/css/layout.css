@@ -15,10 +15,6 @@ body {
   flex-direction: column;
 }
 
-body.has-sticky-bar {
-  padding-bottom: 60px;
-}
-
 main,
 .ps-main-content,
 .ps-page-content,
@@ -679,78 +675,11 @@ main,
 }
 
 /* ==========================================================================
-   Docked Sticky Action Bar & Back-to-Top Button
+   Back-to-Top Button
    ========================================================================== */
-.ps-sticky-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--ps-black);
-  border-top: 2px solid var(--ps-yellow);
-  z-index: 990;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
-  padding: 0.75rem 0;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-}
-
-.ps-sticky-bar.is-hidden {
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.ps-sticky-bar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.ps-sticky-bar-info {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--ps-white);
-  font-size: 0.9rem;
-}
-
-.ps-sticky-bar-text strong {
-  color: var(--ps-yellow);
-}
-
-.ps-sticky-bar-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.ps-sticky-bar-close {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--ps-white);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all var(--ps-transition-fast);
-  margin-left: 0.25rem;
-}
-
-.ps-sticky-bar-close:hover {
-  background: var(--ps-yellow);
-  color: var(--ps-black);
-  border-color: var(--ps-yellow);
-}
-
-/* Back to Top Smooth Button */
 .ps-back-to-top {
   position: fixed;
-  bottom: 75px;
+  bottom: 24px;
   right: 24px;
   width: 44px;
   height: 44px;

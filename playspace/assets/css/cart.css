@@ -27,12 +27,6 @@
   transform: translateY(-2px);
 }
 
-.ps-sticky-bar .ps-cart-toggle:hover {
-  background-color: var(--ps-yellow) !important;
-  color: var(--ps-black) !important;
-  border-color: var(--ps-yellow) !important;
-}
-
 .ps-cart-badge {
   position: absolute;
   top: -5px;

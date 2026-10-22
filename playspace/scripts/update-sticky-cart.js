@@ -61,20 +61,7 @@ files.forEach(f => {
     }
   }
 
-  // 2. Inject Cart toggle into .ps-sticky-bar-actions if present and not already having it
-  if (content.includes('class="ps-sticky-bar-actions"') && !content.includes('Cart (<span class="ps-cart-badge-text">')) {
-    const stickyCartHtml = `      <!-- Cart Button in Sticky Bar -->
-      <button type="button" class="ps-cart-toggle ps-btn ps-btn-sm ps-btn-outline" aria-label="Shopping Cart" title="View Cart" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF; position: relative;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-        Cart (<span class="ps-cart-badge-text">0</span>)
-      </button>
-`;
-    content = content.replace('<div class="ps-sticky-bar-actions">', '<div class="ps-sticky-bar-actions">\n' + stickyCartHtml);
-    changed = true;
-    updatedSticky++;
-  }
-
-  // 3. Inject cart.js if not present
+  // 2. Inject cart.js if not present
   if (!content.includes('cart.js')) {
     const scriptTag = `  <script src="${basePath}assets/js/cart.js"></script>\n`;
     if (content.includes(`<script src="${basePath}assets/js/app.js"></script>`)) {

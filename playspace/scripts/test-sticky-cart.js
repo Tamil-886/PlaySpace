@@ -58,9 +58,7 @@ samplePages.forEach(p => {
   const html = fs.readFileSync(filePath, 'utf8');
   assert(html.includes('ps-cart-toggle ps-btn-icon'), `${p} contains .ps-cart-toggle in navbar`);
   assert(html.includes('cart.js'), `${p} loads cart.js`);
-  if (html.includes('ps-sticky-bar-actions')) {
-    assert(html.includes('Cart (<span class="ps-cart-badge-text">'), `${p} contains Cart button in bottom sticky bar`);
-  }
+  assert(!html.includes('ps-sticky-bar'), `${p} does NOT contain bottom sticky bar`);
 });
 
 // 7. Check footer removal specifically on cart.html (and preserved elsewhere)

@@ -265,36 +265,15 @@
     gap: 0.85rem;
   }
 
-  .ps-sticky-bar-inner {
-    flex-direction: column;
-    gap: 0.6rem;
-    text-align: center;
-  }
-
-  .ps-sticky-bar-actions {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .ps-sticky-bar-actions .ps-btn {
-    flex: 1;
-    font-size: 0.82rem;
-    padding: 0 0.75rem;
-  }
-
   .ps-hide-sm {
     display: none;
   }
 
   .ps-back-to-top {
-    bottom: 110px;
+    bottom: 20px;
     right: 16px;
     width: 40px;
     height: 40px;
-  }
-
-  body.has-sticky-bar {
-    padding-bottom: 95px;
   }
 }
 
@@ -743,18 +722,6 @@
     overflow-y: auto;
   }
 
-  .ps-sticky-bar {
-    padding-inline: 0.75rem;
-  }
-
-  .ps-sticky-bar-actions {
-    flex-wrap: wrap;
-  }
-
-  .ps-sticky-bar-actions .ps-btn {
-    min-width: 0;
-    white-space: normal;
-  }
 
   pre,
   code,
@@ -1539,22 +1506,8 @@
     gap: 0.4rem !important;
   }
 
-  .ps-sticky-bar {
-    padding: 0.35rem 0.4rem !important;
-  }
-
-  .ps-sticky-bar-actions .ps-btn {
-    font-size: 0.7rem !important;
-    padding: 0 0.4rem !important;
-    height: 30px !important;
-  }
-
-  body.has-sticky-bar {
-    padding-bottom: 105px !important;
-  }
-
   .ps-back-to-top {
-    bottom: 115px !important;
+    bottom: 16px !important;
     right: 10px !important;
     width: 34px !important;
     height: 34px !important;
