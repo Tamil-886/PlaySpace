@@ -24,13 +24,13 @@ function generateAttractionsPage() {
           <img src="${zone.heroImage}" alt="${zone.title}" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="ps-attraction-body" style="padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1;">
-          <div class="ps-attraction-specs" style="min-height: 38px; display: flex; align-items: center; flex-wrap: wrap; gap: 0.35rem 0.6rem; margin-bottom: 0.5rem; font-size: 0.8rem; font-weight: 700; color: var(--ps-text-muted);">
+          <div class="ps-attraction-specs" style="min-height: 56px; display: flex; align-items: center; align-content: center; flex-wrap: wrap; gap: 0.25rem 0.5rem; margin-bottom: 0.5rem; font-size: 0.78rem; font-weight: 700; color: var(--ps-text-muted);">
             <span>● ${zone.specs[0]}</span> <span>● ${zone.specs[1]}</span> <span>● ${zone.specs[2]}</span>
           </div>
-          <h3 style="font-size: 1.3rem; margin: 0.25rem 0 0.5rem 0; color: var(--ps-text-main); min-height: 2.2rem; display: flex; align-items: center; line-height: 1.25;">
+          <h3 style="font-size: 1.3rem; margin: 0.25rem 0 0.5rem 0; color: var(--ps-text-main); min-height: 52px; display: flex; align-items: center; line-height: 1.25;">
             ${zone.num}. ${zone.title}
           </h3>
-          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.85rem; min-height: 44px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.85rem; height: 44px; min-height: 44px; max-height: 44px; flex-grow: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
             ${zone.description}
           </p>
           

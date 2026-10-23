@@ -169,7 +169,12 @@
   function resolveFieldType(input) {
     if (!input) return 'text';
     const dataType = (input.getAttribute('data-type') || '').toLowerCase();
-    if (dataType) return dataType;
+    if (dataType) {
+      if (dataType === 'age' || dataType === 'quantity' || dataType === 'jumpers' || dataType === 'count') {
+        return 'number';
+      }
+      return dataType;
+    }
 
     const type = (input.type || '').toLowerCase();
     const id = (input.id || '').toLowerCase();
@@ -243,8 +248,8 @@
       errorEl.setAttribute('role', 'alert');
       errorEl.style.display = 'none';
 
-      // Insert right after input or at the end of the group
-      if (input.nextSibling) {
+      // Insert right after input if direct child, otherwise append to group
+      if (input.parentNode === formGroup && input.nextSibling) {
         formGroup.insertBefore(errorEl, input.nextSibling);
       } else {
         formGroup.appendChild(errorEl);
@@ -277,7 +282,18 @@
     input.classList.remove('is-invalid');
     input.removeAttribute('aria-invalid');
 
-    const errorEl = getOrCreateErrorElement(input);
+    const formGroup = input.closest('.ps-form-group') || input.parentElement;
+    let errorEl = null;
+    if (formGroup) {
+      errorEl = formGroup.querySelector('.ps-form-error, .ps-field-error, .ps-form-hint[style*="e74c3c"]');
+    }
+    if (!errorEl && input.nextElementSibling && (
+      input.nextElementSibling.classList.contains('ps-form-error') ||
+      input.nextElementSibling.classList.contains('ps-field-error')
+    )) {
+      errorEl = input.nextElementSibling;
+    }
+
     if (errorEl) {
       errorEl.textContent = '';
       errorEl.style.display = 'none';

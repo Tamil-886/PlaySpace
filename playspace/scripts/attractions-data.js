@@ -127,7 +127,7 @@ const ATTRACTION_ZONES = [
     tagline: "Reach new heights with certified hydraulic auto-belay towers and colorful themed climbing routes!",
     heroImage: "../assets/images/attractions/Adventure%20Climbing%20Zone/Adventure_climbing_zone_for_chil%E2%80%A6_2K_20261013230351.jpg",
     description: "Explore climbing frames, fun pathways, and exciting elevated play structures with 100% fail-safe auto-belay descenders.",
-    specs: ["Auto-Belay Spires", "Themed Vertical Routes", "Soft Landing Mat"],
+    specs: ["Auto-Belay Spires", "Vertical Routes", "Soft Landing Mat"],
     footwear: "Grip Socks or Clean Rubber-Soled Athletic Shoes",
     about: "Scale colorful spires, glowing Tetris-style geometric faces, and vertical speed challenges in the Adventure Climbing Zone! Designed with state-of-the-art TRUBLUE magnetic auto-belay descent systems, climbers can safely reach heights of up to 24 feet before being lowered in an ultra-smooth, controlled, feather-soft descent back to the cushioned floor.<br><br>Every tower offers a distinct visual theme and grip texture — from giant spiral telephone poles and illuminated neon speed columns to textured faux-rock surfaces tailored for beginners and aspiring rock climbers alike.",
     activities: [
@@ -811,7 +811,7 @@ const ATTRACTION_ZONES = [
     tagline: "Crawl through winding subterranean tunnels, discover hidden rooms, and collect secret quest checkpoint stamps!",
     heroImage: "../assets/images/attractions/Mystery%20Tunnel%20Quest/Mystery_Tunnel_Quest_2K_20261014002606.jpg",
     description: "Crawl through winding tunnels and discover hidden routes in a playful maze filled with observation bubble domes.",
-    specs: ["Winding Labyrinth", "Observation Windows", "Hidden Quest Rooms"],
+    specs: ["Winding Labyrinth", "Lookout Windows", "Hidden Quest Rooms"],
     footwear: "Grip Socks Mandatory",
     about: "An enchanting underground labyrinth awaits young explorers in Mystery Tunnel Quest! Nestled beneath our elevated play structures, this network of winding, padded crawl tunnels features clear acrylic observation domes, secret discovery alcoves, soft LED glow markers, and interactive sensory wall puzzles.<br><br>Children embark on a quest to locate 4 hidden stamp stations hidden inside the secret chambers, collecting embossed symbols on their adventure passport while building spatial confidence in an exciting, cozy subterranean labyrinth.",
     activities: [

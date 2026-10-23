@@ -184,6 +184,31 @@
   color: var(--ps-yellow);
 }
 
+/* Attraction Zone Booking - Add This Zone to Cart Button in Order Summary */
+.ps-order-summary .ps-btn-add-cart,
+.ps-order-summary .ps-btn-outline {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFCC00 !important;
+  border: 2px solid #FFCC00 !important;
+  background-color: rgba(255, 204, 0, 0.08) !important;
+  font-weight: 800 !important;
+  border-radius: var(--ps-radius-full) !important;
+  transition: all var(--ps-transition-base) !important;
+}
+
+.ps-order-summary .ps-btn-add-cart:hover,
+.ps-order-summary .ps-btn-outline:hover,
+.ps-order-summary .ps-btn-add-cart:focus-visible,
+.ps-order-summary .ps-btn-outline:focus-visible {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4) !important;
+}
+
 /* Digital Signature Box */
 .ps-signature-pad {
   border: 2px dashed rgba(0, 0, 0, 0.2);

@@ -644,7 +644,7 @@
         
         <!-- Left 2 Cols: Form -->
         <div style="grid-column: span 2;">
-          <form id="psPassBookingForm" novalidate>
+          <form id="psPassBookingForm" onsubmit="event.preventDefault(); submitPassBooking();" novalidate>
 
             <!-- 1. Select Pass or Plan -->
             <div class="ps-card" style="padding: 1.75rem; margin-bottom: 2rem;">
@@ -1286,7 +1286,7 @@
         if (!isFormValid) {
           alertMsg.textContent = 'Please correct the highlighted errors in the form before submitting.';
           alertBox.style.display = 'block';
-          window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+          alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
           return;
         }
       }
@@ -1322,7 +1322,7 @@
       if (errors.length > 0) {
         alertMsg.innerHTML = errors.join('<br>');
         alertBox.style.display = 'block';
-        window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+        alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
@@ -1399,56 +1399,7 @@
       if (modalPlan) modalPlan.textContent = plan.name;
       if (modalJumpers) modalJumpers.textContent = `${numJumpers} Jumper${numJumpers > 1 ? 's' : ''}`;
       if (modalDate) modalDate.textContent = startDate;
-      if (modalTotal) modalTotal.textContent = '
-
-      openPassSuccessModal();
-    }
-
-    function openPassSuccessModal() {
-      const modal = document.getElementById('psPassSuccessModal');
-      if (modal) {
-        modal.classList.add('active');
-        document.body.classList.add('ps-modal-open');
-      }
-    }
-
-    function closePassSuccessModal() {
-      const modal = document.getElementById('psPassSuccessModal');
-      if (modal) {
-        modal.classList.remove('active');
-        document.body.classList.remove('ps-modal-open');
-      }
-    }
-
-    // Modal controls: Close button, summary button, backdrop click, Escape key
-    document.addEventListener('DOMContentLoaded', function() {
-      const dismissBtn = document.getElementById('btnDismissPassModal');
-      const closeBtn = document.getElementById('btnClosePassModal');
-      const detailsBtn = document.getElementById('btnViewFullPassSummary');
-      const modal = document.getElementById('psPassSuccessModal');
-
-      if (dismissBtn) dismissBtn.addEventListener('click', closePassSuccessModal);
-      if (closeBtn) closeBtn.addEventListener('click', closePassSuccessModal);
-      if (detailsBtn) detailsBtn.addEventListener('click', closePassSuccessModal);
-
-      if (modal) {
-        modal.addEventListener('click', function(e) {
-          if (e.target === modal) {
-            closePassSuccessModal();
-          }
-        });
-      }
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          closePassSuccessModal();
-        }
-      });
-    });
-
-  </script>
-</body>
-</html>
- + totalPrice.toFixed(2);
+      if (modalTotal) modalTotal.textContent = `$${totalPrice.toFixed(2)}`;
 
       openPassSuccessModal();
     }

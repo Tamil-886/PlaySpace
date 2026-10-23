@@ -82,9 +82,9 @@
 .ps-btn-outline[style*="#000"],
 .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline,
 .ps-pricing-card:not(.featured) .ps-btn-outline,
-.ps-section:not(.ps-section-dark):not([style*="#000"]):not([style*="black"]) .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-hero *):not(.ps-header *):not(.ps-hero-dark *):not(.ps-occupancy-banner-grid *),
-.ps-section-white .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not([style*="#000"] *):not([style*="black"] *),
-.ps-section-alt .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
+.ps-section:not(.ps-section-dark):not([style*="#000"]):not([style*="black"]) .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-hero *):not(.ps-header *):not(.ps-hero-dark *):not(.ps-occupancy-banner-grid *):not(.ps-order-summary *),
+.ps-section-white .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not([style*="#000"] *):not([style*="black"] *):not(.ps-order-summary *),
+.ps-section-alt .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not(.ps-order-summary *),
 #toddler .ps-btn-outline {
   color: #000000 !important;
   border-color: rgba(0, 0, 0, 0.3) !important;
@@ -96,42 +96,48 @@
 .ps-btn-outline[style*="#000"]:hover,
 .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline:hover,
 .ps-pricing-card:not(.featured) .ps-btn-outline:hover,
-.ps-section:not(.ps-section-dark):not([style*="#000"]):not([style*="black"]) .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-hero *):not(.ps-header *):not(.ps-hero-dark *):not(.ps-occupancy-banner-grid *):hover,
-.ps-section-white .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not([style*="#000"] *):not([style*="black"] *):hover,
-.ps-section-alt .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):hover,
+.ps-section:not(.ps-section-dark):not([style*="#000"]):not([style*="black"]) .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-hero *):not(.ps-header *):not(.ps-hero-dark *):not(.ps-occupancy-banner-grid *):not(.ps-order-summary *):hover,
+.ps-section-white .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not([style*="#000"] *):not([style*="black"] *):not(.ps-order-summary *):hover,
+.ps-section-alt .ps-btn-outline:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not(.ps-order-summary *):hover,
 #toddler .ps-btn-outline:hover {
   background-color: #000000 !important;
   color: #FFCC00 !important;
   border-color: #000000 !important;
 }
 
-/* Explicit high-contrast outline button inside black Occupancy & Schedule banner */
+/* Explicit high-contrast outline button inside black Occupancy & Schedule banner & Order Summary */
 .ps-occupancy-banner-grid .ps-btn-outline,
 .ps-occupancy-banner-grid a.ps-btn-outline,
+.ps-order-summary .ps-btn-outline,
+.ps-order-summary .ps-btn-add-cart,
 .ps-section-white [style*="#000"] .ps-btn-outline,
 .ps-section-white [style*="black"] .ps-btn-outline {
   color: #FFCC00 !important;
-  border: 1.5px solid #FFCC00 !important;
-  background-color: transparent !important;
-  font-weight: 700 !important;
+  border: 2px solid #FFCC00 !important;
+  background-color: rgba(255, 204, 0, 0.08) !important;
+  font-weight: 800 !important;
 }
 
 .ps-occupancy-banner-grid .ps-btn-outline:hover,
 .ps-occupancy-banner-grid a.ps-btn-outline:hover,
+.ps-order-summary .ps-btn-outline:hover,
+.ps-order-summary .ps-btn-add-cart:hover,
+.ps-order-summary .ps-btn-outline:focus-visible,
+.ps-order-summary .ps-btn-add-cart:focus-visible,
 .ps-section-white [style*="#000"] .ps-btn-outline:hover,
 .ps-section-white [style*="black"] .ps-btn-outline:hover {
   background-color: #FFCC00 !important;
   color: #000000 !important;
   border-color: #FFCC00 !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(255, 204, 0, 0.35);
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.35);
 }
 
 /* Yellow-bordered outline buttons in light containers */
-.ps-section-white .ps-btn-outline[style*="#FFCC00"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
-.ps-section-white .ps-btn-outline[style*="yellow"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
-.ps-section-alt .ps-btn-outline[style*="#FFCC00"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
-.ps-section-alt .ps-btn-outline[style*="yellow"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *),
+.ps-section-white .ps-btn-outline[style*="#FFCC00"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not(.ps-order-summary *),
+.ps-section-white .ps-btn-outline[style*="yellow"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not(.ps-order-summary *),
+.ps-section-alt .ps-btn-outline[style*="#FFCC00"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not(.ps-order-summary *),
+.ps-section-alt .ps-btn-outline[style*="yellow"]:not(.ps-card-dark *):not(.featured *):not(.ps-occupancy-banner-grid *):not(.ps-order-summary *),
 .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="#FFCC00"],
 .ps-card:not(.ps-card-dark):not(.featured) .ps-btn-outline[style*="yellow"] {
   color: #000000 !important;

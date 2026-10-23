@@ -28,16 +28,16 @@ assert(cards.length === 21, `Found all 21 attraction cards (found ${cards.length
 const bodyMatches = html.match(/class="ps-attraction-body" style="padding: 1\.25rem; display: flex; flex-direction: column; flex-grow: 1;"/g) || [];
 assert(bodyMatches.length === 21, `All 21 cards have direct flex-growing body container (found ${bodyMatches.length})`);
 
-// 3. All cards have specs with min-height: 38px
-const specsMatches = html.match(/class="ps-attraction-specs" style="min-height: 38px;/g) || [];
-assert(specsMatches.length === 21, `All 21 cards have specs row locked with min-height: 38px (found ${specsMatches.length})`);
+// 3. All cards have specs with min-height: 56px
+const specsMatches = html.match(/class="ps-attraction-specs" style="min-height: 56px;/g) || [];
+assert(specsMatches.length === 21, `All 21 cards have specs row locked with min-height: 56px (found ${specsMatches.length})`);
 
-// 4. All titles have min-height: 2.2rem
-const titleMatches = html.match(/<h3 style="font-size: 1\.3rem; margin: 0\.25rem 0 0\.5rem 0; color: var\(--ps-text-main\); min-height: 2\.2rem;/g) || [];
-assert(titleMatches.length === 21, `All 21 cards have title locked with min-height: 2.2rem (found ${titleMatches.length})`);
+// 4. All titles have min-height: 52px
+const titleMatches = html.match(/<h3 style="font-size: 1\.3rem; margin: 0\.25rem 0 0\.5rem 0; color: var\(--ps-text-main\); min-height: 52px;/g) || [];
+assert(titleMatches.length === 21, `All 21 cards have title locked with min-height: 52px (found ${titleMatches.length})`);
 
-// 5. All descriptions have min-height: 44px
-const descMatches = html.match(/class="text-muted" style="font-size: 0\.9rem; line-height: 1\.5; margin-bottom: 0\.85rem; min-height: 44px;/g) || [];
+// 5. All descriptions have height and min-height: 44px
+const descMatches = html.match(/class="text-muted" style="font-size: 0\.9rem; line-height: 1\.5; margin-bottom: 0\.85rem; height: 44px; min-height: 44px;/g) || [];
 assert(descMatches.length === 21, `All 21 cards have description locked with min-height: 44px (found ${descMatches.length})`);
 
 // 6. All Age Suitability boxes have min-height: 40px and NO flex-wrap: wrap

@@ -147,7 +147,7 @@ const aboutHtml = pageWrapper(
         <!-- Pillar 1 -->
         <div class="ps-card ps-philosophy-card" style="padding: 1.75rem; border: 1px solid var(--ps-border-color); border-top: 4px solid #FFCC00; display: flex; flex-direction: column; height: 100%; border-radius: var(--ps-radius-lg); background: var(--ps-bg-card);">
           <div style="display: flex; flex-direction: column; flex-grow: 1;">
-            <div class="ps-icon-square" style="margin-bottom: 1.25rem; font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; background: #FFCC00; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">🏃‍♂️</div>
+            <div class="ps-icon-square ps-about-philosophy-icon" style="margin-bottom: 1.25rem; font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; background: #FFCC00; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">🏃‍♂️</div>
             <h4 style="font-size: 1.15rem; margin-bottom: 0.75rem; min-height: 3.2rem; display: flex; align-items: flex-start; line-height: 1.35; color: var(--ps-text-main);">Physical Agility &amp; Fitness</h4>
             <p style="font-size: 0.92rem; color: var(--ps-text-main); opacity: 0.85; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
               Trampoline rebound movement strengthens core stabilization, elevates cardiovascular endurance, and enhances balance without joint impact stress.
@@ -161,7 +161,7 @@ const aboutHtml = pageWrapper(
         <!-- Pillar 2 -->
         <div class="ps-card ps-philosophy-card" style="padding: 1.75rem; border: 1px solid var(--ps-border-color); border-top: 4px solid #FFCC00; display: flex; flex-direction: column; height: 100%; border-radius: var(--ps-radius-lg); background: var(--ps-bg-card);">
           <div style="display: flex; flex-direction: column; flex-grow: 1;">
-            <div class="ps-icon-square" style="margin-bottom: 1.25rem; font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; background: #FFCC00; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">🧩</div>
+            <div class="ps-icon-square ps-about-philosophy-icon" style="margin-bottom: 1.25rem; font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; background: #FFCC00; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">🧩</div>
             <h4 style="font-size: 1.15rem; margin-bottom: 0.75rem; min-height: 3.2rem; display: flex; align-items: flex-start; line-height: 1.35; color: var(--ps-text-main);">Sensory &amp; Motor Development</h4>
             <p style="font-size: 0.92rem; color: var(--ps-text-main); opacity: 0.85; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
               Tactile soft-play obstacles, ball pits, and tunnel networks stimulate proprioceptive sensory input, fine motor coordination, and spatial awareness.
@@ -175,7 +175,7 @@ const aboutHtml = pageWrapper(
         <!-- Pillar 3 -->
         <div class="ps-card ps-philosophy-card" style="padding: 1.75rem; border: 1px solid var(--ps-border-color); border-top: 4px solid #FFCC00; display: flex; flex-direction: column; height: 100%; border-radius: var(--ps-radius-lg); background: var(--ps-bg-card);">
           <div style="display: flex; flex-direction: column; flex-grow: 1;">
-            <div class="ps-icon-square" style="margin-bottom: 1.25rem; font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; background: #FFCC00; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">🤝</div>
+            <div class="ps-icon-square ps-about-philosophy-icon" style="margin-bottom: 1.25rem; font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; background: #FFCC00; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">🤝</div>
             <h4 style="font-size: 1.15rem; margin-bottom: 0.75rem; min-height: 3.2rem; display: flex; align-items: flex-start; line-height: 1.35; color: var(--ps-text-main);">Social Confidence &amp; Empathy</h4>
             <p style="font-size: 0.92rem; color: var(--ps-text-main); opacity: 0.85; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
               Shared adventures teach turn-taking, cooperative problem-solving, cheering peers on the ninja course, and building authentic childhood connections.
@@ -189,7 +189,7 @@ const aboutHtml = pageWrapper(
         <!-- Pillar 4 -->
         <div class="ps-card ps-philosophy-card" style="padding: 1.75rem; border: 1px solid var(--ps-border-color); border-top: 4px solid #FFCC00; display: flex; flex-direction: column; height: 100%; border-radius: var(--ps-radius-lg); background: var(--ps-bg-card);">
           <div style="display: flex; flex-direction: column; flex-grow: 1;">
-            <div class="ps-icon-square" style="margin-bottom: 1.25rem; font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; background: #FFCC00; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">📵</div>
+            <div class="ps-icon-square ps-about-philosophy-icon" style="margin-bottom: 1.25rem; font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; background: #FFCC00; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1;">📵</div>
             <h4 style="font-size: 1.15rem; margin-bottom: 0.75rem; min-height: 3.2rem; display: flex; align-items: flex-start; line-height: 1.35; color: var(--ps-text-main);">Unplugged, Screen-Free Freedom</h4>
             <p style="font-size: 0.92rem; color: var(--ps-text-main); opacity: 0.85; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
               We swap passive screen time for dynamic, full-body immersion where imaginations soar freely, adrenaline flows positively, and kids sleep soundly.
@@ -370,35 +370,35 @@ const aboutHtml = pageWrapper(
         <h3 style="color: #FFCC00; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
           <span>🏢</span> World-Class 35,000 Sq. Ft. Facility Features
         </h3>
-        <div class="ps-grid ps-grid-4" style="gap: 1.5rem;">
-          <div style="background: #111111; border: 1px solid #222222; border-radius: 8px; padding: 1.5rem;">
+        <div class="ps-grid ps-grid-4 ps-facility-grid" style="gap: 1.5rem;">
+          <div class="ps-facility-card">
             <div style="color: #FFCC00; font-size: 1.8rem; margin-bottom: 0.75rem;">🎪</div>
-            <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">8 Distinct Zones</strong>
-            <p style="color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0.5rem 0 0 0; line-height: 1.5;">
+            <strong style="color: #FFFFFF; font-size: 1.1rem; display: flex; align-items: flex-start; min-height: 2.85rem; line-height: 1.35;">8 Distinct Zones</strong>
+            <p style="color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0.5rem 0 0 0; line-height: 1.5; flex-grow: 1;">
               Trampoline Arena, Soft Play, Ball Pit, Climbing Wall, Slides &amp; Tunnels, Toddler Zone, Ninja Course &amp; Interactive Play.
             </p>
           </div>
 
-          <div style="background: #111111; border: 1px solid #222222; border-radius: 8px; padding: 1.5rem;">
+          <div class="ps-facility-card">
             <div style="color: #FFCC00; font-size: 1.8rem; margin-bottom: 0.75rem;">🎂</div>
-            <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">Private Party Suites</strong>
-            <p style="color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0.5rem 0 0 0; line-height: 1.5;">
+            <strong style="color: #FFFFFF; font-size: 1.1rem; display: flex; align-items: flex-start; min-height: 2.85rem; line-height: 1.35;">Private Party Suites</strong>
+            <p style="color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0.5rem 0 0 0; line-height: 1.5; flex-grow: 1;">
               6 soundproof, climate-controlled party rooms equipped with neon glow lighting, dedicated sound systems, and custom decor setups.
             </p>
           </div>
 
-          <div style="background: #111111; border: 1px solid #222222; border-radius: 8px; padding: 1.5rem;">
+          <div class="ps-facility-card">
             <div style="color: #FFCC00; font-size: 1.8rem; margin-bottom: 0.75rem;">☕</div>
-            <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">PlayCafé &amp; Fuel Bar</strong>
-            <p style="color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0.5rem 0 0 0; line-height: 1.5;">
+            <strong style="color: #FFFFFF; font-size: 1.1rem; display: flex; align-items: flex-start; min-height: 2.85rem; line-height: 1.35;">PlayCafé &amp; Fuel Bar</strong>
+            <p style="color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0.5rem 0 0 0; line-height: 1.5; flex-grow: 1;">
               Nutritious children's meals, allergen-friendly snacks, pizza ovens, artisanal espresso, and refreshing fruit smoothies.
             </p>
           </div>
 
-          <div style="background: #111111; border: 1px solid #222222; border-radius: 8px; padding: 1.5rem;">
+          <div class="ps-facility-card">
             <div style="color: #FFCC00; font-size: 1.8rem; margin-bottom: 0.75rem;">❄️</div>
-            <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">Advanced HVAC Air Exchange</strong>
-            <p style="color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0.5rem 0 0 0; line-height: 1.5;">
+            <strong style="color: #FFFFFF; font-size: 1.1rem; display: flex; align-items: flex-start; min-height: 2.85rem; line-height: 1.35;">Advanced HVAC Air Exchange</strong>
+            <p style="color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0.5rem 0 0 0; line-height: 1.5; flex-grow: 1;">
               Commercial grade air-conditioning exchanging 100% fresh filtered air 6 times per hour to maintain optimal temperature and purity.
             </p>
           </div>
@@ -410,45 +410,45 @@ const aboutHtml = pageWrapper(
         <h3 style="color: #FFCC00; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
           <span>👥</span> Certified Staff &amp; Court Patrol
         </h3>
-        <div class="ps-grid ps-grid-3" style="gap: 2rem;">
+        <div class="ps-grid ps-grid-3 ps-about-staff-grid" style="gap: 1.5rem;">
           <!-- Staff Card 1 -->
-          <div class="ps-card ps-card-dark" style="background: #111111; border: 1px solid #222222; padding: 1.75rem;">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-              <div style="width: 50px; height: 50px; border-radius: 50%; background: #FFCC00; color: #000; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">⛑️</div>
-              <div>
-                <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">100% CPR &amp; First-Aid Certified</strong>
-                <span style="color: #FFCC00; font-size: 0.82rem; font-weight: 700;">ALL COURT STAFF</span>
+          <div class="ps-card ps-card-dark ps-about-staff-card" style="background: #111111; border: 1px solid #222222; padding: 1.5rem 1.35rem;">
+            <div class="ps-about-staff-header" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; min-height: 4.5rem;">
+              <div class="ps-about-staff-icon" style="width: 48px; height: 48px; min-width: 48px; min-height: 48px; border-radius: 50%; background: #FFCC00; color: #000; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);">⛑️</div>
+              <div class="ps-about-staff-info" style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+                <strong class="ps-about-staff-title" style="color: #FFFFFF; font-size: 1.08rem; font-weight: 700; display: flex; align-items: center; line-height: 1.32; min-height: 2.85rem; margin: 0;">100% CPR &amp; First-Aid Certified</strong>
+                <span class="ps-about-staff-subtitle" style="color: #FFCC00; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; display: block; white-space: nowrap; line-height: 1.25;">ALL COURT STAFF</span>
               </div>
             </div>
-            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.55; margin: 0;">
+            <p class="ps-about-staff-desc" style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.55; margin: 0; flex-grow: 1;">
               Every member of our floor team undergoes certified Red Cross pediatric CPR, AED operation, and emergency trauma response training before their first shift.
             </p>
           </div>
 
           <!-- Staff Card 2 -->
-          <div class="ps-card ps-card-dark" style="background: #111111; border: 1px solid #222222; padding: 1.75rem;">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-              <div style="width: 50px; height: 50px; border-radius: 50%; background: #FFCC00; color: #000; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">📋</div>
-              <div>
-                <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">Background Checked &amp; Screened</strong>
-                <span style="color: #FFCC00; font-size: 0.82rem; font-weight: 700;">TRUST &amp; INTEGRITY</span>
+          <div class="ps-card ps-card-dark ps-about-staff-card" style="background: #111111; border: 1px solid #222222; padding: 1.5rem 1.35rem;">
+            <div class="ps-about-staff-header" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; min-height: 4.5rem;">
+              <div class="ps-about-staff-icon" style="width: 48px; height: 48px; min-width: 48px; min-height: 48px; border-radius: 50%; background: #FFCC00; color: #000; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);">📋</div>
+              <div class="ps-about-staff-info" style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+                <strong class="ps-about-staff-title" style="color: #FFFFFF; font-size: 1.08rem; font-weight: 700; display: flex; align-items: center; line-height: 1.32; min-height: 2.85rem; margin: 0;">Background Checked &amp; Screened</strong>
+                <span class="ps-about-staff-subtitle" style="color: #FFCC00; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; display: block; white-space: nowrap; line-height: 1.25;">TRUST &amp; INTEGRITY</span>
               </div>
             </div>
-            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.55; margin: 0;">
+            <p class="ps-about-staff-desc" style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.55; margin: 0; flex-grow: 1;">
               We conduct thorough multi-state criminal background checks, child safety clearances, and reference screenings for every employee prior to hire.
             </p>
           </div>
 
           <!-- Staff Card 3 -->
-          <div class="ps-card ps-card-dark" style="background: #111111; border: 1px solid #222222; padding: 1.75rem;">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-              <div style="width: 50px; height: 50px; border-radius: 50%; background: #FFCC00; color: #000; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">🎯</div>
-              <div>
-                <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">Engaging Play Facilitators</strong>
-                <span style="color: #FFCC00; font-size: 0.82rem; font-weight: 700;">ENERGY &amp; ENCOURAGEMENT</span>
+          <div class="ps-card ps-card-dark ps-about-staff-card" style="background: #111111; border: 1px solid #222222; padding: 1.5rem 1.35rem;">
+            <div class="ps-about-staff-header" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; min-height: 4.5rem;">
+              <div class="ps-about-staff-icon" style="width: 48px; height: 48px; min-width: 48px; min-height: 48px; border-radius: 50%; background: #FFCC00; color: #000; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);">🎯</div>
+              <div class="ps-about-staff-info" style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+                <strong class="ps-about-staff-title" style="color: #FFFFFF; font-size: 1.08rem; font-weight: 700; display: flex; align-items: center; line-height: 1.32; min-height: 2.85rem; margin: 0;">Engaging Play Facilitators</strong>
+                <span class="ps-about-staff-subtitle" style="color: #FFCC00; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; display: block; white-space: nowrap; line-height: 1.25;">ENERGY &amp; ENCOURAGEMENT</span>
               </div>
             </div>
-            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.55; margin: 0;">
+            <p class="ps-about-staff-desc" style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.55; margin: 0; flex-grow: 1;">
               Our monitors do more than supervise — they coach kids on ninja obstacles, referee dodgeball games, encourage timid jumpers, and keep positive energy thriving!
             </p>
           </div>

@@ -759,7 +759,7 @@
         
         <!-- Left 2 Cols: Form -->
         <div style="grid-column: span 2;">
-          <form id="psPartyBookingForm" novalidate>
+          <form id="psPartyBookingForm" onsubmit="event.preventDefault(); submitPartyBooking();" novalidate>
 
             <!-- 1. Select Party Package -->
             <div class="ps-card" style="padding: 1.75rem; margin-bottom: 2rem;">
@@ -1424,7 +1424,7 @@
         if (!isFormValid) {
           alertMsg.textContent = 'Please correct the highlighted errors in the form before submitting.';
           alertBox.style.display = 'block';
-          window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+          alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
           return;
         }
       }
@@ -1473,7 +1473,7 @@
       if (errors.length > 0) {
         alertMsg.innerHTML = errors.join('<br>');
         alertBox.style.display = 'block';
-        window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+        alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
